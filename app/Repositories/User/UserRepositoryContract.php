@@ -10,6 +10,8 @@ interface UserRepositoryContract
 
     public function getAllUsersWithDepartments();
 
+    public function getAllUsersWithLocales();
+
     public function create($requestData);
 
     public function update($id, $requestData);

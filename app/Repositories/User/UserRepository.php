@@ -44,6 +44,15 @@ class UserRepository implements UserRepositoryContract
     }
 
     /**
+     * @return mixed cuongnv
+     */
+    public function getAllUsersWithLocales()
+    {
+        return User::all()
+            ->pluck('nameAndLocale', 'id');
+    }
+
+    /**
      * @param $requestData
      * @return static
      */
@@ -74,6 +83,7 @@ class UserRepository implements UserRepositoryContract
         $user->save();
         $user->roles()->attach($requestData->roles);
         $user->department()->attach($requestData->departments);
+        $user->locale()->attach($requestData->locales);
         $user->save();
 
         Session::flash('flash_message', 'User successfully added!'); //Snippet in Master.blade.php
@@ -93,7 +103,7 @@ class UserRepository implements UserRepositoryContract
         $password = bcrypt($requestData->password);
         $role = $requestData->roles;
         $department = $requestData->departments;
-        $user->locale = $requestData->locale;//cuongnv
+        $locale = $requestData->locales;//cuongnv
 
         if ($requestData->hasFile('image_path')) {
             $settings = Setting::findOrFail(1);
@@ -120,6 +130,7 @@ class UserRepository implements UserRepositoryContract
         $user->fill($input)->save();
         $user->roles()->sync([$role]);
         $user->department()->sync([$department]);
+        $user->locale()->sync([$locale]);
 
         Session::flash('flash_message', 'User successfully updated!');
 

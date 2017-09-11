@@ -52,6 +52,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Department::class, 'department_user')->withPivot('department_id');
     }
 
+    //cuongnv
+    public function locale()
+    {
+        return $this->belongsToMany(Locale::class, 'locale_user')->withPivot('locale_id');
+    }
+    //~cuongnv
+
     public function userRole()
     {
         return $this->hasOne(RoleUser::class, 'user_id', 'id');
@@ -66,7 +73,13 @@ class User extends Authenticatable
     {
         return $this->name . ' ' . '- ' . $this->department()->first()->name;
     }
-    
+
+    public function getNameAndLocaleAttribute()
+    {
+        return $this->name . ' ' . '- ' . $this->locale()->first()->name;
+    }
+
+
     public function moveTasks($user_id)
     {
         $tasks = $this->tasks()->get();

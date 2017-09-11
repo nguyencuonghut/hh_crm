@@ -4,8 +4,8 @@ namespace App\Repositories\Locale;
 use App\Models\Locale;
 
 /**
- * Class DepartmentRepository
- * @package App\Repositories\Department
+ * Class LocaleRepository
+ * @package App\Repositories\Locale
  */
 class LocaleRepository implements LocaleRepositoryContract
 {

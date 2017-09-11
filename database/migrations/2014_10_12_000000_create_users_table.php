@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('work_number')->nullable();
             $table->string('personal_number');
             $table->string('image_path')->nullable();
-            $table->string('locale');
             $table->rememberToken();
             $table->timestamps();
         });

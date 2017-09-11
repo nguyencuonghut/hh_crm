@@ -149,14 +149,14 @@ $('body').click(function(e) {
             </div>
             <!-- cuongnv -->
             <a href="#locales" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="sidebar-icon glyphicon glyphicon-list-alt"></i><span id="menu-txt">{{ __('Locales') }}</span>
+                        class="sidebar-icon glyphicon glyphicon-globe"></i><span id="menu-txt">{{ __('Vùng thị trường') }}</span>
                 <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="locales">
                 <a href="{{ route('locales.index')}}"
-                   class="list-group-item childlist">{{ __('All Locales') }}</a>
+                   class="list-group-item childlist">{{ __('Tất cả các vùng') }}</a>
                 @if(Entrust::hasRole('administrator'))
                     <a href="{{ route('locales.create')}}"
-                       class="list-group-item childlist">{{ __('New Locale') }}</a>
+                       class="list-group-item childlist">{{ __('Vùng mới') }}</a>
                 @endif
             </div>
             <!-- ~cuongnv -->

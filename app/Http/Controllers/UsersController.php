@@ -9,12 +9,14 @@ use App\Models\Task;
 use App\Http\Requests;
 use App\Models\Client;
 use App\Models\Lead;
+use App\Models\Locale;
 use Illuminate\Http\Request;
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Repositories\User\UserRepositoryContract;
 use App\Repositories\Role\RoleRepositoryContract;
 use App\Repositories\Department\DepartmentRepositoryContract;
+use App\Repositories\Locale\LocaleRepositoryContract;
 use App\Repositories\Setting\SettingRepositoryContract;
 use App\Repositories\Task\TaskRepositoryContract;
 use App\Repositories\Lead\LeadRepositoryContract;
@@ -24,12 +26,14 @@ class UsersController extends Controller
     protected $users;
     protected $roles;
     protected $departments;
+    protected $locales;
     protected $settings;
 
     public function __construct(
         UserRepositoryContract $users,
         RoleRepositoryContract $roles,
         DepartmentRepositoryContract $departments,
+        LocaleRepositoryContract $locales,
         SettingRepositoryContract $settings,
         TaskRepositoryContract $tasks,
         LeadRepositoryContract $leads
@@ -38,6 +42,7 @@ class UsersController extends Controller
         $this->users = $users;
         $this->roles = $roles;
         $this->departments = $departments;
+        $this->locales = $locales;
         $this->settings = $settings;
         $this->tasks = $tasks;
         $this->leads = $leads;
@@ -60,10 +65,14 @@ class UsersController extends Controller
     public function anyData()
     {
         $canUpdateUser = auth()->user()->can('update-user');
-        $users = User::select(['id', 'name', 'email', 'work_number', 'personal_number', 'locale']);
+
+        $users = User::select(['id', 'name', 'email', 'work_number', 'personal_number']);
         return Datatables::of($users)
             ->addColumn('namelink', function ($users) {
                 return '<a href="users/' . $users->id . '" ">' . $users->name. '</a>';
+            })
+            ->addColumn('locale', function ($users) {
+                return $users->locale()->first()->name;
             })
             ->addColumn('edit', function ($user) {
                 return '<a href="' . route("users.edit", $user->id) . '" class="btn btn-success">Sửa</a>';
@@ -168,7 +177,8 @@ class UsersController extends Controller
     {
         return view('users.create')
             ->withRoles($this->roles->listAllRoles())
-            ->withDepartments($this->departments->listAllDepartments());
+            ->withDepartments($this->departments->listAllDepartments())
+            ->withLocales($this->locales->listAllLocales());
     }
 
     /**
@@ -203,7 +213,8 @@ class UsersController extends Controller
         return view('users.edit')
             ->withUser($this->users->find($id))
             ->withRoles($this->roles->listAllRoles())
-            ->withDepartments($this->departments->listAllDepartments());
+            ->withDepartments($this->departments->listAllDepartments())
+            ->withLocales($this->locales->ListAllLocales());
     }
 
     /**

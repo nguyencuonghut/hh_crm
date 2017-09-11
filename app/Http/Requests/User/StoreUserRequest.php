@@ -34,7 +34,8 @@ class StoreUserRequest extends FormRequest
             'image_path' => '',
             'locale' => 'required',
             'roles' => 'required',
-            'departments' => 'required'
+            'departments' => 'required',
+            'locales' => 'required'
         ];
     }
 }

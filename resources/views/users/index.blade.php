@@ -106,7 +106,7 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'locale', name: 'locale'},
+                {data: 'locale', name: 'locale', orderable: false, searchable: false},
                 {data: 'email', name: 'email'},
                 {data: 'personal_number', name: 'personal_number'},
                     @if(Entrust::can('user-update'))

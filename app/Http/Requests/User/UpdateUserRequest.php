@@ -33,7 +33,8 @@ class UpdateUserRequest extends FormRequest
             'password_confirmation' => 'sometimes',
             'image_path' => '',
             'roles' => 'required',
-            'departments' => ''
+            'departments' => '',
+            'locales' => ''
         ];
     }
 }

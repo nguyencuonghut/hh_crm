@@ -52,7 +52,7 @@
                 <tr>
                     <th>{{ __('Tên') }}</th>
                     <th>{{ __('Company') }}</th>
-                    <th>{{ __('Số điệnt thoại') }}</th>
+                    <th>{{ __('Số điện thoại') }}</th>
                 </tr>
                 </thead>
             </table>

@@ -14,11 +14,6 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group">
-    {!! Form::label('locale', __('Vùng phụ trách'), ['class' => 'control-label']) !!}
-    {!! Form::text('locale', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- cuongnv
 <div class="form-group">
     {!! Form::label('work_number', __('Work number'), ['class' => 'control-label']) !!}
@@ -54,6 +49,15 @@
         $departments,
         isset($user)
         ? $user->department->first()->id : null,
+        ['class' => 'form-control']) !!}
+
+    {!! Form::label('locales', __('Vùng kinh doanh'), ['class' => 'control-label']) !!}
+
+    {!!
+        Form::select('locales',
+        $locales,
+        isset($user)
+        ? $user->locale->first()->id : null,
         ['class' => 'form-control']) !!}
 </div>
 

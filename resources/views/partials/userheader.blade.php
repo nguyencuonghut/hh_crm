@@ -18,5 +18,5 @@
 
     <!--Address-->
     <p><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-        {{ $contact->locale }}  </p>
+        {{ $contact->locale->first()->name }}  </p>
 </div>
