@@ -82,7 +82,12 @@ Route::group(['middleware' => ['auth']], function () {
     /**
      * Departments
      */
-        Route::resource('departments', 'DepartmentsController'); 
+        Route::resource('departments', 'DepartmentsController');
+
+    /**
+     * Locales cuongnv
+     */
+    Route::resource('locales', 'LocalesController');
 
     /**
      * Integrations

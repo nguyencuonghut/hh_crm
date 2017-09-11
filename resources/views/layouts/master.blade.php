@@ -147,6 +147,19 @@ $('body').click(function(e) {
                        class="list-group-item childlist">{{ __('New Department') }}</a>
                 @endif
             </div>
+            <!-- cuongnv -->
+            <a href="#locales" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
+                        class="sidebar-icon glyphicon glyphicon-list-alt"></i><span id="menu-txt">{{ __('Locales') }}</span>
+                <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
+            <div class="collapse" id="locales">
+                <a href="{{ route('locales.index')}}"
+                   class="list-group-item childlist">{{ __('All Locales') }}</a>
+                @if(Entrust::hasRole('administrator'))
+                    <a href="{{ route('locales.create')}}"
+                       class="list-group-item childlist">{{ __('New Locale') }}</a>
+                @endif
+            </div>
+            <!-- ~cuongnv -->
 
             @if(Entrust::hasRole('administrator'))
                 <a href="#settings" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i

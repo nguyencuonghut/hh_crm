@@ -36,6 +36,10 @@ class AccessServiceProvider extends ServiceProvider
             \App\Repositories\Department\DepartmentRepository::class
         );
         $this->app->bind(
+            \App\Repositories\Locale\LocaleRepositoryContract::class,
+            \App\Repositories\Locale\LocaleRepository::class
+        );
+        $this->app->bind(
             \App\Repositories\Setting\SettingRepositoryContract::class,
             \App\Repositories\Setting\SettingRepository::class
         );
