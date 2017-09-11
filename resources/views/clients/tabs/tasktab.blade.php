@@ -1,16 +1,16 @@
 <div id="task" class="tab-pane fade in active">
     <div class="boxspace">
         <table class="table table-hover">
-            <h4>{{ __('All Tasks') }}</h4>
+            <h4>{{ __('Việc') }}</h4>
             <thead>
             <thead>
             <tr>
-                <th>{{ __('Title') }}</th>
-                <th>{{ __('Assigned') }}</th>
-                <th>{{ __('Created at') }}</th>
+                <th>{{ __('Tiêu đề') }}</th>
+                <th>{{ __('Giao cho') }}</th>
+                <th>{{ __('Ngày tạo') }}</th>
                 <th>{{ __('Deadline') }}</th>
                 <th><a href="{{ route('tasks.create', ['client' => $client->id])}}">
-                        <button class="btn btn-success">{{ __('New task') }}</button>
+                        <button class="btn btn-success">{{ __('Tạo việc mới') }}</button>
                     </a></th>
 
             </tr>

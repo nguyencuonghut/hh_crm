@@ -7,14 +7,16 @@
     <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
         <a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></p>
     <!--Work Phone-->
+    <!-- cuongnv
     <p><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
         <a href="tel:{{ $contact->work_number }}">{{ $contact->work_number }}</a></p>
+    -->
 
     <!--Personal Phone-->
     <p><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
         <a href="tel:{{ $contact->personal_number }}">{{ $contact->personal_number }}</a></p>
 
     <!--Address-->
-    <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-        {{ $contact->address }}  </p>
+    <p><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+        {{ $contact->locale }}  </p>
 </div>

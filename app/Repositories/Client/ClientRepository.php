@@ -77,6 +77,11 @@ class ClientRepository implements ClientRepositoryContract
     {
         $client = Client::findOrFail($id);
         $client->fill($requestData->all())->save();
+        //cuongnv
+        $client2 = Client::findorFail($id);
+        $client2->is_key_client = $requestData->is_key_client;
+        $client2->save();
+        //~cuongnv
     }
 
     /**

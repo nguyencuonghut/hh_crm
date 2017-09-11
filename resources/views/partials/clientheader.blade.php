@@ -1,6 +1,7 @@
 <div class="col-md-6">
 
-    <h1 class="moveup">{{$client->name}} ({{$client->company_name}})</h1>
+    <h1 class="moveup">{{$client->name}}</h1>
+    <h5 style="color:darkblue"><b>({{$client->ward}} - {{$client->district}} - {{$client->province}})</b></h5>
 
     <!--Client info leftside-->
     <div class="contactleft">
@@ -12,15 +13,9 @@
         @endif
         @if($client->primary_number != "")
                 <!--Work Phone-->
-        <p><span class="glyphicon glyphicon-headphones" aria-hidden="true" data-toggle="tooltip"
+        <p><span class="glyphicon glyphicon-phone" aria-hidden="true" data-toggle="tooltip"
                  title=" {{ __('Primary number') }} " data-placement="left"> </span>
             <a href="tel:{{$client->work_number}}">{{$client->primary_number}}</a></p>
-        @endif
-        @if($client->secondary_number != "")
-                <!--Secondary Phone-->
-        <p><span class="glyphicon glyphicon-phone" aria-hidden="true" data-toggle="tooltip"
-                 title="{{ __('Secondary number') }}" data-placement="left"> </span>
-            <a href="tel:{{$client->secondary_number}}">{{$client->secondary_number}}</a></p>
         @endif
         @if($client->address || $client->zipcode || $client->city != "")
                 <!--Address-->
@@ -29,6 +24,29 @@
             <br/>{{$client->zipcode}} {{$client->city}}
         </p>
         @endif
+        <!-- cuongnv -->
+        @if($client->client_code)
+            <!--Address-->
+                <p><span class="glyphicon glyphicon-barcode" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Full address') }}" data-placement="left"> </span>
+                    {{$client->client_code}}
+                </p>
+        @endif
+        @if($client->company_service)
+            <!--Address-->
+                <p><span class="glyphicon glyphicon-adjust" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Company service') }}" data-placement="left"> </span>
+                    {{$client->company_service}}
+                </p>
+        @endif
+        @if($client->signature_date)
+            <!--Address-->
+                <p><span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Signature Date') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">{{date('d-m-Y', strtotime($client->signature_date))}}</i>
+                </p>
+        @endif
+        <!-- cuongnv -->
     </div>
 
     <!--Client info leftside END-->
@@ -55,6 +73,25 @@
                  title="{{ __('Company type') }}" data-placement="left"> </span>
             {{$client->company_type}}</p>
         @endif
+        <!-- cuongnv -->
+        @if($client->is_key_client)
+            <!--Key-->
+            <p style="color:red"><span class="glyphicon glyphicon-heart" aria-hidden="true" data-toggle="tooltip"
+                     title="{{ __('Key client') }}" data-placement="left"> </span>
+                <b>Trại key</b></p>
+            @elseif($client->is_candidate)
+            <!--Candidate-->
+                <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-toggle="tooltip"
+                                           title="{{ __('Candidate client') }}" data-placement="left"> </span>
+                    Tiềm năng</p>
+        @endif
+        @if($client->scale)
+            <!--Company Type-->
+                <p><span class="glyphicon glyphicon-list" aria-hidden="true" data-toggle="tooltip"
+                                           title="{{ __('Key client') }}" data-placement="left"> </span>
+                    Quy mô:{{ $client->scale }}</p>
+        @endif
+        <!-- ~cuongnv -->
     </div>
 </div>
 

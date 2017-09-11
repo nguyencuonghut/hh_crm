@@ -8,10 +8,10 @@
     <table class="table table-hover " id="clients-table">
         <thead>
         <tr>
-            <th>{{ __('Name') }}</th>
-            <th>{{ __('Company') }}</th>
-            <th>{{ __('Mail') }}</th>
-            <th>{{ __('Number') }}</th>
+            <th>{{ __('Tên') }}</th>
+            <th>{{ __('Loại') }}</th>
+            <th>{{ __('Địa chỉ') }}</th>
+            <th>{{ __('Dùng sản phẩm của') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -31,9 +31,9 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'company_name', name: 'company_name'},
-                {data: 'email', name: 'email'},
-                {data: 'primary_number', name: 'primary_number'},
+                {data: 'industry', name: 'industry'},
+                {data: 'fulladdr', name: 'fulladdr'},
+                {data: 'company_service', name: 'company_service'},
                 @if(Entrust::can('client-update'))   
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
                 @endif

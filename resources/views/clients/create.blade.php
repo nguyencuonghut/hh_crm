@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('heading')
-    <h1>Create Client</h1>
+    <h1>Tạo khách hàng</h1>
 @stop
 
 @section('content')
@@ -30,6 +30,7 @@
             'url' => '/clients/create/cvrapi'
 
             ]) !!}
+<!-- cuongnv
     <div class="form-group">
         <div class="input-group">
 
@@ -45,6 +46,7 @@
         {!! Form::submit('Get client info', ['class' => 'btn btn-primary clientvat']) !!}
 
     </div>
+~cuongnv -->
 
     {!!Form::close()!!}
 
@@ -52,7 +54,7 @@
             'route' => 'clients.store',
             'class' => 'ui-form'
             ]) !!}
-    @include('clients.form', ['submitButtonText' => __('Create New Client')])
+    @include('clients.form', ['submitButtonText' => __('Tạo mới')])
 
     {!! Form::close() !!}
 

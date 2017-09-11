@@ -60,16 +60,16 @@ class UsersController extends Controller
     public function anyData()
     {
         $canUpdateUser = auth()->user()->can('update-user');
-        $users = User::select(['id', 'name', 'email', 'work_number']);
+        $users = User::select(['id', 'name', 'email', 'work_number', 'personal_number', 'locale']);
         return Datatables::of($users)
             ->addColumn('namelink', function ($users) {
-                return '<a href="users/' . $users->id . '" ">' . $users->name . '</a>';
+                return '<a href="users/' . $users->id . '" ">' . $users->name. '</a>';
             })
             ->addColumn('edit', function ($user) {
-                return '<a href="' . route("users.edit", $user->id) . '" class="btn btn-success"> Edit</a>';
+                return '<a href="' . route("users.edit", $user->id) . '" class="btn btn-success">Sửa</a>';
             })
             ->add_column('delete', function ($user) { 
-                return '<button type="button" class="btn btn-danger delete_client" data-client_id="' . $user->id . '" onClick="openModal(' . $user->id. ')" id="myBtn">Delete</button>';
+                return '<button type="button" class="btn btn-danger delete_client" data-client_id="' . $user->id . '" onClick="openModal(' . $user->id. ')" id="myBtn">Xóa</button>';
             })->make(true);
     }
 

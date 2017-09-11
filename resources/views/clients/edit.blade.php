@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('heading')
-    Edit Client ({{$client->name}})
+    Sửa Khách hàng ({{$client->name}})
 @stop
 
 @section('content')
@@ -8,7 +8,7 @@
             'method' => 'PATCH',
             'route' => ['clients.update', $client->id],
             ]) !!}
-    @include('clients.form', ['submitButtonText' => __('Update client')])
+    @include('clients.form', ['submitButtonText' => __('Cập nhật')])
 
     {!! Form::close() !!}
 

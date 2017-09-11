@@ -32,6 +32,7 @@ class StoreUserRequest extends FormRequest
             'password' => 'required|min:5|confirmed',
             'password_confirmation' => 'required|min:5',
             'image_path' => '',
+            'locale' => 'required',
             'roles' => 'required',
             'departments' => 'required'
         ];

@@ -24,7 +24,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password', 'address', 'personal_number', 'work_number', 'image_path'];
+    protected $fillable = ['name', 'email', 'password', 'address', 'personal_number', 'work_number', 'image_path', 'locale'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -64,7 +64,7 @@ class User extends Authenticatable
 
     public function getNameAndDepartmentAttribute()
     {
-        return $this->name . ' ' . '(' . $this->department()->first()->name . ')';
+        return $this->name . ' ' . '- ' . $this->department()->first()->name;
     }
     
     public function moveTasks($user_id)

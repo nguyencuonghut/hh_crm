@@ -1,15 +1,16 @@
 @extends('layouts.master')
 @section('heading')
-    <h1>{{ __('All users') }}</h1>
+    <h1>{{ __('Tất cả nhân viên') }}</h1>
 @stop
 
 @section('content')
     <table class="table table-hover" id="users-table">
         <thead>
         <tr>
-            <th>{{ __('Name') }}</th>
+            <th>{{ __('Tên') }}</th>
+            <th>{{ __('Vùng') }}</th>
             <th>{{ __('Mail') }}</th>
-            <th>{{ __('Work number') }}</th>
+            <th>{{ __('Số điện thoại') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -105,8 +106,9 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
+                {data: 'locale', name: 'locale'},
                 {data: 'email', name: 'email'},
-                {data: 'work_number', name: 'work_number'},
+                {data: 'personal_number', name: 'personal_number'},
                     @if(Entrust::can('user-update'))
                 {
                     data: 'edit', name: 'edit', orderable: false, searchable: false
@@ -117,7 +119,7 @@
                     data: 'delete', name: 'delete', orderable: false, searchable: false
                 },
                 @endif
-            ]
+            ],
         });
     });
 

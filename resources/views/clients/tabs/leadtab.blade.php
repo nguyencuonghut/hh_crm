@@ -1,17 +1,17 @@
 <div id="lead" class="tab-pane fade">
     <div class="boxspace">
         <table class="table table-hover">
-            <h4>{{ __('All Leads') }}</h4>
+            <h4>{{ __('Chỉ đạo') }}</h4>
             <thead>
             <thead>
             <tr>
-                <th>{{ __('Title') }}</th>
-                <th>{{ __('Assigned user') }}</th>
-                <th>{{ __('Created at') }}</th>
+                <th>{{ __('Tiêu đề') }}</th>
+                <th>{{ __('Giao cho') }}</th>
+                <th>{{ __('Ngày tạo') }}</th>
                 <th>{{ __('Deadline') }}</th>
 
                 <th><a href="{{ route('leads.create', ['client' => $client->id])}}">
-                        <button class="btn btn-success">{{ __('New Lead') }}</button>
+                        <button class="btn btn-success">{{ __('Chỉ đạo mới') }}</button>
                     </a></th>
 
             </tr>

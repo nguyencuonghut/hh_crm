@@ -47,17 +47,20 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number']);
+        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'industry', 'province', 'district', 'ward', 'company_service']);
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
             })
+            ->addColumn('fulladdr', function ($clients) {
+                return "$clients->ward - $clients->district - $clients->province";
+            })
             ->add_column('edit', '
-                <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Edit</a>')
+                <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
             ->add_column('delete', '
                 <form action="{{ route(\'clients.destroy\', $id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" name="submit" value="Delete" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
+            <input type="submit" name="submit" value="Xóa" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
 
             {{csrf_field()}}
             </form>')

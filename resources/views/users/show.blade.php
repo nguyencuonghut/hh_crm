@@ -3,17 +3,17 @@
     @include('partials.userheader')
 <div class="col-sm-8">
   <el-tabs active-name="tasks" style="width:100%">
-    <el-tab-pane label="Tasks" name="tasks">
+    <el-tab-pane label="Việc được giao" name="tasks">
         <table class="table table-hover" id="tasks-table">
-        <h3>{{ __('Tasks assigned') }}</h3>
+        <h3>{{ __('Việc được giao') }}</h3>
             <thead>
-                    <th>{{ __('Title') }}</th>
-                    <th>{{ __('Client') }}</th>
-                    <th>{{ __('Created at') }}</th>
+                    <th>{{ __('Tiêu đề') }}</th>
+                    <th>{{ __('Khách hàng') }}</th>
+                    <th>{{ __('Ngày tạo') }}</th>
                     <th>{{ __('Deadline') }}</th>
                     <th>
                         <select name="status" id="status-task">
-                        <option value="" disabled selected>{{ __('Status') }}</option>
+                        <option value="" disabled selected>{{ __('Trạng thái') }}</option>
                             <option value="open">Open</option>
                             <option value="closed">Closed</option>
                             <option value="all">All</option>
@@ -23,15 +23,15 @@
             </thead>
         </table>
     </el-tab-pane>
-    <el-tab-pane label="Leads" name="leads">
+    <el-tab-pane label="Việc đã giao" name="leads">
       <table class="table table-hover">
         <table class="table table-hover" id="leads-table">
-                <h3>{{ __('Leads assigned') }}</h3>
+                <h3>{{ __('Việc đã giao (cho nhân viên khác)') }}</h3>
                 <thead>
                 <tr>
-                    <th>{{ __('Title') }}</th>
-                    <th>{{ __('Client') }}</th>
-                    <th>{{ __('Created at') }}</th>
+                    <th>{{ __('Tiêu đề') }}</th>
+                    <th>{{ __('Khách hàng') }}</th>
+                    <th>{{ __('Ngày tạo') }}</th>
                     <th>{{ __('Deadline') }}</th>
                     <th>
                         <select name="status" id="status-lead">
@@ -45,14 +45,14 @@
                 </thead>
             </table>
     </el-tab-pane>
-    <el-tab-pane label="Clients" name="clients">
+    <el-tab-pane label="Khách hàng" name="clients">
          <table class="table table-hover" id="clients-table">
-                <h3>{{ __('Clients assigned') }}</h3>
+                <h3>{{ __('Khách hàng') }}</h3>
                 <thead>
                 <tr>
-                    <th>{{ __('Name') }}</th>
+                    <th>{{ __('Tên') }}</th>
                     <th>{{ __('Company') }}</th>
-                    <th>{{ __('Primary number') }}</th>
+                    <th>{{ __('Số điệnt thoại') }}</th>
                 </tr>
                 </thead>
             </table>
@@ -60,9 +60,9 @@
   </el-tabs>
   </div>
   <div class="col-sm-4">
-  <h4>{{ __('Tasks') }}</h4>
+  <h4>{{ __('Việc được giao') }}</h4>
 <doughnut :statistics="{{$task_statistics}}"></doughnut>
-<h4>{{ __('Leads') }}</h4>
+<h4>{{ __('Việc đã giao') }}</h4>
 <doughnut :statistics="{{$lead_statistics}}"></doughnut>
   </div>
 
@@ -108,7 +108,7 @@
                 $('#clients-table').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{!! route('users.clientdata', ['id' => $user->id]) !!}',
+                    ajax: '{!! url('users/clientdata/' . $user->id) !!}',
                     columns: [
 
                         {data: 'clientlink', name: 'name'},
