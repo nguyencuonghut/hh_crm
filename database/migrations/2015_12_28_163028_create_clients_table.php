@@ -25,7 +25,8 @@ class CreateClientsTable extends Migration
             $table->string('ward');
             $table->integer('client_type_id')->unsigned();
             $table->foreign('client_type_id')->references('id')->on('client_types');
-            $table->boolean('is_key_client');
+            $table->integer('group_id')->unsigned();
+            $table->foreign('group_id')->references('id')->on('groups');
             $table->integer('scale');
             $table->integer('pig_num');
             $table->integer('broiler_chicken_num');
@@ -37,9 +38,8 @@ class CreateClientsTable extends Migration
             $table->integer('cow_num');
             $table->integer('product_category_id')->unsigned();
             $table->foreign('product_category_id')->references('id')->on('product_categories');
-            $table->boolean('is_candidate');
-            $table->dateTime('signature_date');
-            $table->dateTime('animal_date');
+            $table->dateTime('signature_date')->nullable();
+            $table->dateTime('animal_date')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('note')->nullable();

@@ -27,23 +27,30 @@
         <!-- cuongnv -->
         @if($client->client_code)
             <!--Address-->
-                <p><span class="glyphicon glyphicon-barcode" aria-hidden="true" data-toggle="tooltip"
-                         title="{{ __('Full address') }}" data-placement="left"> </span>
-                    {{$client->client_code}}
-                </p>
+        <p><span class="glyphicon glyphicon-barcode" aria-hidden="true" data-toggle="tooltip"
+                 title="{{ __('Full address') }}" data-placement="left"> </span>
+            {{$client->client_code}}
+        </p>
         @endif
         @if($client->company_service)
             <!--Address-->
-                <p><span class="glyphicon glyphicon-adjust" aria-hidden="true" data-toggle="tooltip"
-                         title="{{ __('Company service') }}" data-placement="left"> </span>
-                    {{$client->company_service}}
-                </p>
+        <p><span class="glyphicon glyphicon-adjust" aria-hidden="true" data-toggle="tooltip"
+                 title="{{ __('Company service') }}" data-placement="left"> </span>
+            {{$client->company_service}}
+        </p>
         @endif
-        @if($client->signature_date)
-            <!--Address-->
-                <p><span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip"
-                         title="{{ __('Signature Date') }}" data-placement="left"> </span>
-                    <i class="fa fa-handshake-o" aria-hidden="true">{{date('d-m-Y', strtotime($client->signature_date))}}</i>
+        @if($client->signature_date != 0)
+            <!--Sign the contract date-->
+        <p><span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="tooltip"
+                 title="{{ __('Sign Contract Date') }}" data-placement="left"> </span>
+            <i class="fa fa-handshake-o" aria-hidden="true">{{date('d-m-Y', strtotime($client->signature_date))}}</i>
+        </p>
+        @endif
+        @if($client->animal_date != 0)
+            <!--Rise the animal-->
+                <p><span class="glyphicon glyphicon-refresh" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Rise animal date') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">{{date('d-m-Y', strtotime($client->animal_date))}}</i>
                 </p>
         @endif
         <!-- cuongnv -->
@@ -84,12 +91,12 @@
             {{$client->company_type}}</p>
         @endif
         <!-- cuongnv -->
-        @if($client->is_key_client)
+        @if($client->group_id == 2)
             <!--Key-->
             <p style="color:red"><span class="glyphicon glyphicon-heart" aria-hidden="true" data-toggle="tooltip"
                      title="{{ __('Key client') }}" data-placement="left"> </span>
                 <b>Trại key</b></p>
-            @elseif($client->is_candidate)
+            @elseif($client->group_id == 1)
             <!--Candidate-->
                 <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-toggle="tooltip"
                                            title="{{ __('Candidate client') }}" data-placement="left"> </span>

@@ -6,6 +6,7 @@ use App\Models\ClientType;
 use App\Models\Industry;
 use App\Models\Invoice;
 use App\Models\ProductCategory;
+use App\Models\Group;
 use App\Models\User;
 use DB;
 /**
@@ -78,6 +79,14 @@ class ClientRepository implements ClientRepositoryContract
     }
 
     /**
+     * @return mixed cuongnv
+     */
+    public function listAllGroups()
+    {
+        return Group::pluck('name', 'id');
+    }
+
+    /**
      * @param $requestData
      */
     public function create($requestData)
@@ -94,13 +103,7 @@ class ClientRepository implements ClientRepositoryContract
     public function update($id, $requestData)
     {
         $client = Client::findOrFail($id);
-
         $client->fill($requestData->all())->save();
-        //cuongnv
-        $client2 = Client::findorFail($id);
-        $client2->is_key_client = $requestData->is_key_client;
-        $client2->save();
-        //~cuongnv
     }
 
     /**

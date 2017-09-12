@@ -64,12 +64,15 @@
         'id' => 'search-select'])
     !!}
 </div>
+
 <div class="form-group">
-    {!! Form::label('is_key_client', 'Trại key:', ['class' => 'control-label']) !!}
+    {!! Form::label('group', 'Phân loại:', ['class' => 'control-label']) !!}
     {!!
-        Form::checkbox('is_key_client',
-        isset($data['is_key_client']) ? $data['is_key_client'] : null,
-        ['class' => 'form-control'])
+        Form::select('group_id',
+        $groups,
+        null,
+        ['class' => 'form-control ui search selection top right pointing search-select',
+        'id' => 'search-select'])
     !!}
 </div>
 
@@ -168,15 +171,6 @@
         null,
         ['class' => 'form-control ui search selection top right pointing search-select',
         'id' => 'search-select'])
-    !!}
-</div>
-
-<div class="form-group">
-    {!! Form::label('is_candidate', 'Khách hàng tiềm năng:', ['class' => 'control-label']) !!}
-    {!!
-        Form::checkbox('is_candidate',
-        isset($data['is_candidate']) ? $data['is_candidate'] : null,
-        ['class' => 'form-control'])
     !!}
 </div>
 

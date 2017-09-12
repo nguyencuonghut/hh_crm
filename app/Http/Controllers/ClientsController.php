@@ -63,6 +63,10 @@ class ClientsController extends Controller
                 $client = Client::find($clients->id);
                 return $client->product_category->name;
             })
+            ->addColumn('group', function ($clients) {
+                $client = Client::find($clients->id);
+                return $client->group->name;
+            })
             ->add_column('edit', '
                 <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
             ->add_column('delete', '
@@ -136,7 +140,8 @@ class ClientsController extends Controller
             ->withUsers($this->users->getAllUsersWithDepartments())
             ->withIndustries($this->clients->listAllIndustries())
             ->withClienttypes($this->clients->listAllClientTypes())
-            ->withProductCategories($this->clients->listAllProductCategories());
+            ->withProductCategories($this->clients->listAllProductCategories())
+            ->withGroups($this->clients->listAllGroups());
     }
 
     /**

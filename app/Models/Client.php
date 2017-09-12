@@ -13,7 +13,7 @@ class Client extends Model
         'district',
         'ward',
         'client_type_id',
-        'is_client_key',
+        'group_id',
         'scale',
         'pig_num',
         'broiler_chicken_num',
@@ -24,7 +24,6 @@ class Client extends Model
         'layer_chicken_num',
         'cow_num',
         'product_category_id',
-        'is_candidate',
         'signature_date',
         'animal_date',
         'company_name',
@@ -70,6 +69,10 @@ class Client extends Model
     public function product_category()
     {
         return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
+    }
+    public function group()
+    {
+        return $this->belongsTo(Group::class, 'group_id', 'id');
     }
     //~cuongnv
 

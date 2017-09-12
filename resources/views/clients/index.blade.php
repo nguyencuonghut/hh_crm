@@ -12,6 +12,7 @@
             <th>{{ __('Loại') }}</th>
             <th>{{ __('Địa chỉ') }}</th>
             <th>{{ __('Dùng sản phẩm của') }}</th>
+            <th>{{ __('Phân loại') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -34,6 +35,7 @@
                 {data: 'client_type', name: 'client_type', orderable: false, searchable: false},
                 {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
                 {data: 'product_category', name: 'product_category', orderable: false, searchable: false},
+                {data: 'group', name: 'group', orderable: false, searchable: false},
                 @if(Entrust::can('client-update'))   
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
                 @endif
