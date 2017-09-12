@@ -15,6 +15,8 @@ interface ClientRepositoryContract
 
     public function listAllClientTypes();
 
+    public function listAllProductCategories();
+
     public function create($requestData);
 
     public function update($id, $requestData);

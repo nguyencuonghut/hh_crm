@@ -30,7 +30,7 @@ class StoreClientRequest extends FormRequest
             'district'=> 'required',
             'ward' => 'required',
             'client_type_id' => 'required',
-            'company_service'=> 'required',
+            'product_category_id'=> 'required',
             'signature_date' => 'required',
             'animal_date' => 'required',
             'vat' => 'max:12',

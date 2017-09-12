@@ -47,7 +47,7 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'company_service']);
+        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward']);
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
@@ -58,6 +58,10 @@ class ClientsController extends Controller
             ->addColumn('client_type', function ($clients) {
                 $client = Client::find($clients->id);
                 return $client->client_type->name;
+            })
+            ->addColumn('product_category', function ($clients) {
+                $client = Client::find($clients->id);
+                return $client->product_category->name;
             })
             ->add_column('edit', '
                 <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
@@ -111,6 +115,7 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
+        $client = Client::find($id);
         return view('clients.show')
             ->withClient($this->clients->find($id))
             ->withCompanyname($this->settings->getCompanyName())
@@ -130,7 +135,8 @@ class ClientsController extends Controller
             ->withClient($this->clients->find($id))
             ->withUsers($this->users->getAllUsersWithDepartments())
             ->withIndustries($this->clients->listAllIndustries())
-            ->withClienttypes($this->clients->listAllClientTypes());
+            ->withClienttypes($this->clients->listAllClientTypes())
+            ->withProductCategories($this->clients->listAllProductCategories());
     }
 
     /**

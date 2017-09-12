@@ -23,7 +23,7 @@ class Client extends Model
         'layer_duck_num',
         'layer_chicken_num',
         'cow_num',
-        'company_service',
+        'product_category_id',
         'is_candidate',
         'signature_date',
         'animal_date',
@@ -66,6 +66,10 @@ class Client extends Model
     public function client_type()
     {
         return $this->belongsTo(ClientType::class, 'client_type_id', 'id');
+    }
+    public function product_category()
+    {
+        return $this->belongsTo(ProductCategory::class, 'product_category_id', 'id');
     }
     //~cuongnv
 

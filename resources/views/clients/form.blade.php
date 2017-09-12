@@ -161,12 +161,13 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('company_service', 'Dùng sản phẩm của:', ['class' => 'control-label']) !!}
+    {!! Form::label('product_category', 'Dùng sản phẩm của:', ['class' => 'control-label']) !!}
     {!!
-        Form::select('company_service',
-        ['100% Hồng Hà', 'Hồng Hà + Cty khác', 'Cty khác'],
-        isset($data['company_service']) ? $data['company_service'] : null,
-        ['class' => 'form-control'])
+        Form::select('product_category_id',
+        $product_categories,
+        null,
+        ['class' => 'form-control ui search selection top right pointing search-select',
+        'id' => 'search-select'])
     !!}
 </div>
 

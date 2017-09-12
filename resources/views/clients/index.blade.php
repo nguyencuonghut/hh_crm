@@ -31,9 +31,9 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'client_type', name: 'client_type'},
-                {data: 'fulladdr', name: 'fulladdr'},
-                {data: 'company_service', name: 'company_service'},
+                {data: 'client_type', name: 'client_type', orderable: false, searchable: false},
+                {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
+                {data: 'product_category', name: 'product_category', orderable: false, searchable: false},
                 @if(Entrust::can('client-update'))   
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
                 @endif

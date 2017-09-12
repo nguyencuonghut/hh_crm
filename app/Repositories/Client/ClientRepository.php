@@ -5,6 +5,7 @@ use App\Models\Client;
 use App\Models\ClientType;
 use App\Models\Industry;
 use App\Models\Invoice;
+use App\Models\ProductCategory;
 use App\Models\User;
 use DB;
 /**
@@ -66,6 +67,14 @@ class ClientRepository implements ClientRepositoryContract
     public function listAllClientTypes()
     {
         return ClientType::pluck('name', 'id');
+    }
+
+    /**
+     * @return mixed cuongnv
+     */
+    public function listAllProductCategories()
+    {
+        return ProductCategory::pluck('name', 'id');
     }
 
     /**

@@ -35,7 +35,8 @@ class CreateClientsTable extends Migration
             $table->integer('layer_duck_num');
             $table->integer('layer_chicken_num');
             $table->integer('cow_num');
-            $table->string('company_service');
+            $table->integer('product_category_id')->unsigned();
+            $table->foreign('product_category_id')->references('id')->on('product_categories');
             $table->boolean('is_candidate');
             $table->dateTime('signature_date');
             $table->dateTime('animal_date');
