@@ -23,9 +23,8 @@ class CreateClientsTable extends Migration
             $table->string('province');
             $table->string('district');
             $table->string('ward');
-            $table->string('industry');
-            $table->integer('industry_id')->unsigned();
-            $table->foreign('industry_id')->references('id')->on('industries');
+            $table->integer('client_type_id')->unsigned();
+            $table->foreign('client_type_id')->references('id')->on('client_types');
             $table->boolean('is_key_client');
             $table->integer('scale');
             $table->integer('pig_num');
@@ -54,12 +53,12 @@ class CreateClientsTable extends Migration
             $table->string('city')->nullable();
             $table->string('company_name')->nullable();
             $table->string('vat')->nullable();
-            //$table->string('industry');
+            $table->string('industry')->nullable();
             $table->string('company_type')->nullable();
             //$table->integer('user_id')->unsigned();
             //$table->foreign('user_id')->references('id')->on('users');
-            //$table->integer('industry_id')->unsigned();
-            //$table->foreign('industry_id')->references('id')->on('industries');
+            $table->integer('industry_id')->unsigned()->nullable();
+            $table->foreign('industry_id')->references('id')->on('industries')->nullable();
             $table->timestamps();
         });
     }

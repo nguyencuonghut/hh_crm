@@ -29,14 +29,16 @@ class UpdateClientRequest extends FormRequest
             'province' => 'required',
             'district'=> 'required',
             'ward' => 'required',
+            'client_type_id' => 'required',
             'company_service'=> 'required',
+            'signature_date' => 'required',
+            'animal_date' => 'required',
             'vat' => 'max:12',
             'address' => '',
             'zipcode' => 'max:6',
             'city' => '',
             'primary_number' => 'required|max:10',
             'secondary_number' => 'max:10',
-            'industry_id' => 'required',
             'company_type' => '',
             'user_id' => 'required'
         ];

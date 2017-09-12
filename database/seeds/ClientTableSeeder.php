@@ -1,10 +1,7 @@
 <?php
-
 use Illuminate\Database\Seeder;
-
 class ClientsTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -12,10 +9,7 @@ class ClientsTableSeeder extends Seeder
      */
     public function run()
     {
-
-
         \DB::table('clients')->delete();
-
         \DB::table('clients')->insert(array (
             0 =>
                 array (
@@ -26,8 +20,7 @@ class ClientsTableSeeder extends Seeder
                     'province'              => 'Hải Dương',
                     'district'              => 'Bình Giang',
                     'ward'                  => 'Thái Học',
-                    'industry'              => 'Trại chăn nuôi',
-                    'industry_id'           => '1',
+                    'client_type_id'        => '1',
                     'is_key_client'         => true,
                     'scale'                 => 100,
                     'pig_num'               => 10,
@@ -49,6 +42,8 @@ class ClientsTableSeeder extends Seeder
                     'zipcode'               => null,
                     'city'                  => null,
                     'vat'                   => null,
+                    'industry'              => null,
+                    'industry_id'           => null,
                     'company_type'          => null,
                     'created_at'            => '2016-06-04 13:42:19',
                     'updated_at'            => '2016-06-04 13:42:19',
@@ -62,8 +57,7 @@ class ClientsTableSeeder extends Seeder
                     'province'              => 'Hưng Yên',
                     'district'              => 'Yên Mỹ',
                     'ward'                  => 'Mỹ Đức',
-                    'industry'              => 'Đại lý',
-                    'industry_id'           => '2',
+                    'client_type_id'        => '2',
                     'is_key_client'         => false,
                     'scale'                 => 1001,
                     'pig_num'               => 101,
@@ -86,6 +80,8 @@ class ClientsTableSeeder extends Seeder
                     'city'                  => null,
                     'vat'                   => null,
                     'company_type'          => null,
+                    'industry'              => null,
+                    'industry_id'           => null,
                     'created_at'            => '2016-06-04 13:42:19',
                     'updated_at'            => '2016-06-04 13:42:19',
                 ),
@@ -98,8 +94,7 @@ class ClientsTableSeeder extends Seeder
                     'province'              => 'Hà Tĩnh',
                     'district'              => 'Thạch Linh',
                     'ward'                  => 'Thạch Đài',
-                    'industry'              => 'Trại chăn nuôi',
-                    'industry_id'           => '2',
+                    'client_type_id'        => '1',
                     'is_key_client'         => false,
                     'scale'                 => 1002,
                     'pig_num'               => 102,
@@ -122,6 +117,8 @@ class ClientsTableSeeder extends Seeder
                     'city'                  => null,
                     'vat'                   => null,
                     'company_type'          => null,
+                    'industry'              => null,
+                    'industry_id'           => null,
                     'created_at'            => '2016-06-04 13:42:19',
                     'updated_at'            => '2016-06-04 13:42:19',
                 ),

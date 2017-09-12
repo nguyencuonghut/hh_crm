@@ -31,7 +31,7 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'industry', name: 'industry'},
+                {data: 'client_type', name: 'client_type'},
                 {data: 'fulladdr', name: 'fulladdr'},
                 {data: 'company_service', name: 'company_service'},
                 @if(Entrust::can('client-update'))   

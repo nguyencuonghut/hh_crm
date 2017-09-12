@@ -55,10 +55,10 @@
     </div>
 </div>
 <div class="form-group">
-    {!! Form::label('industry', 'Đại lý/Trại chăn nuôi:', ['class' => 'control-label']) !!}
+    {!! Form::label('client_type', 'Đại lý/Trại chăn nuôi:', ['class' => 'control-label']) !!}
     {!!
-        Form::select('industry_id',
-        $industries,
+        Form::select('client_type_id',
+        $clienttypes,
         null,
         ['class' => 'form-control ui search selection top right pointing search-select',
         'id' => 'search-select'])

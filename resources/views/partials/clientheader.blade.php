@@ -52,6 +52,16 @@
     <!--Client info leftside END-->
     <!--Client info rightside-->
     <div class="contactright">
+        @if($client->client_type_id == 1)
+                <!--Agency-->
+        <p><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" data-toggle="tooltip"
+                 title="{{ __('Agency') }}" data-placement="left"> </span> Đại lý</p>
+        @endif
+        @if($client->client_type_id == 2)
+                <!--Farming-->
+        <p><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true" data-toggle="tooltip"
+                 title="{{ __('Farming') }}" data-placement="left"> </span> Trại chăn nuôi</p>
+        @endif
         @if($client->company_name != "")
                 <!--Company-->
         <p><span class="glyphicon glyphicon-star" aria-hidden="true" data-toggle="tooltip"

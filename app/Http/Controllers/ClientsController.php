@@ -47,13 +47,17 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'industry', 'province', 'district', 'ward', 'company_service']);
+        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'company_service']);
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
             })
             ->addColumn('fulladdr', function ($clients) {
                 return "$clients->ward - $clients->district - $clients->province";
+            })
+            ->addColumn('client_type', function ($clients) {
+                $client = Client::find($clients->id);
+                return $client->client_type->name;
             })
             ->add_column('edit', '
                 <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
@@ -125,7 +129,8 @@ class ClientsController extends Controller
         return view('clients.edit')
             ->withClient($this->clients->find($id))
             ->withUsers($this->users->getAllUsersWithDepartments())
-            ->withIndustries($this->clients->listAllIndustries());
+            ->withIndustries($this->clients->listAllIndustries())
+            ->withClienttypes($this->clients->listAllClientTypes());
     }
 
     /**

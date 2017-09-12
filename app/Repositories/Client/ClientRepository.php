@@ -2,6 +2,7 @@
 namespace App\Repositories\Client;
 
 use App\Models\Client;
+use App\Models\ClientType;
 use App\Models\Industry;
 use App\Models\Invoice;
 use App\Models\User;
@@ -60,6 +61,14 @@ class ClientRepository implements ClientRepositoryContract
     }
 
     /**
+     * @return mixed cuongnv
+     */
+    public function listAllClientTypes()
+    {
+        return ClientType::pluck('name', 'id');
+    }
+
+    /**
      * @param $requestData
      */
     public function create($requestData)
@@ -76,6 +85,7 @@ class ClientRepository implements ClientRepositoryContract
     public function update($id, $requestData)
     {
         $client = Client::findOrFail($id);
+
         $client->fill($requestData->all())->save();
         //cuongnv
         $client2 = Client::findorFail($id);

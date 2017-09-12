@@ -13,6 +13,8 @@ interface ClientRepositoryContract
 
     public function listAllIndustries();
 
+    public function listAllClientTypes();
+
     public function create($requestData);
 
     public function update($id, $requestData);

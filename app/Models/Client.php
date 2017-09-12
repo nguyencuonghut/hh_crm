@@ -12,6 +12,7 @@ class Client extends Model
         'province',
         'district',
         'ward',
+        'client_type_id',
         'is_client_key',
         'scale',
         'pig_num',
@@ -61,6 +62,12 @@ class Client extends Model
     {
         return $this->hasMany(Document::class, 'client_id', 'id');
     }
+    //cuongnv
+    public function client_type()
+    {
+        return $this->belongsTo(ClientType::class, 'client_type_id', 'id');
+    }
+    //~cuongnv
 
     public function invoices()
     {
