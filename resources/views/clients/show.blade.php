@@ -26,8 +26,8 @@
     <div class="row">
         <div class="col-md-8 currenttask">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#task">{{__('Việc')}}</a></li>
-                <li><a data-toggle="tab" href="#lead">{{__('Chỉ đạo')}}</a></li>
+                <li class="active"><a data-toggle="tab" href="#task">{{__('Nhiệm vụ')}}</a></li>
+                <li><a data-toggle="tab" href="#lead">{{__('Giao việc')}}</a></li>
                 <!-- cuongnv
                 <li><a data-toggle="tab" href="#document">{{__('Documents')}}</a></li>
                 <li><a data-toggle="tab" href="#invoice">{{__('Invoices')}}</a></li>

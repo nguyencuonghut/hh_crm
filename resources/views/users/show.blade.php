@@ -3,9 +3,9 @@
     @include('partials.userheader')
 <div class="col-sm-8">
   <el-tabs active-name="tasks" style="width:100%">
-    <el-tab-pane label="Việc được giao" name="tasks">
+    <el-tab-pane label="Nhiệm vụ" name="tasks">
         <table class="table table-hover" id="tasks-table">
-        <h3>{{ __('Việc được giao') }}</h3>
+        <h3>{{ __('Nhiệm vụ') }}</h3>
             <thead>
                     <th>{{ __('Tiêu đề') }}</th>
                     <th>{{ __('Khách hàng') }}</th>
@@ -23,10 +23,10 @@
             </thead>
         </table>
     </el-tab-pane>
-    <el-tab-pane label="Việc đã giao" name="leads">
+    <el-tab-pane label="Giao việc" name="leads">
       <table class="table table-hover">
         <table class="table table-hover" id="leads-table">
-                <h3>{{ __('Việc đã giao (cho nhân viên khác)') }}</h3>
+                <h3>{{ __('Giao việc') }}</h3>
                 <thead>
                 <tr>
                     <th>{{ __('Tiêu đề') }}</th>
@@ -60,9 +60,9 @@
   </el-tabs>
   </div>
   <div class="col-sm-4">
-  <h4>{{ __('Việc được giao') }}</h4>
+  <h4>{{ __('Nhiệm vụ') }}</h4>
 <doughnut :statistics="{{$task_statistics}}"></doughnut>
-<h4>{{ __('Việc đã giao') }}</h4>
+<h4>{{ __('Giao việc') }}</h4>
 <doughnut :statistics="{{$lead_statistics}}"></doughnut>
   </div>
 
