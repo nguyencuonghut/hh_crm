@@ -157,7 +157,7 @@ $('body').click(function(e) {
                    class="list-group-item childlist">{{ __('Tất cả các vùng') }}</a>
                 @if(Entrust::hasRole('administrator'))
                     <a href="{{ route('locales.create')}}"
-                       class="list-group-item childlist">{{ __('Vùng mới') }}</a>
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
             </div>
             <!-- ~cuongnv -->
