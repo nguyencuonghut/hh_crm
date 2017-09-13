@@ -117,13 +117,13 @@ $('body').click(function(e) {
             </div>
 
             <a href="#user" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="sidebar-icon fa fa-users"></i><span id="menu-txt">{{ __('Users') }}</span>
+                        class="sidebar-icon fa fa-users"></i><span id="menu-txt">{{ __('Người dùng') }}</span>
             <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="user">
-                <a href="{{ route('users.index')}}" class="list-group-item childlist">{{ __('Users All') }}</a>
+                <a href="{{ route('users.index')}}" class="list-group-item childlist">{{ __('Tất cả người dùng') }}</a>
                 @if(Entrust::can('user-create'))
                     <a href="{{ route('users.create')}}"
-                       class="list-group-item childlist">{{ __('New User') }}</a>
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
             </div>
 
@@ -145,7 +145,7 @@ $('body').click(function(e) {
                    class="list-group-item childlist">{{ __('Tất cả phòng/ban') }}</a>
                 @if(Entrust::hasRole('administrator'))
                     <a href="{{ route('departments.create')}}"
-                       class="list-group-item childlist">{{ __('Phòng/Ban mới') }}</a>
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
             </div>
             <!-- cuongnv -->
