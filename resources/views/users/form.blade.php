@@ -14,6 +14,11 @@
     {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group">
+    {!! Form::label('code', __('Mã NV'), ['class' => 'control-label']) !!}
+    {!! Form::text('code', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- cuongnv
 <div class="form-group">
     {!! Form::label('work_number', __('Work number'), ['class' => 'control-label']) !!}

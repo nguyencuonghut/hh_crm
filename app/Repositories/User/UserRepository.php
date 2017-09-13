@@ -73,13 +73,13 @@ class UserRepository implements UserRepositoryContract
 
         $user = New User();
         $user->name = $requestData->name;
+        $user->code = $requestData->code;
         $user->email = $requestData->email;
         $user->address = $requestData->address;
         $user->work_number = $requestData->work_number;
         $user->personal_number = $requestData->personal_number;
         $user->password = bcrypt($requestData->password);
         $user->image_path = $filename;
-        $user->locale = $requestData->locale;
         $user->save();
         $user->roles()->attach($requestData->roles);
         $user->department()->attach($requestData->departments);
@@ -103,7 +103,7 @@ class UserRepository implements UserRepositoryContract
         $password = bcrypt($requestData->password);
         $role = $requestData->roles;
         $department = $requestData->departments;
-        $locale = $requestData->locales;//cuongnv
+        $locale = $requestData->locales;
 
         if ($requestData->hasFile('image_path')) {
             $settings = Setting::findOrFail(1);
@@ -127,6 +127,7 @@ class UserRepository implements UserRepositoryContract
             }
         }
 
+        $user->code = $requestData->code;//cuongnv
         $user->fill($input)->save();
         $user->roles()->sync([$role]);
         $user->department()->sync([$department]);

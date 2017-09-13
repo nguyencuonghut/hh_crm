@@ -16,6 +16,10 @@
     <p><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
         <a href="tel:{{ $contact->personal_number }}">{{ $contact->personal_number }}</a></p>
 
+    <!--Code-->
+    <p><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span>
+        {{ $contact->code }}</p>
+
     <!--Address-->
     <p><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
         {{ $contact->locale->first()->name }}  </p>

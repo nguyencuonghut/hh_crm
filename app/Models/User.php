@@ -79,7 +79,6 @@ class User extends Authenticatable
         return $this->name . ' ' . '- ' . $this->locale()->first()->name;
     }
 
-
     public function moveTasks($user_id)
     {
         $tasks = $this->tasks()->get();

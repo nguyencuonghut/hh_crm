@@ -8,8 +8,9 @@
         <thead>
         <tr>
             <th>{{ __('Tên') }}</th>
-            <th>{{ __('Vùng') }}</th>
+            <th>{{ __('Mã NV') }}</th>
             <th>{{ __('Mail') }}</th>
+            <th>{{ __('Vùng') }}</th>
             <th>{{ __('Số điện thoại') }}</th>
             <th></th>
             <th></th>
@@ -106,8 +107,9 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'locale', name: 'locale', orderable: false, searchable: false},
-                {data: 'email', name: 'email'},
+                {data: 'code', name: 'code'},
+                {data: 'email', name: 'email', orderable: false, searchable: false},
+                {data: 'locale', name: 'locale'},
                 {data: 'personal_number', name: 'personal_number'},
                     @if(Entrust::can('user-update'))
                 {

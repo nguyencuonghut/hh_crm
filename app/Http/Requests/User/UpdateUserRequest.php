@@ -26,6 +26,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
+            'code'  => 'required',
             'address' => '',
             'work_number' => 'numeric',
             'personal_number' => 'numeric',
@@ -34,7 +35,7 @@ class UpdateUserRequest extends FormRequest
             'image_path' => '',
             'roles' => 'required',
             'departments' => '',
-            'locales' => ''
+            'locales' => '',
         ];
     }
 }

@@ -26,16 +26,16 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
+            'code' => 'required',
             'address' => '',
             'work_number' => 'numeric',
             'personal_number' => 'numeric',
             'password' => 'required|min:5|confirmed',
             'password_confirmation' => 'required|min:5',
             'image_path' => '',
-            'locale' => 'required',
             'roles' => 'required',
             'departments' => 'required',
-            'locales' => 'required'
+            'locales' => 'required',
         ];
     }
 }

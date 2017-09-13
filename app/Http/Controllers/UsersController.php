@@ -66,7 +66,7 @@ class UsersController extends Controller
     {
         $canUpdateUser = auth()->user()->can('update-user');
 
-        $users = User::select(['id', 'name', 'email', 'work_number', 'personal_number']);
+        $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number']);
         return Datatables::of($users)
             ->addColumn('namelink', function ($users) {
                 return '<a href="users/' . $users->id . '" ">' . $users->name. '</a>';

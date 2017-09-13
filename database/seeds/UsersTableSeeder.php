@@ -22,6 +22,7 @@ class UsersTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Tony Nguyễn',
                 'email' => 'nguyenvancuong@honghafeed.com.vn',
+                'code' => 'KD0001',
                 'password' => bcrypt('Hongha@123'),
                 'address' => '',
                 'work_number' => 0,
@@ -35,6 +36,7 @@ class UsersTableSeeder extends Seeder
                 array (
                     'id' => 2,
                     'name' => 'Đỗ Minh Đông',
+                    'code' => 'KD1001',
                     'email' => 'dominhdong@honghafeed.com.vn',
                     'password' => bcrypt('Hongha@123'),
                     'address' => '',
@@ -49,6 +51,7 @@ class UsersTableSeeder extends Seeder
                 array (
                     'id' => 3,
                     'name' => 'Trần Văn Cang',
+                    'code' => 'KD2001',
                     'email' => 'tranvancang@honghafeed.com.vn',
                     'password' => bcrypt('Hongha@123'),
                     'address' => '',
@@ -63,6 +66,7 @@ class UsersTableSeeder extends Seeder
                 array (
                     'id' => 4,
                     'name' => 'Ngô Trường Long',
+                    'code' => 'KD3001',
                     'email' => 'ngotruonglong@honghafeed.com.vn',
                     'password' => bcrypt('Hongha@123'),
                     'address' => '',
