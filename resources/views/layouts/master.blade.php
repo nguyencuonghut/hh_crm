@@ -138,14 +138,14 @@ $('body').click(function(e) {
                 @endif
             </div>
             <a href="#departments" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="sidebar-icon glyphicon glyphicon-list-alt"></i><span id="menu-txt">{{ __('Departments') }}</span>
+                        class="sidebar-icon glyphicon glyphicon-list-alt"></i><span id="menu-txt">{{ __('Phòng/Ban') }}</span>
             <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="departments">
                 <a href="{{ route('departments.index')}}"
-                   class="list-group-item childlist">{{ __('All Departments') }}</a>
+                   class="list-group-item childlist">{{ __('Tất cả phòng/ban') }}</a>
                 @if(Entrust::hasRole('administrator'))
                     <a href="{{ route('departments.create')}}"
-                       class="list-group-item childlist">{{ __('New Department') }}</a>
+                       class="list-group-item childlist">{{ __('Phòng/Ban mới') }}</a>
                 @endif
             </div>
             <!-- cuongnv -->
