@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('heading')
-    <h1>All tasks</h1>
+    <h1>Tất cả nhiệm vụ</h1>
 @stop
 
 @section('content')
@@ -8,10 +8,10 @@
         <thead>
         <tr>
 
-            <th>{{ __('Title') }}</th>
-            <th>{{ __('Created at') }}</th>
+            <th>{{ __('Tiêu đề') }}</th>
+            <th>{{ __('Ngày tạo') }}</th>
             <th>{{ __('Deadline') }}</th>
-            <th>{{ __('Assigned') }}</th>
+            <th>{{ __('Giao cho') }}</th>
 
         </tr>
         </thead>

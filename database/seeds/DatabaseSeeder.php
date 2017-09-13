@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call('UserRoleTableSeeder');
         $this->call('ClientsTableSeeder');
         $this->call('LocalesTableSeeder');
+        $this->call('TasksTableSeeder');
     }
 }
