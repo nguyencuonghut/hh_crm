@@ -95,14 +95,14 @@ $('body').click(function(e) {
 
 
             <a href="#clients" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="glyphicon sidebar-icon glyphicon-tag"></i><span id="menu-txt">{{ __('Clients') }}</span>
+                        class="glyphicon sidebar-icon glyphicon-tag"></i><span id="menu-txt">{{ __('Khách hàng') }}</span>
             <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="clients">
 
-                <a href="{{ route('clients.index')}}" class="list-group-item childlist">{{ __('All Clients') }}</a>
+                <a href="{{ route('clients.index')}}" class="list-group-item childlist">{{ __('Tất cả khách hàng') }}</a>
                 @if(Entrust::can('client-create'))
                     <a href="{{ route('clients.create')}}"
-                       class="list-group-item childlist">{{ __('New Client') }}</a>
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
             </div>
 

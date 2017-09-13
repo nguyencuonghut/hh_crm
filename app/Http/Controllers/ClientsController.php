@@ -88,7 +88,10 @@ class ClientsController extends Controller
     {
         return view('clients.create')
             ->withUsers($this->users->getAllUsersWithDepartments())
-            ->withIndustries($this->clients->listAllIndustries());
+            ->withIndustries($this->clients->listAllIndustries())
+            ->withClienttypes($this->clients->listAllClientTypes())
+            ->withProductCategories($this->clients->listAllProductCategories())
+            ->withGroups($this->clients->listAllGroups());
     }
 
     /**
