@@ -12,6 +12,14 @@
             <th>{{ __('Ngày tạo') }}</th>
             <th>{{ __('Deadline') }}</th>
             <th>{{ __('Giao cho') }}</th>
+            <th>
+                <select name="status" id="status-task">
+                    <option value="" disabled selected>{{ __('Trạng thái') }}</option>
+                    <option value="open">Open</option>
+                    <option value="closed">Closed</option>
+                    <option value="all">All</option>
+                </select>
+            </th>
 
         </tr>
         </thead>
@@ -21,7 +29,7 @@
 @push('scripts')
 <script>
     $(function () {
-        $('#tasks-table').DataTable({
+        var table = $('#tasks-table').DataTable({
             processing: true,
             serverSide: true,
             ajax: '{!! route('tasks.data') !!}',
@@ -31,8 +39,20 @@
                 {data: 'created_at', name: 'created_at'},
                 {data: 'deadline', name: 'deadline'},
                 {data: 'user_assigned_id', name: 'user_assigned_id',},
+                {data: 'status', name: 'status', orderable: false},
 
             ]
+        });
+
+        $('#status-task').change(function() {
+            selected = $("#status-task option:selected").val();
+            if(selected == 'open') {
+                table.columns(4).search(1).draw();
+            } else if(selected == 'closed') {
+                table.columns(4).search(2).draw();
+            } else {
+                table.columns(4).search( '' ).draw();
+            }
         });
     });
 </script>
