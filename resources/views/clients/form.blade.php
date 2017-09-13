@@ -106,10 +106,10 @@
     </div>
 
     <div class="form-group col-sm-3 removeright">
-        {!! Form::label('broilder_duck_num', 'Vịt thịt:', ['class' => 'control-label']) !!}
+        {!! Form::label('broiler_duck_num', 'Vịt thịt:', ['class' => 'control-label']) !!}
         {!!
-            Form::number('broilder_duck_num',
-            isset($data['broilder_duck_num']) ? $data['broilder_duck_num'] : null,
+            Form::number('broiler_duck_num',
+            isset($data['broiler_duck_num']) ? $data['broiler_duck_num'] : null,
             ['class' => 'form-control'])
         !!}
     </div>

@@ -53,6 +53,34 @@
                     <i class="fa fa-handshake-o" aria-hidden="true">{{date('d-m-Y', strtotime($client->animal_date))}}</i>
                 </p>
         @endif
+        @if($client->pig_num != 0)
+            <!--Pig number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Pig number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Lợn: {{$client->pig_num}}</i>
+                </p>
+        @endif
+        @if($client->broiler_chicken_num != 0)
+            <!--Broiler chicken number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Broiler chicken number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Gà thịt: {{$client->broiler_chicken_num}}</i>
+                </p>
+        @endif
+        @if($client->broiler_duck_num != 0)
+            <!--Broiler duck number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Broiler duck number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Vịt thịt: {{$client->broiler_duck_num}}</i>
+                </p>
+        @endif
+        @if($client->quail_num != 0)
+            <!--Quail number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Quail number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Cút: {{$client->quail_num}}</i>
+                </p>
+        @endif
         <!-- cuongnv -->
     </div>
 
@@ -107,6 +135,34 @@
                 <p><span class="glyphicon glyphicon-list" aria-hidden="true" data-toggle="tooltip"
                                            title="{{ __('Key client') }}" data-placement="left"> </span>
                     Quy mô:{{ $client->scale }}</p>
+        @endif
+        @if($client->aqua_num != 0)
+            <!--Aqua number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Aqua number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Thủy sản: {{$client->aqua_num}}</i>
+                </p>
+        @endif
+        @if($client->layer_chicken_num != 0)
+            <!--Layer chicken number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Layer chicken number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Gà đẻ: {{$client->layer_chicken_num}}</i>
+                </p>
+        @endif
+        @if($client->layer_duck_num != 0)
+            <!--Layer duck number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Layer duck number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Vịt đẻ: {{$client->layer_duck_num}}</i>
+                </p>
+        @endif
+        @if($client->cow_num != 0)
+            <!--Cow number-->
+                <p><span class="glyphicon glyphicon-unchecked" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Cow number') }}" data-placement="left"> </span>
+                    <i class="fa fa-handshake-o" aria-hidden="true">Bò: {{$client->cow_num}}</i>
+                </p>
         @endif
         <!-- ~cuongnv -->
     </div>

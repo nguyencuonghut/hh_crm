@@ -17,7 +17,7 @@ class Client extends Model
         'scale',
         'pig_num',
         'broiler_chicken_num',
-        'broilder_duck_num',
+        'broiler_duck_num',
         'quail_num',
         'aqua_num',
         'layer_duck_num',

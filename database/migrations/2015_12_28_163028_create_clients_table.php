@@ -30,7 +30,7 @@ class CreateClientsTable extends Migration
             $table->integer('scale');
             $table->integer('pig_num');
             $table->integer('broiler_chicken_num');
-            $table->integer('broilder_duck_num');
+            $table->integer('broiler_duck_num');
             $table->integer('quail_num');
             $table->integer('aqua_num');
             $table->integer('layer_duck_num');
