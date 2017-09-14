@@ -56,8 +56,8 @@ class LeadsController extends Controller
     public function anyData()
     {
         $leads = Lead::select(
-            ['id', 'title', 'user_created_id', 'client_id', 'user_assigned_id', 'contact_date']
-        )->where('status', 1)->get();
+            ['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'contact_date']
+        );
         return Datatables::of($leads)
             ->addColumn('titlelink', function ($leads) {
                 return '<a href="leads/' . $leads->id . '" ">' . $leads->title . '</a>';
@@ -71,6 +71,9 @@ class LeadsController extends Controller
             })
             ->editColumn('user_assigned_id', function ($leads) {
                 return $leads->user->name;
+            })
+            ->editColumn('status', function ($leads) {
+                return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';;
             })->make(true);
     }
 
