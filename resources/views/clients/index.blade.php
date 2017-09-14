@@ -9,7 +9,6 @@
         <thead>
         <tr>
             <th>{{ __('Tên') }}</th>
-            <th>{{ __('Mã') }}</th>
             <th>
                 <select name="client-type" id="client-type">
                     <option value="" disabled selected>{{ __('Loại') }}</option>
@@ -18,8 +17,15 @@
                     <option value="all">All</option>
                 </select>
             </th>
-            <th>{{ __('Địa chỉ') }}</th>
-            <th>{{ __('Dùng sản phẩm của') }}</th>
+            <th>
+                <select name="product-category" id="product-category">
+                    <option value="" disabled selected>{{ __('Dùng sản phẩm') }}</option>
+                    <option value="100% Hồng Hà">100% Hồng Hà</option>
+                    <option value="Hồng Hà + Công ty khác">Hồng Hà + Công ty khác</option>
+                    <option value="Công ty khác">Công ty khác</option>
+                    <option value="all">All</option>
+                </select>
+            </th>
             <th>
                 <select name="client-group" id="client-group">
                     <option value="" disabled selected>{{ __('Phân loại') }}</option>
@@ -28,6 +34,7 @@
                     <option value="all">All</option>
                 </select>
             </th>
+            <th>{{ __('Địa chỉ') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -47,11 +54,10 @@
             columns: [
 
                 {data: 'namelink', name: 'name'},
-                {data: 'client_code', name: 'client_code'},
                 {data: 'client_type_id', name: 'client_type_id', orderable: false},
-                {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
-                {data: 'product_category', name: 'product_category', orderable: false, searchable: false},
+                {data: 'product_category_id', name: 'product_category_id', orderable: false},
                 {data: 'group_id', name: 'group_id', orderable: false},
+                {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
                 @if(Entrust::can('client-update'))   
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
                 @endif
@@ -65,23 +71,35 @@
         $('#client-type').change(function() {
             selected = $("#client-type option:selected").val();
             if(selected == 'Đại lý') {
-                table.columns(2).search(1).draw();
+                table.columns(1).search(1).draw();
             } else if(selected == 'Trại chăn nuôi') {
+                table.columns(1).search(2).draw();
+            } else {
+                table.columns(1).search( '' ).draw();
+            }
+        });
+
+        $('#product-category').change(function() {
+            selected = $("#product-category option:selected").val();
+            if(selected == '100% Hồng Hà') {
+                table.columns(2).search(1).draw();
+            } else if(selected == 'Hồng Hà + Công ty khác') {
                 table.columns(2).search(2).draw();
+            } else if(selected == 'Công ty khác') {
+                table.columns(2).search(3).draw();
             } else {
                 table.columns(2).search( '' ).draw();
             }
         });
 
-
         $('#client-group').change(function() {
             selected = $("#client-group option:selected").val();
             if(selected == 'Đại lý/Trại tiềm năng') {
-                table.columns(5).search(1).draw();
+                table.columns(3).search(1).draw();
             } else if(selected == 'Trại key') {
-                table.columns(5).search(2).draw();
+                table.columns(3).search(2).draw();
             } else {
-                table.columns(5).search( '' ).draw();
+                table.columns(3).search( '' ).draw();
             }
         });
     });

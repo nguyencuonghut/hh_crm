@@ -47,7 +47,7 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id']);
+        $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id']);
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
@@ -58,12 +58,25 @@ class ClientsController extends Controller
             ->editColumn('client_type_id', function($clients) {
                 return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';
             })
-            ->addColumn('product_category', function ($clients) {
-                $client = Client::find($clients->id);
-                return $client->product_category->name;
-            })
             ->editColumn('group_id', function($clients) {
                 return $clients->group_id == 1 ? 'Đại lý/Trại tiềm năng' : 'Trại key';
+            })
+            ->editColumn('client_type_id', function($clients) {
+                return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';
+            })
+            ->editColumn('product_category_id', function($clients) {
+                switch($clients->product_category_id) {
+                    case 1:
+                        $product = '100% Hồng Hà';
+                        break;
+                    case 2:
+                        $product = 'Hồng Hà + Công ty khác';
+                        break;
+                    case 3:
+                        $product = 'Công ty khác';
+                        break;
+                }
+                return $product;
             })
             ->add_column('edit', '
                 <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
