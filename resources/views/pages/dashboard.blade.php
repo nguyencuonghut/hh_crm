@@ -33,12 +33,12 @@
                             @endforeach
                         </h3>
 
-                        <p>{{ __('Tasks completed this month') }}</p>
+                        <p>{{ __('Nhiệm vụ hoàn thành trong tháng này') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-ios-book-outline"></i>
                     </div>
-                    <a href="{{route('tasks.index')}}" class="small-box-footer">{{ __('All Tasks') }} <i
+                    <a href="{{route('tasks.index')}}" class="small-box-footer">{{ __('Tất cả nhiệm vụ') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -53,12 +53,12 @@
                             @endforeach
                         </h3>
 
-                        <p>{{ __('Leads completed this month') }}</p>
+                        <p>{{ __('Việc đã giao trong tháng này') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="{{route('leads.index')}}" class="small-box-footer">{{ __('All Leads') }} <i
+                    <a href="{{route('leads.index')}}" class="small-box-footer">{{ __('Tất cả việc đã giao') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -69,12 +69,12 @@
                     <div class="inner">
                         <h3>{{$totalClients}}</h3>
 
-                        <p>{{ __('All Clients') }}</p>
+                        <p>{{ __('Tất cả khách hàng') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person"></i>
                     </div>
-                    <a href="{{route('clients.index')}}" class="small-box-footer">{{ __('All clients') }} <i
+                    <a href="{{route('clients.index')}}" class="small-box-footer">{{ __('Tất cả khách hàng') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
@@ -92,12 +92,12 @@
                                 0
                             @endif</h3>
 
-                        <p>{{ __('Total hours registered') }}</p>
+                        <p>{{ __('Tổng thời gian đăng ký') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer"> {{ __('More info') }} <i
+                    <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>

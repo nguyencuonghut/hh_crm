@@ -5,7 +5,7 @@
         <div class="box-header with-border">
             <h4 class="box-title"
             >
-                {{ __('Tasks each month') }}
+                {{ __('Nhiệm vụ mỗi tháng') }}
             </h4>
             <div class="box-tools pull-right">
                 <button type="button" id="collapse1" class="btn btn-box-tool" data-toggle="collapse"
@@ -27,7 +27,7 @@
         <div class="box-header with-border">
             <h4 class="box-title"
             >
-               {{ __('Lead each month') }}
+               {{ __('Việc giao mỗi tháng') }}
             </h4>
             <div class="box-tools pull-right">
                 <button type="button" id="collapse2" class="btn btn-box-tool" data-toggle="collapse"
@@ -55,14 +55,14 @@
             <span class="info-box-icon"><i class="ion ion-ios-book-outline"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text"> {{ __('All Tasks') }} </span>
+                <span class="info-box-text"> {{ __('Tất cả nhiệm vụ') }} </span>
                 <span class="info-box-number">{{$allCompletedTasks}} / {{$alltasks}}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: {{$totalPercentageTasks}}%"></div>
                 </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageTasks, 0)}}% {{ __('Completed') }}
+                    {{number_format($totalPercentageTasks, 0)}}% {{ __('Hoàn thành') }}
                   </span>
             </div>
             <!-- /.info-box-content -->
@@ -74,14 +74,14 @@
             <span class="info-box-icon"><i class="ion ion-stats-bars"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('All Leads') }}</span>
+                <span class="info-box-text">{{ __('Tất cả việc đã giao') }}</span>
                 <span class="info-box-number">{{$allCompletedLeads}} / {{$allleads}}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: {{$totalPercentageLeads}}%"></div>
                 </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageLeads, 0)}}% {{ __('Completed') }}
+                    {{number_format($totalPercentageLeads, 0)}}% {{ __('Hoàn thành') }}
                   </span>
             </div>
             <!-- /.info-box-content -->
@@ -94,7 +94,7 @@
             <div class="box-header with-border">
                 <h4 class="box-title"
                 >
-                    {{ __('Users') }}
+                    {{ __('Người dùng') }}
                 </h4>
                 <div class="box-tools pull-right">
 
