@@ -108,7 +108,7 @@
 
                 {data: 'namelink', name: 'name'},
                 {data: 'code', name: 'code'},
-                {data: 'email', name: 'email', orderable: false, searchable: false},
+                {data: 'email', name: 'email'},
                 {data: 'locale', name: 'locale', orderable: false, searchable: false},
                 {data: 'personal_number', name: 'personal_number'},
                     @if(Entrust::can('user-update'))

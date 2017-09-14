@@ -47,7 +47,7 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward']);
+        $clients = Client::select(['id', 'name', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id']);
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
@@ -55,17 +55,15 @@ class ClientsController extends Controller
             ->addColumn('fulladdr', function ($clients) {
                 return "$clients->ward - $clients->district - $clients->province";
             })
-            ->addColumn('client_type', function ($clients) {
-                $client = Client::find($clients->id);
-                return $client->client_type->name;
+            ->editColumn('client_type_id', function($clients) {
+                return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';
             })
             ->addColumn('product_category', function ($clients) {
                 $client = Client::find($clients->id);
                 return $client->product_category->name;
             })
-            ->addColumn('group', function ($clients) {
-                $client = Client::find($clients->id);
-                return $client->group->name;
+            ->editColumn('group_id', function($clients) {
+                return $clients->group_id == 1 ? 'Đại lý/Trại tiềm năng' : 'Trại key';
             })
             ->add_column('edit', '
                 <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Sửa</a>')

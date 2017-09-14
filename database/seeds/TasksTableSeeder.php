@@ -39,7 +39,7 @@ class TasksTableSeeder extends Seeder
                     'user_assigned_id'      => 3,
                     'client_id'             => 1,
                     'invoice_id'            => 0,
-                    'deadline'              => '2017-06-04 13:42:19',
+                    'deadline'              => '2017-12-04 13:42:19',
                     'created_at'            => '2017-08-04 13:42:19',
                     'updated_at'            => '2017-08-04 13:42:19',
                 ),
