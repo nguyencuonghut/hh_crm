@@ -24,13 +24,13 @@
         </div>
         <div class="col-md-3">
             <div class="sidebarheader">
-                <p>{{ __('Task information') }}</p>
+                <p>{{ __('Thông tin nhiệm vụ') }}</p>
             </div>
             <div class="sidebarbox">
-                <p>{{ __('Assigned') }}:
+                <p>{{ __('Giao cho') }}:
                     <a href="{{route('users.show', $tasks->user->id)}}">
                         {{$tasks->user->name}}</a></p>
-                <p>{{ __('Created at') }}: {{ date('d F, Y, H:i', strtotime($tasks->created_at))}} </p>
+                <p>{{ __('Ngày tạo') }}: {{ date('d F, Y, H:i', strtotime($tasks->created_at))}} </p>
 
                 @if($tasks->days_until_deadline)
                     <p>{{ __('Deadline') }}: <span style="color:red;">{{date('d, F Y', strTotime($tasks->deadline))}}
@@ -46,9 +46,9 @@
                 @endif
 
                 @if($tasks->status == 1)
-                    {{ __('Status') }}: {{ __('Open') }}
+                    {{ __('Trạng thái') }}: {{ __('Open') }}
                 @else
-                    {{ __('Status') }}: {{ __('Closed') }}
+                    {{ __('Trạng thái') }}: {{ __('Closed') }}
                 @endif
             </div>
             @if($tasks->status == 1)
@@ -58,7 +58,7 @@
                 'url' => ['tasks/updateassign', $tasks->id],
                 ]) !!}
                 {!! Form::select('user_assigned_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
-                {!! Form::submit(__('Assign user'), ['class' => 'btn btn-primary form-control closebtn']) !!}
+                {!! Form::submit(__('Giao cho'), ['class' => 'btn btn-primary form-control closebtn']) !!}
                 {!! Form::close() !!}
 
                 {!! Form::model($tasks, [
@@ -66,10 +66,11 @@
           'url' => ['tasks/updatestatus', $tasks->id],
           ]) !!}
 
-                {!! Form::submit(__('Close task'), ['class' => 'btn btn-success form-control closebtn']) !!}
+                {!! Form::submit(__('Đóng nhiệm vụ'), ['class' => 'btn btn-success form-control closebtn']) !!}
                 {!! Form::close() !!}
 
             @endif
+            <!-- cuongnv
             <div class="sidebarheader">
                 <p>{{ __('Time management') }}</p>
             </div>
@@ -106,6 +107,7 @@
             </div>
 
             @include('invoices._invoiceLineModal', ['title' => $tasks->title, 'id' => $tasks->id, 'type' => 'task'])
+            ~cuongnv-->
         </div>
     </div>
 @stop

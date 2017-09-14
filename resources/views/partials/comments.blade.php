@@ -4,7 +4,7 @@
     <div class="panel-heading"><p>{{$subject->title}}</p></div>
     <div class="panel-body">
         <p>{{$subject->description }}</p>
-        <p class="smalltext">{{ __('Created at') }}:
+        <p class="smalltext">{{ __('Vào lúc') }}:
             {{ date('d F, Y, H:i:s', strtotime($subject->created_at))}}
             @if($subject->updated_at != $subject->created_at)
                 <br/>{{ __('Modified') }}: {{date('d F, Y, H:i:s', strtotime($subject->updated_at))}}
@@ -19,10 +19,10 @@
         <div class="panel-body">
             <p class="smalltext">#{{$i++}}</p>
             <p>  {{ $comment->description }}</p>
-            <p class="smalltext">{{ __('Comment by') }}: <a
+            <p class="smalltext">{{ __('Bình luận bởi') }}: <a
                         href="{{route('users.show', $comment->user->id)}}"> {{$comment->user->name}} </a>
             </p>
-            <p class="smalltext">{{ __('Created at') }}:
+            <p class="smalltext">{{ __('Vào lúc') }}:
                 {{ date('d F, Y, H:i:s', strtotime($comment->created_at))}}
                 @if($comment->updated_at != $comment->created_at)
                         <br/>{{ __('Modified') }} : {{date('d F, Y, H:i:s', strtotime($comment->updated_at))}}
@@ -37,7 +37,7 @@
     <div class="form-group">
         {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'comment-field']) !!}
 
-        {!! Form::submit( __('Add Comment') , ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit( __('Thêm bình luận') , ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
 @else
@@ -45,7 +45,7 @@
     <div class="form-group">
         {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'comment-field']) !!}
 
-        {!! Form::submit( __('Add Comment') , ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit( __('Thêm bình luận') , ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
 @endif
