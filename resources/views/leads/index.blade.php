@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('heading')
-    <h1>{{__('All leads')}}</h1>
+    <h1>{{__('Tất cả')}}</h1>
 @stop
 
 @section('content')
@@ -8,10 +8,10 @@
         <thead>
         <tr>
 
-            <th>{{ __('Title') }}</th>
-            <th>{{ __('Created by') }}</th>
+            <th>{{ __('Tiêu đề') }}</th>
+            <th>{{ __('Người tạo') }}</th>
             <th>{{ __('Deadline') }}</th>
-            <th>{{ __('Assigned') }}</th>
+            <th>{{ __('Giao cho') }}</th>
 
         </tr>
         </thead>

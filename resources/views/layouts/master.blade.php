@@ -128,13 +128,13 @@ $('body').click(function(e) {
             </div>
 
             <a href="#leads" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="glyphicon sidebar-icon glyphicon-hourglass"></i><span id="menu-txt">{{ __('Leads') }}</span>
+                        class="glyphicon sidebar-icon glyphicon-hourglass"></i><span id="menu-txt">{{ __('Giao việc') }}</span>
             <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="leads">
-                <a href="{{ route('leads.index')}}" class="list-group-item childlist">{{ __('All Leads') }}</a>
+                <a href="{{ route('leads.index')}}" class="list-group-item childlist">{{ __('Tất cả') }}</a>
                 @if(Entrust::can('lead-create'))
                     <a href="{{ route('leads.create')}}"
-                       class="list-group-item childlist">{{ __('New Lead') }}</a>
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
             </div>
             <a href="#departments" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
