@@ -23,13 +23,13 @@
         </div>
         <div class="col-md-3">
             <div class="sidebarheader">
-                <p> {{ __('Lead information') }}</p>
+                <p> {{ __('Thông tin giao việc') }}</p>
             </div>
             <div class="sidebarbox">
-                <p>{{ __('Assigned to') }}:
+                <p>{{ __('Giao cho') }}:
                     <a href="{{route('leads.show', $lead->user->id)}}">
                         {{$lead->user->name}}</a></p>
-                <p>{{ __('Created at') }}: {{ date('d F, Y, H:i', strtotime($lead->created_at))}} </p>
+                <p>{{ __('Ngày tạo') }}: {{ date('d F, Y, H:i', strtotime($lead->created_at))}} </p>
                 @if($lead->days_until_contact < 2)
                     <p>{{ __('Follow up') }}: <span style="color:red;">{{date('d, F Y, H:i', strTotime($lead->contact_date))}}
 
@@ -46,11 +46,11 @@
                     <!--Remove days left if lead is completed-->
                 @endif
                 @if($lead->status == 1)
-                    {{ __('Status') }}: {{ __('Contact') }}
+                    {{ __('Trạng thái') }}: {{ __('Open') }}
                 @elseif($lead->status == 2)
-                    {{ __('Status') }}: {{ __('Completed') }}
+                    {{ __('Trạng thái') }}: {{ __('Closed') }}
                 @elseif($lead->status == 3)
-                    {{ __('Status') }}: {{ __('Not interested') }}
+                    {{ __('Trạng thái') }}: {{ __('Not interested') }}
                 @endif
 
             </div>
@@ -60,14 +60,14 @@
                 'url' => ['leads/updateassign', $lead->id],
                 ]) !!}
                 {!! Form::select('user_assigned_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
-                {!! Form::submit(__('Assign new user'), ['class' => 'btn btn-primary form-control closebtn']) !!}
+                {!! Form::submit(__('Giao cho người khác'), ['class' => 'btn btn-primary form-control closebtn']) !!}
                 {!! Form::close() !!}
                 {!! Form::model($lead, [
                'method' => 'PATCH',
                'url' => ['leads/updatestatus', $lead->id],
                ]) !!}
 
-                {!! Form::submit(__('Complete Lead'), ['class' => 'btn btn-success form-control closebtn movedown']) !!}
+                {!! Form::submit(__('Đánh dấu hoàn thành'), ['class' => 'btn btn-success form-control closebtn movedown']) !!}
                 {!! Form::close() !!}
             @endif
 
