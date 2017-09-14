@@ -51,7 +51,8 @@
                 <thead>
                 <tr>
                     <th>{{ __('Tên') }}</th>
-                    <th>{{ __('Company') }}</th>
+                    <th>{{ __('Địa chỉ') }}</th>
+                    <th>{{ __('Mã') }}</th>
                     <th>{{ __('Số điện thoại') }}</th>
                 </tr>
                 </thead>
@@ -112,7 +113,8 @@
                     columns: [
 
                         {data: 'clientlink', name: 'name'},
-                        {data: 'company_name', name: 'company_name'},
+                        {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
+                        {data: 'client_code', name: 'client_code'},
                         {data: 'primary_number', name: 'primary_number'},
 
                     ]

@@ -71,7 +71,7 @@ class User extends Authenticatable
 
     public function getNameAndDepartmentAttribute()
     {
-        return $this->name . ' ' . '- ' . $this->department()->first()->name;
+        return $this->code . ' ' . '-' . ' ' . $this->name . ' ' . '- ' . $this->department()->first()->name;
     }
 
     public function getNameAndLocaleAttribute()

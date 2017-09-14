@@ -1,7 +1,7 @@
 <div class="col-lg-6">
 
     <div class="profilepic"><img class="profilepicsize" src="../{{ $contact->avatar }}" /></div>
-    <h1>{{ $contact->nameAndDepartment }} </h1>
+    <h1>{{ $contact->name }} </h1>
 
     <!--MAIL-->
     <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
