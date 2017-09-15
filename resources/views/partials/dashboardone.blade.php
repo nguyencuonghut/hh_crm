@@ -74,7 +74,7 @@
             <span class="info-box-icon"><i class="ion ion-stats-bars"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('Tất cả việc đã giao') }}</span>
+                <span class="info-box-text">{{ __('Tất cả chỉ đạo') }}</span>
                 <span class="info-box-number">{{$allCompletedLeads}} / {{$allleads}}</span>
 
                 <div class="progress">
@@ -139,7 +139,7 @@
             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-book-outline"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('Tasks completed today') }}</span>
+                <span class="info-box-text">{{ __('Nhiệm vụ xong trong ngày') }}</span>
                 <span class="info-box-number">{{$completedTasksToday}}
                     <small></small></span>
             </div>
@@ -153,7 +153,7 @@
             <span class="info-box-icon bg-red"><i class="ion ion-ios-book-outline"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('Tasks created today') }}</span>
+                <span class="info-box-text">{{ __('Nhiệm vụ tạo trong ngày') }}</span>
                 <span class="info-box-number">{{$createdTasksToday}}</span>
             </div>
             <!-- /.info-box-content -->
@@ -170,7 +170,7 @@
             <span class="info-box-icon bg-green"><i class="ion ion-stats-bars"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('Leads completed today') }}</span>
+                <span class="info-box-text">{{ __('Chỉ đạo xong trong ngày') }}</span>
                 <span class="info-box-number">{{$completedLeadsToday}}</span>
             </div>
             <!-- /.info-box-content -->
@@ -183,7 +183,7 @@
             <span class="info-box-icon bg-yellow"><i class="ion ion-stats-bars"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">{{ __('Leads created today') }}</span>
+                <span class="info-box-text">{{ __('Chỉ đạo tạo trong ngày') }}</span>
                 <span class="info-box-number">{{$createdLeadsToday}}</span>
             </div>
             <!-- /.info-box-content -->

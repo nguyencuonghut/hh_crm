@@ -53,12 +53,12 @@
                             @endforeach
                         </h3>
 
-                        <p>{{ __('Việc đã giao trong tháng này') }}</p>
+                        <p>{{ __('Chỉ đạo hoàn thành trong tháng này') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="{{route('leads.index')}}" class="small-box-footer">{{ __('Tất cả việc đã giao') }} <i
+                    <a href="{{route('leads.index')}}" class="small-box-footer">{{ __('Tất cả chỉ đạo') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
