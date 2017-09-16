@@ -247,4 +247,15 @@ class TaskRepository implements TaskRepositoryContract
 
         return collect([$closed_tasks, $open_tasks]);
     }
+
+    /**
+     * @param $id
+     * @param $requestData
+     */
+    public function update($id, $requestData)
+    {
+        $task = Task::findOrFail($id);
+        //dd($requestData->title);
+        $task->fill($requestData->all())->save();
+    }
 }

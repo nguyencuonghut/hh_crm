@@ -35,4 +35,6 @@ interface TaskRepositoryContract
     public function totalTimeSpent();
 
     public function totalOpenAndClosedTasks($id);
+
+    public function update($id, $requestData);
 }

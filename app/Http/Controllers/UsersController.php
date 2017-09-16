@@ -111,6 +111,9 @@ class UsersController extends Controller
             ->editColumn('client_id', function ($tasks) {
                 return $tasks->client->name;
             })
+            ->addColumn('edit', function ($task) {
+                return '<a href="' . route("tasks.edit", $task->id) . '" class="btn btn-success">Sửa</a>';
+            })
             ->make(true);
     }
 

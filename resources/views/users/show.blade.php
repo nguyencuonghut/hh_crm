@@ -19,6 +19,7 @@
                             <option value="all">All</option>
                         </select>
                     </th>
+                    <th></th>
                 </tr>
             </thead>
         </table>
@@ -90,6 +91,9 @@
                         {data: 'created_at', name: 'created_at'},
                         {data: 'deadline', name: 'deadline'},
                         {data: 'status', name: 'status', orderable: false},
+                        @if(Entrust::can('task-update'))
+                        { data: 'edit', name: 'edit', orderable: false, searchable: false},
+                        @endif
                     ]
                 });
 

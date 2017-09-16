@@ -20,6 +20,7 @@
                     <option value="all">All</option>
                 </select>
             </th>
+            <th></th>
 
         </tr>
         </thead>
@@ -40,6 +41,9 @@
                 {data: 'deadline', name: 'deadline'},
                 {data: 'user_assigned_id', name: 'user_assigned_id',},
                 {data: 'status', name: 'status', orderable: false},
+                @if(Entrust::can('task-update'))
+                { data: 'edit', name: 'edit', orderable: false, searchable: false},
+                @endif
 
             ]
         });

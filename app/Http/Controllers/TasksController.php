@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use Gate;
 use Carbon;
 use Datatables;
+use Auth;
 use App\Models\Task;
 use App\Http\Requests;
 use App\Models\Integration;
 use Illuminate\Http\Request;
 use App\Http\Requests\Task\StoreTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
 use App\Repositories\Task\TaskRepositoryContract;
 use App\Repositories\User\UserRepositoryContract;
 use App\Repositories\Client\ClientRepositoryContract;
@@ -77,6 +79,9 @@ class TasksController extends Controller
             })
             ->editColumn('user_assigned_id', function ($tasks) {
                 return $tasks->user->name;
+            })
+            ->addColumn('edit', function ($task) {
+                return '<a href="' . route("tasks.edit", $task->id) . '" class="btn btn-success">Sửa</a>';
             })->make(true);
     }
 
@@ -194,5 +199,46 @@ class TasksController extends Controller
     {
         Notifynder::readAll(\Auth::id());
         return redirect()->back();
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return mixed
+     */
+    public function edit($id)
+    {
+        $task = Task::find($id);
+        $user_created_id = $task->user_created_id;
+        $task_status = $task->status;
+        $user_id = Auth::user()->id;
+        // Cannot update the task if it is completed
+        if (2 == $task_status){
+            Session()->flash('flash_message', 'Nhiệm vụ đã hoàn thành, không thể sửa được!');
+                return redirect()->back();
+        }
+        // Update based on authority
+        if(($user_id == $user_created_id) | (1 == Auth::user()->userRole()->first()->role_id)) {
+            return view('tasks.edit')
+                ->withTask($this->tasks->find($id))
+                ->withClients($this->clients->listAllClients())
+                ->withUsers($this->users->getAllUsersWithDepartments());
+        }else {
+            Session()->flash('flash_message', 'Bạn không có quyền sửa nhiệm vụ này!');
+            return redirect()->back();
+        }
+    }
+
+    /**
+     * @param $id
+     * @param UpdateTaskRequest $request
+     * @return mixed
+     */
+    public function update($id, UpdateTaskRequest $request)
+    {
+        $this->tasks->update($id, $request);
+        Session()->flash('flash_message', 'Task successfully updated');
+        return redirect()->route('tasks.index');
     }
 }

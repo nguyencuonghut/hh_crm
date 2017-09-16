@@ -4,10 +4,10 @@
     <div class="panel-heading"><p>{{$subject->title}}</p></div>
     <div class="panel-body">
         <p>{{$subject->description }}</p>
-        <p class="smalltext">{{ __('Vào lúc') }}:
+        <p class="smalltext">{{ __('Thời gian tạo') }}:
             {{ date('d F, Y, H:i:s', strtotime($subject->created_at))}}
             @if($subject->updated_at != $subject->created_at)
-                <br/>{{ __('Modified') }}: {{date('d F, Y, H:i:s', strtotime($subject->updated_at))}}
+                <br/>{{ __('Thời gian sửa') }}: {{date('d F, Y, H:i:s', strtotime($subject->updated_at))}}
             @endif</p>
     </div>
 </div>
