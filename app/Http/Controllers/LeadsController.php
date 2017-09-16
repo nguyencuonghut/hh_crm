@@ -13,6 +13,7 @@ use App\Http\Requests\Lead\StoreLeadRequest;
 use App\Repositories\Lead\LeadRepositoryContract;
 use App\Repositories\User\UserRepositoryContract;
 use App\Http\Requests\Lead\UpdateLeadFollowUpRequest;
+use App\Http\Requests\Lead\UpdateLeadRequest;
 use App\Repositories\Client\ClientRepositoryContract;
 use App\Repositories\Setting\SettingRepositoryContract;
 
@@ -66,7 +67,7 @@ class LeadsController extends Controller
                 return $leads->creator->name;
             })
             ->editColumn('contact_date', function ($leads) {
-                return $leads->contact_date ? with(new Carbon($leads->created_at))
+                return $leads->contact_date ? with(new Carbon($leads->contact_date))
                     ->format('d/m/Y') : '';
             })
             ->editColumn('user_assigned_id', function ($leads) {
@@ -74,6 +75,9 @@ class LeadsController extends Controller
             })
             ->editColumn('status', function ($leads) {
                 return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';;
+            })
+            ->addColumn('edit', function ($lead) {
+                return '<a href="' . route("leads.edit", $lead->id) . '" class="btn btn-success">Sửa</a>';
             })->make(true);
     }
 
@@ -148,4 +152,45 @@ class LeadsController extends Controller
         Session()->flash('flash_message', 'Lead is completed');
         return redirect()->back();
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return mixed
+     */
+    public function edit($id)
+    {
+        $lead = Lead::find($id);
+        $user_created_id = $lead->user_created_id;
+        $lead_status = $lead->status;
+        $user_id = Auth::user()->id;
+        // Cannot update the lead if it is completed
+        if (2 == $lead_status){
+            Session()->flash('flash_message', 'Chỉ đạo đã hoàn thành, không thể sửa được!');
+            return redirect()->back();
+        }
+        // Update based on authority
+        if(($user_id == $user_created_id) | (1 == Auth::user()->userRole()->first()->role_id)) {
+            return view('leads.edit')
+                ->withLead($this->leads->find($id))
+                ->withClients($this->clients->listAllClients())
+                ->withUsers($this->users->getAllUsersWithDepartments());
+        }else {
+            Session()->flash('flash_message', 'Bạn không có quyền sửa chỉ đạo này!');
+            return redirect()->back();
+        }
+    }
+
+    /**
+     * @param $id
+     * @param UpdateLeadRequest $request
+     * @return mixed
+     */
+    public function update($id, UpdateLeadRequest $request)
+    {
+        $this->leads->update($id, $request);
+        Session()->flash('flash_message', 'Chỉ đạo đã được cập nhật thành công!');
+        return redirect()->route('leads.index');
+    }
+
 }

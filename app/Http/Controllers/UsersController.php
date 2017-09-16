@@ -137,7 +137,7 @@ class UsersController extends Controller
                     ->format('d/m/Y') : '';
             })
             ->editColumn('contact_date', function ($leads) {
-                return $leads->created_at ? with(new Carbon($leads->created_at))
+                return $leads->contact_date ? with(new Carbon($leads->contact_date))
                     ->format('d/m/Y') : '';
             })
             ->editColumn('status', function ($leads) {
@@ -145,6 +145,9 @@ class UsersController extends Controller
             })
             ->editColumn('client_id', function ($tasks) {
                 return $tasks->client->name;
+            })
+            ->addColumn('edit', function ($lead) {
+                return '<a href="' . route("leads.edit", $lead->id) . '" class="btn btn-success">Sửa</a>';
             })
             ->make(true);
     }

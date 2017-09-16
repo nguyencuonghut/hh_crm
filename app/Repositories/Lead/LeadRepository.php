@@ -205,4 +205,15 @@ class LeadRepository implements LeadRepositoryContract
 
         return collect([$closed_leads, $open_leads]);
     }
+
+    /**
+     * @param $id
+     * @param $requestData
+     */
+    public function update($id, $requestData)
+    {
+        $lead = Lead::findOrFail($id);
+        $lead->fill($requestData->all())->save();
+    }
+
 }

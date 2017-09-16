@@ -30,4 +30,6 @@ interface LeadRepositoryContract
     public function completedLeadsMonthly();
 
     public function totalOpenAndClosedLeads($id);
+
+    public function update($id, $requestData);
 }
