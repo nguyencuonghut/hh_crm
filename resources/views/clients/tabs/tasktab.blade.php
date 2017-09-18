@@ -42,8 +42,9 @@
                                     </a>
                                     <span class="glyphicon glyphicon-headphones" aria-hidden="true"> </span>
                                     <a href="mailto:{{$task->user->work_number}}">
-                                    {{$task->user->work_number}}</p>
-                                </a>
+                                    {{$task->user->work_number}}
+                                    </a>
+                                </p>
 
                             </div>
                             <a href="{{route('users.show', $task->user->id)}}"> {{$task->user->name}}</a>
@@ -61,3 +62,4 @@
             </tbody>
         </table>
     </div>
+</div>
