@@ -23,7 +23,7 @@
             @include('partials.comments', ['subject' => $tasks])
         </div>
         <div class="col-md-3">
-            <div class="sidebarheader">
+            <div class="sidebarheader" style="margin-top: 0px">
                 <p>{{ __('Thông tin nhiệm vụ') }}</p>
             </div>
             <div class="sidebarbox">
