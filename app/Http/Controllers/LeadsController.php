@@ -64,14 +64,16 @@ class LeadsController extends Controller
                 return '<a href="leads/' . $leads->id . '" ">' . $leads->title . '</a>';
             })
             ->editColumn('user_created_id', function ($leads) {
-                return $leads->creator->name;
+                return '<a href="' . route('users.show', $leads->user_created_id) . '">' . $leads->creator->name . '</a>';
+
             })
             ->editColumn('contact_date', function ($leads) {
                 return $leads->contact_date ? with(new Carbon($leads->contact_date))
                     ->format('d/m/Y') : '';
             })
             ->editColumn('user_assigned_id', function ($leads) {
-                return $leads->user->name;
+                return '<a href="' . route('users.show', $leads->user_assigned_id) . '">' . $leads->user->name . '</a>';
+
             })
             ->editColumn('status', function ($leads) {
                 return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';;

@@ -78,7 +78,8 @@ class TasksController extends Controller
                     ->format('d/m/Y') : '';
             })
             ->editColumn('user_assigned_id', function ($tasks) {
-                return $tasks->user->name;
+                return '<a href="' . route('users.show', $tasks->user_assigned_id) . '">' . $tasks->user->name . '</a>';
+
             })
             ->addColumn('edit', function ($task) {
                 return '<a href="' . route("tasks.edit", $task->id) . '" class="btn btn-success">Sửa</a>';
