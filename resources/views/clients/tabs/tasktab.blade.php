@@ -51,7 +51,7 @@
 
                         </div> <!--Shows users assigned to task -->
                     </td>
-                    <td>{{date('d, M Y, H:i', strTotime($task->created_at))}}  </td>
+                    <td>{{date('d, M Y', strTotime($task->created_at))}}  </td>
                     <td>{{date('d, M Y', strTotime($task->deadline))}}
                         @if($task->status == 1)({{ $task->days_until_deadline }}) @endif</td>
                     <td></td>
