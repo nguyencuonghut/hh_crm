@@ -164,7 +164,7 @@ class UserRepository implements UserRepositoryContract
             Session()->flash('flash_message', 'Xóa người dùng thành công.');
         } catch (\Illuminate\Database\QueryException $e) {
             dd($e);
-            Session()->flash('flash_message_warning', 'NGười dùng không được có Chỉ đạo, Khách hàng hoặc Nhiệm vụ khi bị xóa.');
+            Session()->flash('flash_message_warning', 'Người dùng không được có Chỉ đạo, Khách hàng hoặc Nhiệm vụ khi bị xóa.');
         }
     }
 }

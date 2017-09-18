@@ -189,7 +189,7 @@ class LeadsController extends Controller
     public function update($id, UpdateLeadRequest $request)
     {
         $this->leads->update($id, $request);
-        Session()->flash('flash_message_warning', 'Chỉ đạo đã được cập nhật thành công!');
+        Session()->flash('flash_message', 'Chỉ đạo đã được cập nhật thành công!');
         return redirect()->route('leads.index');
     }
 

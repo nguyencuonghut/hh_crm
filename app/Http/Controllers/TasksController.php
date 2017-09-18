@@ -238,7 +238,7 @@ class TasksController extends Controller
     public function update($id, UpdateTaskRequest $request)
     {
         $this->tasks->update($id, $request);
-        Session()->flash('flash_message_warning', 'Nhiệm vụ sửa thành công!');
+        Session()->flash('flash_message', 'Nhiệm vụ sửa thành công!');
         return redirect()->route('tasks.index');
     }
 }
