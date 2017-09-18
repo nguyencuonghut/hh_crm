@@ -109,7 +109,7 @@ class UsersController extends Controller
                 return $tasks->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';
             })
             ->editColumn('client_id', function ($tasks) {
-                return $tasks->client->name;
+                return '<a href="' . route('clients.show', $tasks->client_id) . '">' . $tasks->client->name . '</a>';
             })
             ->addColumn('edit', function ($task) {
                 return '<a href="' . route("tasks.edit", $task->id) . '" class="btn btn-success">Sửa</a>';
@@ -144,7 +144,7 @@ class UsersController extends Controller
                 return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';
             })
             ->editColumn('client_id', function ($tasks) {
-                return $tasks->client->name;
+                return '<a href="' . route('clients.show', $tasks->client_id) . '">' . $tasks->client->name . '</a>';
             })
             ->addColumn('edit', function ($lead) {
                 return '<a href="' . route("leads.edit", $lead->id) . '" class="btn btn-success">Sửa</a>';
