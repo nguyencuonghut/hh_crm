@@ -146,7 +146,7 @@ class UserRepository implements UserRepositoryContract
     {
         $user = User::findorFail($id);
         if ($user->hasRole('super_administrator')) {
-            return Session()->flash('flash_message_warning', 'Not allowed to delete super admin');
+            return Session()->flash('flash_message_warning', 'Không cho phép xóa Super Admin');
         }
 
         if ($request->tasks == "move_all_tasks" && $request->task_user != "" ) {
@@ -161,10 +161,10 @@ class UserRepository implements UserRepositoryContract
 
         try {
             $user->delete();
-            Session()->flash('flash_message', 'User successfully deleted');
+            Session()->flash('flash_message', 'Xóa người dùng thành công.');
         } catch (\Illuminate\Database\QueryException $e) {
             dd($e);
-            Session()->flash('flash_message_warning', 'User can NOT have, leads, clients, or tasks assigned when deleted');
+            Session()->flash('flash_message_warning', 'NGười dùng không được có Chỉ đạo, Khách hàng hoặc Nhiệm vụ khi bị xóa.');
         }
     }
 }

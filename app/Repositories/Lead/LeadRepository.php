@@ -53,7 +53,7 @@ class LeadRepository implements LeadRepositoryContract
 
         $lead = Lead::create($input);
         $insertedId = $lead->id;
-        Session()->flash('flash_message', 'Lead successfully added!');
+        Session()->flash('flash_message', 'Thêm chỉ đạo thành công!');
 
         event(new \App\Events\LeadAction($lead, self::CREATED));
 

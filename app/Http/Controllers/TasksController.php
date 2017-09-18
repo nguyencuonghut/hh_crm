@@ -139,7 +139,7 @@ class TasksController extends Controller
     public function updateStatus($id, Request $request)
     {
         $this->tasks->updateStatus($id, $request);
-        Session()->flash('flash_message', 'Task is completed');
+        Session()->flash('flash_message', 'Nhiệm vụ được hoàn thành!');
         return redirect()->back();
     }
 
@@ -154,7 +154,7 @@ class TasksController extends Controller
 
 
         $this->tasks->updateAssign($id, $request);
-        Session()->flash('flash_message', 'New user is assigned');
+        Session()->flash('flash_message', 'Người dùng mới được gán.');
         return redirect()->back();
     }
 
@@ -166,7 +166,7 @@ class TasksController extends Controller
     public function updateTime($id, Request $request)
     {
         $this->tasks->updateTime($id, $request);
-        Session()->flash('flash_message', 'Time has been updated');
+        Session()->flash('flash_message', 'Thời gian được cập nhật.');
         return redirect()->back();
     }
 
@@ -215,7 +215,7 @@ class TasksController extends Controller
         $user_id = Auth::user()->id;
         // Cannot update the task if it is completed
         if (2 == $task_status){
-            Session()->flash('flash_message', 'Nhiệm vụ đã hoàn thành, không thể sửa được!');
+            Session()->flash('flash_message_warning', 'Nhiệm vụ đã hoàn thành, không thể sửa được!');
                 return redirect()->back();
         }
         // Update based on authority
@@ -225,7 +225,7 @@ class TasksController extends Controller
                 ->withClients($this->clients->listAllClients())
                 ->withUsers($this->users->getAllUsersWithDepartments());
         }else {
-            Session()->flash('flash_message', 'Bạn không có quyền sửa nhiệm vụ này!');
+            Session()->flash('flash_message_warning', 'Bạn không có quyền sửa nhiệm vụ này!');
             return redirect()->back();
         }
     }
@@ -238,7 +238,7 @@ class TasksController extends Controller
     public function update($id, UpdateTaskRequest $request)
     {
         $this->tasks->update($id, $request);
-        Session()->flash('flash_message', 'Task successfully updated');
+        Session()->flash('flash_message_warning', 'Nhiệm vụ sửa thành công!');
         return redirect()->route('tasks.index');
     }
 }

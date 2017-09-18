@@ -16,7 +16,7 @@ class CanClientCreate
     public function handle($request, Closure $next)
     {
         if (!auth()->user()->can('client-create')) {
-            Session()->flash('flash_message_warning', 'Not allowed to create client!');
+            Session()->flash('flash_message_warning', 'Không được quyền tạo khách hàng!');
             return redirect()->route('clients.index');
         }
 

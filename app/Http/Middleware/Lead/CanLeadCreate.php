@@ -16,7 +16,7 @@ class CanLeadCreate
     public function handle($request, Closure $next)
     {
         if (!auth()->user()->can('lead-create')) {
-            Session()->flash('flash_message_warning', 'Not allowed to create lead');
+            Session()->flash('flash_message_warning', 'Không được quyền tạo chỉ đạo!');
             return redirect()->route('leads.index');
         }
         return $next($request);

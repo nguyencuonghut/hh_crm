@@ -102,14 +102,14 @@ class LeadsController extends Controller
     public function store(StoreLeadRequest $request)
     {
         $getInsertedId = $this->leads->create($request);
-        Session()->flash('flash_message', 'Lead is created');
+        Session()->flash('flash_message', 'Chỉ đạo được tạo.');
         return redirect()->route('leads.show', $getInsertedId);
     }
 
     public function updateAssign($id, Request $request)
     {
         $this->leads->updateAssign($id, $request);
-        Session()->flash('flash_message', 'New user is assigned');
+        Session()->flash('flash_message', 'Người dùng mới được gán.');
         return redirect()->back();
     }
 
@@ -149,7 +149,7 @@ class LeadsController extends Controller
     public function updateStatus($id, Request $request)
     {
         $this->leads->updateStatus($id, $request);
-        Session()->flash('flash_message', 'Lead is completed');
+        Session()->flash('flash_message', 'Chỉ đạo được hoàn thành!');
         return redirect()->back();
     }
     /**
@@ -166,7 +166,7 @@ class LeadsController extends Controller
         $user_id = Auth::user()->id;
         // Cannot update the lead if it is completed
         if (2 == $lead_status){
-            Session()->flash('flash_message', 'Chỉ đạo đã hoàn thành, không thể sửa được!');
+            Session()->flash('flash_message_warning', 'Chỉ đạo đã hoàn thành, không thể sửa được!');
             return redirect()->back();
         }
         // Update based on authority
@@ -176,7 +176,7 @@ class LeadsController extends Controller
                 ->withClients($this->clients->listAllClients())
                 ->withUsers($this->users->getAllUsersWithDepartments());
         }else {
-            Session()->flash('flash_message', 'Bạn không có quyền sửa chỉ đạo này!');
+            Session()->flash('flash_message_warning', 'Bạn không có quyền sửa chỉ đạo này!');
             return redirect()->back();
         }
     }
@@ -189,7 +189,7 @@ class LeadsController extends Controller
     public function update($id, UpdateLeadRequest $request)
     {
         $this->leads->update($id, $request);
-        Session()->flash('flash_message', 'Chỉ đạo đã được cập nhật thành công!');
+        Session()->flash('flash_message_warning', 'Chỉ đạo đã được cập nhật thành công!');
         return redirect()->route('leads.index');
     }
 

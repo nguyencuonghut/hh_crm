@@ -26,7 +26,7 @@ class CanLeadUpdateStatus
         }
         $settingscomplete = $settings[0]['lead_complete_allowed'];
         if ($settingscomplete == 1  && Auth()->user()->id == $lead->fk_user_id_assign) {
-            Session()->flash('flash_message_warning', 'Only assigned user are allowed to close lead.');
+            Session()->flash('flash_message_warning', 'Chỉ người thực hiện mới có quyền đóng chỉ đạo!');
             return redirect()->back();
         }
         return $next($request);

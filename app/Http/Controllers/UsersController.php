@@ -234,7 +234,7 @@ class UsersController extends Controller
     public function update($id, UpdateUserRequest $request)
     {
         $this->users->update($id, $request);
-        Session()->flash('flash_message', 'User successfully updated');
+        Session()->flash('flash_message', 'Sửa người dùng thành công.');
         return redirect()->back();
     }
 

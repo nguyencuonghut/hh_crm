@@ -69,7 +69,7 @@ class TaskRepository implements TaskRepositoryContract
         $task = Task::create($input);
 
         $insertedId = $task->id;
-        Session()->flash('flash_message', 'Task successfully added!');
+        Session()->flash('flash_message', 'Thêm nhiệm vụ thành công!');
         event(new \App\Events\TaskAction($task, self::CREATED));
 
         return $insertedId;

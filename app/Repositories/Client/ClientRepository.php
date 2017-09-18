@@ -92,7 +92,7 @@ class ClientRepository implements ClientRepositoryContract
     public function create($requestData)
     {
         $client = Client::create($requestData);
-        Session()->flash('flash_message', 'Client successfully added');
+        Session()->flash('flash_message', 'Thêm mới khác hàng thành công.');
         event(new \App\Events\ClientAction($client, self::CREATED));
     }
 
@@ -114,9 +114,9 @@ class ClientRepository implements ClientRepositoryContract
         try {
             $client = Client::findorFail($id);
             $client->delete();
-            Session()->flash('flash_message', 'Client successfully deleted');
+            Session()->flash('flash_message', 'Xóa khách  hàng thành công.');
         } catch (\Illuminate\Database\QueryException $e) {
-            Session()->flash('flash_message_warning', 'Client can NOT have, leads, or tasks assigned when deleted');
+            Session()->flash('flash_message_warning', 'Khách hàng không có Nhiệm vụ hoặc Chỉ đạo được gán khi xóa.');
         }
     }
 

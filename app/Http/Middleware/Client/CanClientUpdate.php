@@ -16,7 +16,7 @@ class CanClientUpdate
     public function handle($request, Closure $next)
     {
         if (!auth()->user()->can('client-update')) {
-            Session()->flash('flash_message_warning', 'Not allowed to update client');
+            Session()->flash('flash_message_warning', 'Không được quyền sửa khách hàng!');
             return redirect()->route('clients.index');
         }
         return $next($request);
