@@ -30,7 +30,7 @@
                 <p>{{ __('Giao cho') }}:
                     <a href="{{route('users.show', $tasks->user->id)}}">
                         {{$tasks->user->name}}</a></p>
-                <p>{{ __('Ngày tạo') }}: {{ date('d F, Y, H:i', strtotime($tasks->created_at))}} </p>
+                <p>{{ __('Ngày tạo') }}: {{ date('d F, Y', strtotime($tasks->created_at))}} </p>
 
                 @if($tasks->days_until_deadline)
                     <p>{{ __('Deadline') }}: <span style="color:red;">{{date('d, F Y', strTotime($tasks->deadline))}}
