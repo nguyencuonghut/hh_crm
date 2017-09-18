@@ -44,8 +44,9 @@
                                     </a>
                                     <span class="glyphicon glyphicon-headphones" aria-hidden="true"> </span>
                                     <a href="mailto:{{$lead->user->work_number}}">
-                                    {{$lead->user->work_number}}</p>
-                                </a>
+                                    {{$lead->user->work_number}}
+                                    </a>
+                                </p>
 
                             </div>
                             <a href="{{route('users.show', $lead->user->id)}}"> {{$lead->user->name}}</a>
