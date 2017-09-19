@@ -64,25 +64,25 @@ class TaskActionNotification extends Notification
     {
         switch ($this->action) {
             case 'created':
-                $text = __(':title was created by :creator, and assigned to you', [
+                $text = __(':title được tạo bởi :creator, và gán cho bạn', [
                     'title' =>  $this->task->title,
                     'creator' => $this->task->creator->name,
                     ]);
                 break;
             case 'updated_status':
-                $text = __(':title was completed by :username', [
+                $text = __(':title được hoàn thành bởi :username', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);
                 break;
             case 'updated_time':
-                $text = __(':username inserted a new time for :title', [
+                $text = __(':username đã thêm thời gian mới cho :title', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);
                 break;
             case 'updated_assign':
-                $text = __(':username assigned a task to you', [
+                $text = __(':username gán công việc cho bạn', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);

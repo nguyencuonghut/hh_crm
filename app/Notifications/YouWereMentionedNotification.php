@@ -43,7 +43,7 @@ class YouWereMentionedNotification extends Notification
     public function toArray($notifiable)
     {
         $topic = $this->comment->commentable;
-        $text = __(':creator mentioned you in :topic', [
+        $text = __(':creator nhắc đến bạn ở :topic', [
             'topic' =>  $topic->title,
             'creator' => $notifiable->name,
             ]);

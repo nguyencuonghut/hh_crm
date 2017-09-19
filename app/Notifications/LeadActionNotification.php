@@ -64,25 +64,25 @@ class LeadActionNotification extends Notification
     {
         switch ($this->action) {
             case 'created':
-                $text = __(':title was created by :creator and assigned to you', [
+                $text = __(':title được tạo bởi :creator và gán cho bạn', [
                 'title' => $this->lead->title,
                 'creator' => $this->lead->creator->name
                 ]);
                 break;
             case 'updated_status':
-                $text = __(':title was completed by :username', [
+                $text = __(':title hoàn thành bởi :username', [
                 'title' => $this->lead->title,
                 'username' =>  Auth()->user()->name
                 ]);
                 break;
             case 'updated_deadline':
-                $text = __(':username updated the deadline for this :title', [
+                $text = __(':username sửa deadline cho :title', [
                 'title' => $this->lead->title,
                 'username' =>  Auth()->user()->name
                 ]);
                 break;
             case 'updated_assign':
-                $text = __(':username assigned a lead to you', [
+                $text = __(':username đã gán một chỉ đạo cho bạn', [
                 'username' =>  Auth()->user()->name
                 ]);
                 break;

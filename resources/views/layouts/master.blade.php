@@ -24,7 +24,7 @@
         <!--NOTIFICATIONS START-->
 <div class="menu">
    
-    <div class="notifications-header"><p>Notifications</p> </div>
+    <div class="notifications-header"><p>Thông báo</p> </div>
   <!-- Menu -->
  <ul>
  <?php $notifications = auth()->user()->unreadNotifications; ?>
