@@ -34,7 +34,9 @@
                     <option value="all">All</option>
                 </select>
             </th>
-            <th>{{ __('Địa chỉ') }}</th>
+            <th>Tỉnh</th>
+            <th>Huyện</th>
+            <th>Xã</th>
             <th></th>
             <th></th>
         </tr>
@@ -57,7 +59,10 @@
                 {data: 'client_type_id', name: 'client_type_id', orderable: false},
                 {data: 'product_category_id', name: 'product_category_id', orderable: false},
                 {data: 'group_id', name: 'group_id', orderable: false},
-                {data: 'fulladdr', name: 'fulladdr', orderable: false, searchable: false},
+                {data: 'province', name: 'province'},
+                {data: 'district', name: 'district'},
+                {data: 'ward', name: 'ward'},
+
                 @if(Entrust::can('client-update'))   
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
                 @endif
