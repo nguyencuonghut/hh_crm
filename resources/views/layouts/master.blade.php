@@ -125,6 +125,10 @@ $('body').click(function(e) {
                     <a href="{{ route('users.create')}}"
                        class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
+                @if(Entrust::can('user-create'))
+                    <a href="{{ route('data.importexportuser')}}"
+                       class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
+                @endif
             </div>
 
             <a href="#leads" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i

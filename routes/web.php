@@ -116,4 +116,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/newitem/{id}', 'InvoicesController@newItem')->name('invoice.new.item');
     });
         Route::resource('invoices', 'InvoicesController');
+
+    /**
+     * Data
+     */
+    Route::group(['prefix' => 'data'], function () {
+        Route::get('/importexportuser', ['uses' => 'DataController@importExportUser', 'as' => 'data.importexportuser'] );
+        Route::post('/importuser', ['uses' => 'DataController@importUser', 'as' => 'data.importuser'] );
+        Route::get('/downloaduserform/{type}', ['uses' => 'DataController@downloadUserForm', 'as' => 'data.downloaduserform'] );
+    });
 });
