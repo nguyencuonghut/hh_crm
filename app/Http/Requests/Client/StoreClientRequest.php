@@ -25,7 +25,7 @@ class StoreClientRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'client_code' => 'required',
+            'client_code' => '',
             'province' => 'required',
             'district'=> 'required',
             'ward' => 'required',

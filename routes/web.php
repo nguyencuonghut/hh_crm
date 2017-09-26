@@ -124,5 +124,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/importexportuser', ['uses' => 'DataController@importExportUser', 'as' => 'data.importexportuser'] );
         Route::post('/importuser', ['uses' => 'DataController@importUser', 'as' => 'data.importuser'] );
         Route::get('/downloaduserform/{type}', ['uses' => 'DataController@downloadUserForm', 'as' => 'data.downloaduserform'] );
+
+        Route::get('/importexportclient', ['uses' => 'DataController@importExportClient', 'as' => 'data.importexportclient'] );
+        Route::post('/importclient', ['uses' => 'DataController@importClient', 'as' => 'data.importclient'] );
+        Route::get('/downloadclientform/{type}', ['uses' => 'DataController@downloadClientForm', 'as' => 'data.downloadclientform'] );
     });
 });

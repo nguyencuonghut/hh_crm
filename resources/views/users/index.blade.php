@@ -10,7 +10,6 @@
             <th>{{ __('Tên') }}</th>
             <th>{{ __('Mã NV') }}</th>
             <th>{{ __('Mail') }}</th>
-            <th>{{ __('Vùng') }}</th>
             <th>{{ __('Số điện thoại') }}</th>
             <th></th>
             <th></th>
@@ -109,7 +108,6 @@
                 {data: 'namelink', name: 'name'},
                 {data: 'code', name: 'code'},
                 {data: 'email', name: 'email'},
-                {data: 'locale', name: 'locale', orderable: false, searchable: false},
                 {data: 'personal_number', name: 'personal_number'},
                     @if(Entrust::can('user-update'))
                 {
