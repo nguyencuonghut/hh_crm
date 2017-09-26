@@ -31,6 +31,7 @@
                     <option value="" disabled selected>{{ __('Phân loại') }}</option>
                     <option value="Đại lý/Trại tiềm năng">Đại lý/Trại tiềm năng</option>
                     <option value="Trại key">Trại key</option>
+                    <option value="Đại lý/Trại thường">Đại lý/Trại thường</option>
                     <option value="all">All</option>
                 </select>
             </th>
@@ -103,6 +104,8 @@
                 table.columns(3).search(1).draw();
             } else if(selected == 'Trại key') {
                 table.columns(3).search(2).draw();
+            } else if(selected == 'Đại lý/Trại thường') {
+                table.columns(3).search(3).draw();
             } else {
                 table.columns(3).search( '' ).draw();
             }

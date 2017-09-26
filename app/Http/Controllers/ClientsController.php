@@ -59,7 +59,13 @@ class ClientsController extends Controller
                 return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';
             })
             ->editColumn('group_id', function($clients) {
-                return $clients->group_id == 1 ? 'Đại lý/Trại tiềm năng' : 'Trại key';
+                if($clients->group_id == 1) {
+                    return 'Đại lý/Trại tiềm năng';
+                } else if($clients->group_id == 2) {
+                    return 'Trại key';
+                } else {
+                    return 'Đại lý/Trại thường';
+                }
             })
             ->editColumn('client_type_id', function($clients) {
                 return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';

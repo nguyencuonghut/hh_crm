@@ -27,6 +27,11 @@ class GroupsTableSeeder extends Seeder
                     'id'                    => 2,
                     'name'                  => 'Trại key',
                 ),
+            2 =>
+                array (
+                    'id'                    => 3,
+                    'name'                  => 'Đại lý/Trại thường',
+                ),
         ));
     }
 }

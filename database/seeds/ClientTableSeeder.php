@@ -21,7 +21,7 @@ class ClientsTableSeeder extends Seeder
                     'district'              => 'Bình Giang',
                     'ward'                  => 'Thái Học',
                     'client_type_id'        => '1',
-                    'group_id'              => 1,
+                    'group_id'              => 3,
                     'scale'                 => 100,
                     'pig_num'               => 10,
                     'broiler_chicken_num'   => 20,
