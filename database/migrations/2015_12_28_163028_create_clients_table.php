@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             //cuongnv
             $table->string('client_code')->nullable();
-            $table->string('primary_number');
+            $table->string('primary_number')->unique();
             $table->string('province');
             $table->string('district');
             $table->string('ward');

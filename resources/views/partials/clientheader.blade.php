@@ -131,11 +131,16 @@
             <p style="color:red"><span class="glyphicon glyphicon-heart" aria-hidden="true" data-toggle="tooltip"
                      title="{{ __('Key client') }}" data-placement="left"> </span>
                 <b>Trại key</b></p>
-            @elseif($client->group_id == 1)
+        @elseif($client->group_id == 1)
             <!--Candidate-->
                 <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-toggle="tooltip"
                                            title="{{ __('Candidate client') }}" data-placement="left"> </span>
                     Tiềm năng</p>
+        @elseif($client->group_id == 3)
+            <!--Candidate-->
+                <p><span class="glyphicon glyphicon-ok" aria-hidden="true" data-toggle="tooltip"
+                         title="{{ __('Normal client') }}" data-placement="left"> </span>
+                    Đại lý/Trại thường</p>
         @endif
         @if($client->client_type_id == 2)
             <!--Company Type-->
