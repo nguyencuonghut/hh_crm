@@ -159,13 +159,25 @@ class UsersController extends Controller
      */
     public function clientData($id)
     {
-        $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'primary_number', 'email', 'province', 'district', 'ward'])->where('user_id', $id);
+        $clients = Client::select(['id', 'name', 'client_code', 'client_type_id', 'group_id', 'company_name', 'primary_number', 'email', 'province', 'district', 'ward'])->where('user_id', $id);
         return Datatables::of($clients)
             ->addColumn('clientlink', function ($clients) {
                 return '<a href="' . route('clients.show', $clients->id) . '">' . $clients->name . '</a>';
             })
             ->addColumn('fulladdr', function ($clients) {
                 return "$clients->ward - $clients->district - $clients->province";
+            })
+            ->editColumn('client_type_id', function($clients) {
+                return $clients->client_type_id == 1 ? 'Đại lý' : 'Trại chăn nuôi';
+            })
+            ->editColumn('group_id', function($clients) {
+                if($clients->group_id == 1) {
+                    return 'Đại lý/Trại tiềm năng';
+                } else if($clients->group_id == 2) {
+                    return 'Trại key';
+                } else {
+                    return 'Đại lý/Trại thường';
+                }
             })
             ->editColumn('created_at', function ($clients) {
                 return $clients->created_at ? with(new Carbon($clients->created_at))
