@@ -1,6 +1,6 @@
 <div class="col-md-6">
 
-    <h1 class="moveup">{{$client->name}}</h1>
+    <h1 class="moveup"><a href="{{ route('clients.show', $client->id) }}">{{ $client->name }}</a></h1>
     <h5 style="color:darkblue"><b>({{$client->ward}} - {{$client->district}} - {{$client->province}})</b></h5>
 
     <!--Client info leftside-->
