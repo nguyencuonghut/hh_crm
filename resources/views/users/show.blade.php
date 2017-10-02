@@ -131,7 +131,7 @@
                 var table = $('#clients-table').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{!! url('users/clientdata/' . $user->id) !!}',
+                    ajax: '{!! route('users.clientdata', ['id' => $user->id]) !!}',
                     columns: [
 
                         {data: 'clientlink', name: 'name'},
