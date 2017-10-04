@@ -69,7 +69,7 @@
                     <div class="inner">
                         <h3>{{$totalClients}}</h3>
 
-                        <p>{{ __('Tất cả khách hàng') }}</p>
+                        <p>{{ __('Tổng số khách hàng') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person"></i>
@@ -96,6 +96,77 @@
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>{{ $allagents }} - {{ $allfarms }}</h3>
+                        <p>{{ __('Tổng số Đại lý - Trại chăn nuôi') }}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-clipboard"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3>{{ $allkeyclients }} - {{ $allcandidateclients }}</h3>
+                        <p>{{ __('Tổng số Trại key - Đại lý/trại tiềm năng') }}</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-key"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>{{ $allpigs }} - {{ $allbroilerchickens }} - {{ $allbroilerducks }} - {{ $allquails }}</h3>
+                        <p>{{ __('Tổng số Lợn - Gà thịt - Vịt thịt - Cút') }}</p>
+
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-social-octocat"></i>
+                    </div>
+                    <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
+                                class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3>{{ $allaquas }} - {{ $alllayerchickens }} - {{ $alllayerducks }} - {{ $allcows }}</h3>
+                        <p>{{ __('Tổng số Thủy sản - Gà đẻ - Vịt đẻ - Bò') }}</p>
+
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-social-octocat"></i>
                     </div>
                     <a href="#" class="small-box-footer"> {{ __('Xem thêm') }} <i
                                 class="fa fa-arrow-circle-right"></i></a>

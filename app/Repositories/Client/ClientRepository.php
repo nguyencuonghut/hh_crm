@@ -54,6 +54,66 @@ class ClientRepository implements ClientRepositoryContract
         return Client::all()->count();
     }
 
+
+
+    /**
+     * @return int cuongnv
+     */
+    public function getAllAgentsCount()
+    {
+        return Client::all()->where('client_type_id', 1)->count();
+    }
+
+    public function getAllKeyClientsCount()
+    {
+        return Client::all()->where('group_id', 2)->count();
+    }
+
+    public function getAllCandidateClientsCount()
+    {
+        return Client::all()->where('group_id', 1)->count();
+    }
+    public function getAllPigsCount()
+    {
+        return Client::sum('pig_num');
+    }
+
+    public function getAllBroilerChickensCount()
+    {
+        return Client::sum('broiler_chicken_num');
+    }
+    public function getAllBroilerDucksCount()
+    {
+        return Client::sum('broiler_duck_num');
+    }
+    public function getAllQuailsCount()
+    {
+        return Client::sum('quail_num');
+    }
+    public function getAllAquasCount()
+    {
+        return Client::sum('aqua_num');
+    }
+    public function getAllLayerChickensCount()
+    {
+        return Client::sum('layer_chicken_num');
+    }
+    public function getAllLayerDucksCount()
+    {
+        return Client::sum('layer_duck_num');
+    }
+    public function getAllCowsCount()
+    {
+        return Client::sum('cow_num');
+    }
+    /**
+     * @return int cuongnv
+     */
+    public function getAllFarmsCount()
+    {
+        return Client::all()->where('client_type_id', 2)->count();
+    }
+
     /**
      * @return mixed
      */
