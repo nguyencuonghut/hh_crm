@@ -42,6 +42,8 @@ class CreateClientsTable extends Migration
             $table->dateTime('animal_date')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('giam_sat_id')->unsigned();
+            $table->foreign('giam_sat_id')->references('id')->on('users');
             $table->text('note')->nullable();
 
 
