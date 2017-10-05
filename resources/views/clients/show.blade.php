@@ -40,6 +40,7 @@
             @include('clients.tabs.leadtab')
             @include('clients.tabs.documenttab')
             @include('clients.tabs.invoicetab')
+            <a href="{{ route("clients.edit", $client->id) }}"><button class="btn btn-success btn-md" style="margin-left: 10px">Sửa thông tin khách hàng</button></a>
         </div>
     </div>
     <div class="col-md-4 currenttask">
