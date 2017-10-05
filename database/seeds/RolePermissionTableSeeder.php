@@ -46,6 +46,30 @@ class RolePermissionTableSeeder extends Seeder
         $updateClient->timestamps = false;
         $updateClient->save();
 
+        $createClient = new PermissionRole;
+        $createClient->role_id = '2';
+        $createClient->permission_id = '4';
+        $createClient->timestamps = false;
+        $createClient->save();
+
+        $updateClient = new PermissionRole;
+        $updateClient->role_id = '2';
+        $updateClient->permission_id = '5';
+        $updateClient->timestamps = false;
+        $updateClient->save();
+
+        $createClient = new PermissionRole;
+        $createClient->role_id = '3';
+        $createClient->permission_id = '4';
+        $createClient->timestamps = false;
+        $createClient->save();
+
+        $updateClient = new PermissionRole;
+        $updateClient->role_id = '3';
+        $updateClient->permission_id = '5';
+        $updateClient->timestamps = false;
+        $updateClient->save();
+
         $deleteClient = new PermissionRole;
         $deleteClient->role_id = '1';
         $deleteClient->permission_id = '6';
