@@ -167,6 +167,36 @@ class UsersTableSeeder extends Seeder
                     'created_at' => '2016-06-04 13:42:19',
                     'updated_at' => '2016-06-04 13:42:19',
                 ),
+            10 =>
+                array (
+                    'id' => 11,
+                    'name' => 'Đào Trung Thành',
+                    'code' => 'KD558',
+                    'email' => 'daotrungthanh@honghafeed.com.vn',
+                    'password' => bcrypt('Hongha@123'),
+                    'address' => '',
+                    'work_number' => 0,
+                    'personal_number' => '0962961456',
+                    'image_path' => '',
+                    'remember_token' => null,
+                    'created_at' => '2016-06-04 13:42:19',
+                    'updated_at' => '2016-06-04 13:42:19',
+                ),
+            11 =>
+                array (
+                    'id' => 12,
+                    'name' => 'Đỗ Đức Tiến',
+                    'code' => 'LD001',
+                    'email' => 'doductien@honghafeed.com.vn',
+                    'password' => bcrypt('Hongha@123'),
+                    'address' => '',
+                    'work_number' => 0,
+                    'personal_number' => '0913203608',
+                    'image_path' => '',
+                    'remember_token' => null,
+                    'created_at' => '2016-06-04 13:42:19',
+                    'updated_at' => '2016-06-04 13:42:19',
+                ),
         ));
     }
 }

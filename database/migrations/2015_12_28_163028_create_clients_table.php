@@ -46,6 +46,12 @@ class CreateClientsTable extends Migration
             $table->foreign('giam_sat_id')->references('id')->on('users');
             $table->integer('truong_vung_id')->unsigned()->default(1);
             $table->foreign('truong_vung_id')->references('id')->on('users');
+            $table->integer('gd_vung_id')->unsigned()->default(1);
+            $table->foreign('gd_vung_id')->references('id')->on('users');
+            $table->integer('pgd_id')->unsigned()->default(1);
+            $table->foreign('pgd_id')->references('id')->on('users');
+            $table->integer('gd_id')->unsigned()->default(1);
+            $table->foreign('gd_id')->references('id')->on('users');
             $table->text('note')->nullable();
 
 

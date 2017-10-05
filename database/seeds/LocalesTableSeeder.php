@@ -107,5 +107,15 @@ class LocalesTableSeeder extends Seeder
             'locale_id' => 2,
             'user_id' => 10
         ]);
+
+        \DB::table('locale_user')->insert([
+            'locale_id' => 2,
+            'user_id' => 11
+        ]);
+
+        \DB::table('locale_user')->insert([
+            'locale_id' => 2,
+            'user_id' => 12
+        ]);
     }
 }
