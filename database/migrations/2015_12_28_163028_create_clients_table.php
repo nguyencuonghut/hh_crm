@@ -40,9 +40,9 @@ class CreateClientsTable extends Migration
             $table->foreign('product_category_id')->references('id')->on('product_categories');
             $table->dateTime('signature_date')->nullable();
             $table->dateTime('animal_date')->nullable();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->default(0);
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('giam_sat_id')->unsigned();
+            $table->integer('giam_sat_id')->unsigned()->default(0);
             $table->foreign('giam_sat_id')->references('id')->on('users');
             $table->text('note')->nullable();
 
