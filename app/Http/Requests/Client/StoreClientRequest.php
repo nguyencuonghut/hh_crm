@@ -39,7 +39,12 @@ class StoreClientRequest extends FormRequest
             'primary_number' => 'required|max:10',
             'secondary_number' => 'max:10',
             'company_type' => '',
-            'user_id' => 'required'
+            'user_id' => 'required',
+            'gs_tv_id' => 'required',
+            'gd_vung_id' => 'required',
+            'pgd_id' => 'required',
+            'gd_id' => 'required'
+
         ];
     }
 }

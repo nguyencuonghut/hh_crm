@@ -36,7 +36,11 @@ class Client extends Model
         'secondary_number',
         'industry_id',
         'company_type',
-        'user_id'];
+        'user_id',
+        'gs_tv_id',
+        'gd_vung_id',
+        'pgd_id',
+        'gd_id'];
 
     public function user()
     {

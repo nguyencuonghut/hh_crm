@@ -189,6 +189,26 @@
     {!! Form::select('user_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
 
 </div>
+<div class="form-group">
+    {!! Form::label('gs_tv_id', 'Giám sát/Trưởng vùng:', ['class' => 'control-label']) !!}
+    {!! Form::select('gs_tv_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+<div class="form-group">
+    {!! Form::label('gd_vung_id', 'Giám đốc vùng:', ['class' => 'control-label']) !!}
+    {!! Form::select('gd_vung_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+<div class="form-group">
+    {!! Form::label('pgd_id', 'Phó giám đốc:', ['class' => 'control-label']) !!}
+    {!! Form::select('pgd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+<div class="form-group">
+    {!! Form::label('gd_id', 'Giám đốc:', ['class' => 'control-label']) !!}
+    {!! Form::select('gd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
 
 
 <!-- ~cuongnv -->

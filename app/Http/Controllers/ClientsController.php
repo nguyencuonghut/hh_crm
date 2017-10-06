@@ -7,6 +7,7 @@ use Datatables;
 use App\Models\Client;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Auth;
 use App\Http\Requests\Client\StoreClientRequest;
 use App\Http\Requests\Client\UpdateClientRequest;
 use App\Repositories\User\UserRepositoryContract;
@@ -47,7 +48,19 @@ class ClientsController extends Controller
      */
     public function anyData()
     {
-        $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id']);
+        //Only show all Clients for administrator
+        if(1 == Auth::user()->userRole()->first()->role_id) {
+            $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id']);
+        } else {
+            $id = Auth::user()->id;
+            $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id'])
+            ->where('user_id', $id)
+            ->orWhere('gs_tv_id', $id)
+            ->orWhere('gd_vung_id', $id)
+            ->orWhere('pgd_id', $id)
+            ->orWhere('gd_id', $id)
+            ->get();
+        }
         return Datatables::of($clients)
             ->addColumn('namelink', function ($clients) {
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
