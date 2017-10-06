@@ -160,8 +160,7 @@ class UsersController extends Controller
     public function clientData($id)
     {
         $clients = Client::select(['id', 'name', 'client_code', 'client_type_id', 'group_id', 'company_name', 'primary_number', 'email', 'province', 'district', 'ward'])->where('user_id', $id)
-            ->orWhere('giam_sat_id', $id)
-            ->orWhere('truong_vung_id', $id)
+            ->orWhere('gs_tv_id', $id)
             ->orWhere('gd_vung_id', $id)
             ->orWhere('pgd_id', $id)
             ->orWhere('gd_id', $id)->get();
