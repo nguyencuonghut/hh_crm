@@ -27,7 +27,7 @@ class LocalesController extends Controller
     public function index()
     {
         return view('locales.index')
-            ->withLocale($this->locales->getAllLocales());
+            ->withLocales($this->locales->getAllLocales());
     }
 
     /**

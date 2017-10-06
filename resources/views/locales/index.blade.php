@@ -9,6 +9,7 @@
             <tr>
                 <th>{{ __('Tên') }}</th>
                 <th>{{ __('Mô tả') }}</th>
+                <th>{{ __('Trưởng vùng') }}</th>
                 @if(Entrust::hasRole('administrator'))
                     <th>{{ __('Hành động') }}</th>
                 @endif
@@ -16,10 +17,11 @@
             </thead>
             <tbody>
 
-            @foreach($locale as $locale)
+            @foreach($locales as $locale)
                 <tr>
                     <td>{{$locale->name}}</td>
                     <td>{{Str_limit($locale->description, 50)}}</td>
+                    <td>{{ $locale->manager->name }}</td>
                     @if(Entrust::hasRole('administrator'))
                         <td>   {!! Form::open([
             'method' => 'DELETE',

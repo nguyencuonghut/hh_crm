@@ -8,6 +8,12 @@ class Locale extends Model
     protected $fillable =
         [
             'name',
-            'description'
+            'description',
+            'manager_id'
         ];
+
+    public function manager()
+    {
+        return $this->belongsTo(User::class, 'manager_id', 'id');
+    }
 }

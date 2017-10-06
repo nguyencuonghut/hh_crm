@@ -17,6 +17,8 @@ class CreateLocalesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->integer('manager_id')->unsigned();
+            $table->foreign('manager_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

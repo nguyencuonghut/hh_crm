@@ -16,46 +16,55 @@ class LocalesTableSeeder extends Seeder
         $createLocale = new Locale;
         $createLocale->id = '1';
         $createLocale->name = 'Vùng 1';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '2';
         $createLocale->name = 'Vùng 2';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '3';
         $createLocale->name = 'Vùng 3';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '4';
         $createLocale->name = 'Vùng 4';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '5';
         $createLocale->name = 'Vùng 5';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '6';
         $createLocale->name = 'Vùng 6';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '7';
         $createLocale->name = 'Vùng 7';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '8';
         $createLocale->name = 'Vùng 8';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         $createLocale = new Locale;
         $createLocale->id = '9';
         $createLocale->name = 'Vùng 9';
+        $createLocale->manager_id = 11;
         $createLocale->save();
 
         \DB::table('locale_user')->insert([
