@@ -29,14 +29,14 @@ class TaskActionLog
     {
         switch ($event->getAction()) {
             case 'created':
-                $text = __(':title was created by :creator and assigned to :assignee', [
+                $text = __(':title được tạo bởi :creator và giao cho :assignee', [
                         'title' => $event->getTask()->title,
                         'creator' => $event->getTask()->creator->name,
                         'assignee' => $event->getTask()->user->name
                     ]);
                 break;
             case 'updated_status':
-                $text = __('Task was completed by :username', [
+                $text = __('Nhiệm vụ được hoàn thành bởi :username', [
                         'username' => Auth()->user()->name,
                     ]);
                 break;
@@ -47,7 +47,7 @@ class TaskActionLog
                 ;
                 break;
             case 'updated_assign':
-                $text = __(':username assigned task to :assignee', [
+                $text = __(':username giao cho :assignee', [
                         'username' => Auth()->user()->name,
                         'assignee' => $event->getTask()->user->name
                     ]);

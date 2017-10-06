@@ -95,7 +95,8 @@
             </button>
             @if($tasks->invoice)
                 <a href="/invoices/{{$tasks->invoice->id}}">See the invoice</a>
-            @endif 
+            @endif
+            ~cuongnv -->
             <div class="activity-feed movedown">
                 @foreach($tasks->activity as $activity)
                     <div class="feed-item">
@@ -106,6 +107,7 @@
                 @endforeach
             </div>
 
+            <!-- cuongnv
             @include('invoices._invoiceLineModal', ['title' => $tasks->title, 'id' => $tasks->id, 'type' => 'task'])
             ~cuongnv-->
         </div>

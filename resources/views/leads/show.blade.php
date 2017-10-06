@@ -38,7 +38,7 @@
                                 data-target="#ModalFollowUp"></i></p> <!--Remove days left if lead is completed-->
 
                 @else
-                    <p>{{ __('Follow up') }}: <span style="color:green;">{{date('d, F Y, H:i', strTotime($lead->contact_date))}}
+                    <p>{{ __('Follow up') }}: <span style="color:red;">{{date('d, F Y, H:i', strTotime($lead->contact_date))}}
 
                             @if($lead->status == 1) ({!! $lead->days_until_contact !!})<i
                                     class="glyphicon glyphicon-calendar" data-toggle="modal"

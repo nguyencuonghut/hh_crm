@@ -30,24 +30,24 @@ class LeadActionLog
     {
         switch ($event->getAction()) {
             case 'created':
-                $text = __(':title was created by :creator and assigned to :assignee', [
+                $text = __(':title được tạo bởi :creator và giao cho :assignee', [
                     'title' => $event->getLead()->title,
                     'creator' => $event->getLead()->creator->name,
                     'assignee' => $event->getLead()->user->name
                 ]);
                 break;
             case 'updated_status':
-                $text = __('Lead was completed by :username', [
+                $text = __('Chỉ đạo được hoàn thành bởi :username', [
                     'username' => Auth()->user()->name,
                 ]);
                 break;
             case 'updated_deadline':
-                $text = __(':username updated the deadline for this lead', [
+                $text = __(':username đã sửa deadline cho chỉ đạo này', [
                     'username' => Auth()->user()->name,
                 ]);
                 break;
             case 'updated_assign':
-                $text = __(':username assigned lead to :assignee', [
+                $text = __(':username giao cho :assignee', [
                     'username' => Auth()->user()->name,
                     'assignee' => $event->getLead()->user->name
                 ]);
