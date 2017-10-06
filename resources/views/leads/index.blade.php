@@ -9,8 +9,9 @@
         <tr>
 
             <th>{{ __('Tiêu đề') }}</th>
-            <th>{{ __('Người tạo') }}</th>
+            <th>{{ __('Ngày tạo') }}</th>
             <th>{{ __('Deadline') }}</th>
+            <th>{{ __('Người tạo') }}</th>
             <th>{{ __('Giao cho') }}</th>
             <th>
                 <select name="status" id="status-task">
@@ -37,8 +38,9 @@
             columns: [
 
                 {data: 'titlelink', name: 'title'},
-                {data: 'user_created_id', name: 'user_created_id'},
+                {data: 'created_at', name: 'created_at',},
                 {data: 'contact_date', name: 'contact_date',},
+                {data: 'user_created_id', name: 'user_created_id'},
                 {data: 'user_assigned_id', name: 'user_assigned_id'},
                 {data: 'status', name: 'status', orderable: false},
                 @if(Entrust::can('lead-update'))
@@ -53,11 +55,11 @@
         $('#status-task').change(function() {
             selected = $("#status-task option:selected").val();
             if(selected == 'open') {
-                table.columns(4).search(1).draw();
+                table.columns(5).search(1).draw();
             } else if(selected == 'closed') {
-                table.columns(4).search(2).draw();
+                table.columns(5).search(2).draw();
             } else {
-                table.columns(4).search( '' ).draw();
+                table.columns(5).search( '' ).draw();
             }
         });
     });

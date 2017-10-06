@@ -56,9 +56,16 @@ class LeadsController extends Controller
      */
     public function anyData()
     {
-        $leads = Lead::select(
-            ['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'contact_date']
-        );
+        //Only show all Tasks for administrator
+        if(1 == Auth::user()->userRole()->first()->role_id) {
+            $leads = Lead::select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date']);
+        } else {
+            $id = Auth::user()->id;
+            $leads = Lead::select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date'])
+                ->where('user_created_id', $id)
+                ->orWhere('user_assigned_id', $id)
+                ->get();
+        }
         return Datatables::of($leads)
             ->addColumn('titlelink', function ($leads) {
                 return '<a href="leads/' . $leads->id . '" ">' . $leads->title . '</a>';
@@ -66,6 +73,10 @@ class LeadsController extends Controller
             ->editColumn('user_created_id', function ($leads) {
                 return '<a href="' . route('users.show', $leads->user_created_id) . '">' . $leads->creator->name . '</a>';
 
+            })
+            ->editColumn('created_at', function ($leads) {
+                return $leads->created_at ? with(new Carbon($leads->created_at))
+                    ->format('d/m/Y') : '';
             })
             ->editColumn('contact_date', function ($leads) {
                 return $leads->contact_date ? with(new Carbon($leads->contact_date))
