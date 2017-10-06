@@ -22,5 +22,8 @@
 
     <!--Address-->
     <p><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-        {{ $contact->locale->first()->name }}  </p>
+        {{ $contact->locale->first()->name }} -  GĐV: <a href="{{route('users.show', \App\Models\Locale::find($contact->locale->first()->id)->manager->id)}}">
+            {{ \App\Models\Locale::find($contact->locale->first()->id)->manager->name }}
+        </a>
+    </p>
 </div>
