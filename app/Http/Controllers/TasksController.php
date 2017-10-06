@@ -58,10 +58,16 @@ class TasksController extends Controller
 
     public function anyData()
     {
-        $tasks = Task::select(
-            ['id', 'title', 'created_at', 'deadline', 'user_assigned_id', 'status']
-        );
-         //   ->where('status', 1)->get();
+        //Only show all Tasks for administrator
+        if(1 == Auth::user()->userRole()->first()->role_id) {
+            $tasks = Task::select(['id', 'title', 'created_at', 'deadline', 'user_created_id', 'user_assigned_id', 'status']);
+        } else {
+            $id = Auth::user()->id;
+            $tasks = Task::select(['id', 'title', 'created_at', 'deadline', 'user_created_id','user_assigned_id', 'status'])
+                ->where('user_created_id', $id)
+                ->orWhere('user_assigned_id', $id)
+                ->get();
+        }
         return Datatables::of($tasks)
             ->addColumn('titlelink', function ($tasks) {
                 return '<a href="tasks/' . $tasks->id . '" ">' . $tasks->title . '</a>';
@@ -76,6 +82,10 @@ class TasksController extends Controller
             ->editColumn('deadline', function ($tasks) {
                 return $tasks->deadline ? with(new Carbon($tasks->deadline))
                     ->format('d/m/Y') : '';
+            })
+            ->editColumn('user_created_id', function ($tasks) {
+                return '<a href="' . route('users.show', $tasks->user_created_id) . '">' . $tasks->createdUser->name . '</a>';
+
             })
             ->editColumn('user_assigned_id', function ($tasks) {
                 return '<a href="' . route('users.show', $tasks->user_assigned_id) . '">' . $tasks->user->name . '</a>';
