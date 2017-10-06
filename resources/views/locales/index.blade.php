@@ -25,7 +25,7 @@
                     @if(Entrust::hasRole('administrator'))
                         <td>   {!! Form::open([
             'method' => 'DELETE',
-            'route' => ['departments.destroy', $locale->id]
+            'route' => ['locales.destroy', $locale->id]
         ]); !!}
                             {!! Form::submit( __('Xóa'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
 

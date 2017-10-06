@@ -14,6 +14,10 @@
         {!! Form::label( __('Description'), 'Mô tả:', ['class' => 'control-label']) !!}
         {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
     </div>
+
+    {!! Form::label('manager_id', __('Giám đốc vùng:'), ['class' => 'control-label']) !!}
+    {!! Form::select('manager_id', $users, null, ['class' => 'form-control']) !!}
+    <br>
     {!! Form::submit("Tạo mới", ['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}

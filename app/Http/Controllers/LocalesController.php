@@ -5,19 +5,23 @@ use Session;
 use App\Http\Requests;
 use App\Http\Requests\Locale\StoreLocaleRequest;
 use App\Repositories\Locale\LocaleRepositoryContract;
+use App\Repositories\User\UserRepositoryContract;
 
 class LocalesController extends Controller
 {
 
     protected $locales;
+    protected $users;
 
     /**
      * LocalesController constructor.
      * @param LocaleRepositoryContract $locales
      */
-    public function __construct(LocaleRepositoryContract $locales)
+    public function __construct(LocaleRepositoryContract $locales,
+                                UserRepositoryContract $users)
     {
         $this->locales = $locales;
+        $this->users = $users;
         $this->middleware('user.is.admin', ['only' => ['create', 'destroy']]);
     }
 
@@ -35,7 +39,8 @@ class LocalesController extends Controller
      */
     public function create()
     {
-        return view('locales.create');
+        return view('locales.create')
+            ->withUsers($this->users->getAllUsersWithDepartments());
     }
 
     /**
