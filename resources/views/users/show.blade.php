@@ -76,7 +76,7 @@
                     <th>
                         <select name="client-product" id="client-product">
                             <option value="" disabled selected>{{ __('Sản phẩm') }}</option>
-                            <option value="100% Hồng Hà">100% Hồng Hà</option>
+                            <option value="Hồng Hà">Hồng Hà</option>
                             <option value="Hồng Hà + Công ty khác">Hồng Hà + Công ty khác</option>
                             <option value="Công ty khác">Công ty khác</option>
                             <option value="all">All</option>
@@ -88,11 +88,12 @@
     </el-tab-pane>
   </el-tabs>
   </div>
-  <div class="col-sm-4">
+    <hr>
+  <div class="col-sm-6">
         <h4>{{ __('Nhiệm vụ') }}</h4>
         <doughnut :statistics="{{$task_statistics}}"></doughnut>
   </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <h4>{{ __('Giao việc') }}</h4>
         <doughnut :statistics="{{$lead_statistics}}"></doughnut>
     </div>
@@ -183,7 +184,7 @@
                 });
                 $('#client-product').change(function() {
                     selected = $("#client-product option:selected").val();
-                    if(selected == '100% Hồng Hà') {
+                    if(selected == 'Hồng Hà') {
                         table.columns(6).search(1).draw();
                     } else if(selected == 'Hồng Hà + Công ty khác') {
                         table.columns(6).search(2).draw();

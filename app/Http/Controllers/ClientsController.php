@@ -86,7 +86,7 @@ class ClientsController extends Controller
             ->editColumn('product_category_id', function($clients) {
                 switch($clients->product_category_id) {
                     case 1:
-                        $product = '100% Hồng Hà';
+                        $product = 'Hồng Hà';
                         break;
                     case 2:
                         $product = 'Hồng Hà + Công ty khác';

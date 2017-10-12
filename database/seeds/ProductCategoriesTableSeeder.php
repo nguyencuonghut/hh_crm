@@ -20,7 +20,7 @@ class ProductCategoriesTableSeeder extends Seeder
             0 =>
                 array (
                     'id'                    => 1,
-                    'name'                  => '100% Hồng Hà',
+                    'name'                  => 'Hồng Hà',
                 ),
             1 =>
                 array (

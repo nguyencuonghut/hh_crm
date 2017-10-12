@@ -20,7 +20,7 @@
             <th>
                 <select name="product-category" id="product-category">
                     <option value="" disabled selected>{{ __('Dùng sản phẩm') }}</option>
-                    <option value="100% Hồng Hà">100% Hồng Hà</option>
+                    <option value="Hồng Hà">Hồng Hà</option>
                     <option value="Hồng Hà + Công ty khác">Hồng Hà + Công ty khác</option>
                     <option value="Công ty khác">Công ty khác</option>
                     <option value="all">All</option>
@@ -87,7 +87,7 @@
 
         $('#product-category').change(function() {
             selected = $("#product-category option:selected").val();
-            if(selected == '100% Hồng Hà') {
+            if(selected == 'Hồng Hà') {
                 table.columns(2).search(1).draw();
             } else if(selected == 'Hồng Hà + Công ty khác') {
                 table.columns(2).search(2).draw();

@@ -188,7 +188,7 @@ class UsersController extends Controller
             })
             ->editColumn('product_category_id', function($clients) {
                 if($clients->product_category_id == 1) {
-                    return '100% Hồng Hà';
+                    return 'Hồng Hà';
                 } else if($clients->product_category_id == 2) {
                     return 'Hồng Hà + Công ty khác';
                 } else {
