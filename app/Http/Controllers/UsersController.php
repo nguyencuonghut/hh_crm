@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Repositories\Client\ClientRepositoryContract;
 use Gate;
 use Carbon;
 use Datatables;
@@ -36,7 +37,8 @@ class UsersController extends Controller
         LocaleRepositoryContract $locales,
         SettingRepositoryContract $settings,
         TaskRepositoryContract $tasks,
-        LeadRepositoryContract $leads
+        LeadRepositoryContract $leads,
+        ClientRepositoryContract $clients
     )
     {
         $this->users = $users;
@@ -46,6 +48,7 @@ class UsersController extends Controller
         $this->settings = $settings;
         $this->tasks = $tasks;
         $this->leads = $leads;
+        $this->clients = $clients;
         $this->middleware('user.create', ['only' => ['create']]);
     }
 
@@ -159,7 +162,7 @@ class UsersController extends Controller
      */
     public function clientData($id)
     {
-        $clients = Client::select(['id', 'name', 'client_code', 'client_type_id', 'group_id', 'company_name', 'primary_number', 'email', 'province', 'district', 'ward'])->where('user_id', $id)
+        $clients = Client::select(['id', 'name', 'client_code', 'client_type_id', 'group_id', 'product_category_id', 'company_name', 'primary_number', 'email', 'province', 'district', 'ward'])->where('user_id', $id)
             ->orWhere('gs_tv_id', $id)
             ->orWhere('gd_vung_id', $id)
             ->orWhere('pgd_id', $id)
@@ -181,6 +184,15 @@ class UsersController extends Controller
                     return 'Trại key';
                 } else {
                     return 'Đại lý/Trại thường';
+                }
+            })
+            ->editColumn('product_category_id', function($clients) {
+                if($clients->product_category_id == 1) {
+                    return '100% Hồng Hà';
+                } else if($clients->product_category_id == 2) {
+                    return 'Hồng Hà + Công ty khác';
+                } else {
+                    return 'Công ty khác';
                 }
             })
             ->editColumn('created_at', function ($clients) {
@@ -226,7 +238,8 @@ class UsersController extends Controller
             ->withUser($this->users->find($id))
             ->withCompanyname($this->settings->getCompanyName())
             ->withTaskStatistics($this->tasks->totalOpenAndClosedTasks($id))
-            ->withLeadStatistics($this->leads->totalOpenAndClosedLeads($id));
+            ->withLeadStatistics($this->leads->totalOpenAndClosedLeads($id))
+            ->withClientStatistics($this->clients->totalProducts($id));
     }
 
     /**

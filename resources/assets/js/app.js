@@ -5,9 +5,11 @@
  */
 
 require('./bootstrap');
+import Vue from 'vue';
 import ElementUI from 'element-ui';
 import graphline from './components/Graphline.vue';
 import doughnut from './components/Doughnut.vue';
+import pie from './components/Pie.vue';
 import message from './components/Message.vue';
 import 'element-ui/lib/theme-default/index.css';
 /**
@@ -94,8 +96,9 @@ $('.search-select')
 var app = new Vue({
     el: '#wrapper',
     components: {
-      graphline,
-      doughnut,
-      message
+        graphline,
+        doughnut,
+        pie,
+        message
     }
 });

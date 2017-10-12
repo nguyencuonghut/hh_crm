@@ -73,6 +73,15 @@
                             <option value="all">All</option>
                         </select>
                     </th>
+                    <th>
+                        <select name="client-product" id="client-product">
+                            <option value="" disabled selected>{{ __('Sản phẩm') }}</option>
+                            <option value="100% Hồng Hà">100% Hồng Hà</option>
+                            <option value="Hồng Hà + Công ty khác">Hồng Hà + Công ty khác</option>
+                            <option value="Công ty khác">Công ty khác</option>
+                            <option value="all">All</option>
+                        </select>
+                    </th>
                 </tr>
                 </thead>
             </table>
@@ -80,11 +89,17 @@
   </el-tabs>
   </div>
   <div class="col-sm-4">
-  <h4>{{ __('Nhiệm vụ') }}</h4>
-<doughnut :statistics="{{$task_statistics}}"></doughnut>
-<h4>{{ __('Giao việc') }}</h4>
-<doughnut :statistics="{{$lead_statistics}}"></doughnut>
+        <h4>{{ __('Nhiệm vụ') }}</h4>
+        <doughnut :statistics="{{$task_statistics}}"></doughnut>
   </div>
+    <div class="col-sm-4">
+        <h4>{{ __('Giao việc') }}</h4>
+        <doughnut :statistics="{{$lead_statistics}}"></doughnut>
+    </div>
+    <div class="col-sm-6">
+        <h4>{{ __('Cơ cấu sản phẩm') }}</h4>
+        <pie :statistics="{{$client_statistics}}"></pie>
+    </div>
 
    @stop 
 @push('scripts')
@@ -140,6 +155,7 @@
                         {data: 'ward', name: 'ward'},
                         {data: 'client_type_id', name: 'client_type_id', orderable: false},
                         {data: 'group_id', name: 'group_id', orderable: false},
+                        {data: 'product_category_id', name: 'product_category_id', orderable: false},
 
                     ]
                 });
@@ -163,6 +179,18 @@
                         table.columns(5).search(3).draw();
                     } else {
                         table.columns(5).search( '' ).draw();
+                    }
+                });
+                $('#client-product').change(function() {
+                    selected = $("#client-product option:selected").val();
+                    if(selected == '100% Hồng Hà') {
+                        table.columns(6).search(1).draw();
+                    } else if(selected == 'Hồng Hà + Công ty khác') {
+                        table.columns(6).search(2).draw();
+                    } else if(selected == 'Công ty khác') {
+                        table.columns(6).search(3).draw();
+                    } else {
+                        table.columns(6).search( '' ).draw();
                     }
                 });
             });
