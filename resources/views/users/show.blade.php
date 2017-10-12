@@ -67,9 +67,9 @@
                     <th>
                         <select name="client-group" id="client-group">
                             <option value="" disabled selected>{{ __('Phân loại') }}</option>
-                            <option value="Đại lý/Trại tiềm năng">Đại lý/Trại tiềm năng</option>
+                            <option value="Tiềm năng">Tiềm năng</option>
                             <option value="Trại key">Trại key</option>
-                            <option value="Đại lý/Trại thường">Đại lý/Trại thường</option>
+                            <option value="Thường">Thường</option>
                             <option value="all">All</option>
                         </select>
                     </th>
@@ -100,6 +100,10 @@
     <div class="col-sm-6">
         <h4>{{ __('Cơ cấu sản phẩm') }}</h4>
         <pie :statistics="{{$client_statistics}}"></pie>
+    </div>
+    <div class="col-sm-6">
+        <h4>{{ __('Khách hàng') }}</h4>
+        <pie1 :statistics="{{$group_statistics}}"></pie1>
     </div>
 
    @stop 
@@ -172,11 +176,11 @@
                 });
                 $('#client-group').change(function() {
                     selected = $("#client-group option:selected").val();
-                    if(selected == 'Đại lý/Trại tiềm năng') {
+                    if(selected == 'Tiềm năng') {
                         table.columns(5).search(1).draw();
                     } else if(selected == 'Trại key') {
                         table.columns(5).search(2).draw();
-                    } else if(selected == 'Đại lý/Trại thường') {
+                    } else if(selected == 'Thường') {
                         table.columns(5).search(3).draw();
                     } else {
                         table.columns(5).search( '' ).draw();

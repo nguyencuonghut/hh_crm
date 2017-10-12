@@ -10,6 +10,7 @@ import ElementUI from 'element-ui';
 import graphline from './components/Graphline.vue';
 import doughnut from './components/Doughnut.vue';
 import pie from './components/Pie.vue';
+import pie1 from './components/Pie1.vue';
 import message from './components/Message.vue';
 import 'element-ui/lib/theme-default/index.css';
 /**
@@ -99,6 +100,7 @@ var app = new Vue({
         graphline,
         doughnut,
         pie,
+        pie1,
         message
     }
 });

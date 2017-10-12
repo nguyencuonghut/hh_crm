@@ -29,9 +29,9 @@
             <th>
                 <select name="client-group" id="client-group">
                     <option value="" disabled selected>{{ __('Phân loại') }}</option>
-                    <option value="Đại lý/Trại tiềm năng">Đại lý/Trại tiềm năng</option>
+                    <option value="Tiềm năng">Tiềm năng</option>
                     <option value="Trại key">Trại key</option>
-                    <option value="Đại lý/Trại thường">Đại lý/Trại thường</option>
+                    <option value="Thường">Thường</option>
                     <option value="all">All</option>
                 </select>
             </th>
@@ -100,11 +100,11 @@
 
         $('#client-group').change(function() {
             selected = $("#client-group option:selected").val();
-            if(selected == 'Đại lý/Trại tiềm năng') {
+            if(selected == 'Tiềm năng') {
                 table.columns(3).search(1).draw();
             } else if(selected == 'Trại key') {
                 table.columns(3).search(2).draw();
-            } else if(selected == 'Đại lý/Trại thường') {
+            } else if(selected == 'Thường') {
                 table.columns(3).search(3).draw();
             } else {
                 table.columns(3).search( '' ).draw();

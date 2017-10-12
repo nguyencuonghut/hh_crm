@@ -73,11 +73,11 @@ class ClientsController extends Controller
             })
             ->editColumn('group_id', function($clients) {
                 if($clients->group_id == 1) {
-                    return 'Đại lý/Trại tiềm năng';
+                    return 'Tiềm năng';
                 } else if($clients->group_id == 2) {
                     return 'Trại key';
                 } else {
-                    return 'Đại lý/Trại thường';
+                    return 'Thường';
                 }
             })
             ->editColumn('client_type_id', function($clients) {

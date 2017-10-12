@@ -20,7 +20,7 @@ class GroupsTableSeeder extends Seeder
             0 =>
                 array (
                     'id'                    => 1,
-                    'name'                  => 'Đại lý/Trại tiềm năng',
+                    'name'                  => 'Tiềm năng',
                 ),
             1 =>
                 array (
@@ -30,7 +30,7 @@ class GroupsTableSeeder extends Seeder
             2 =>
                 array (
                     'id'                    => 3,
-                    'name'                  => 'Đại lý/Trại thường',
+                    'name'                  => 'Thường',
                 ),
         ));
     }

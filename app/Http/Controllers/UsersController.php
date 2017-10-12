@@ -179,11 +179,11 @@ class UsersController extends Controller
             })
             ->editColumn('group_id', function($clients) {
                 if($clients->group_id == 1) {
-                    return 'Đại lý/Trại tiềm năng';
+                    return 'Tiềm năng';
                 } else if($clients->group_id == 2) {
                     return 'Trại key';
                 } else {
-                    return 'Đại lý/Trại thường';
+                    return 'Thường';
                 }
             })
             ->editColumn('product_category_id', function($clients) {
@@ -239,7 +239,8 @@ class UsersController extends Controller
             ->withCompanyname($this->settings->getCompanyName())
             ->withTaskStatistics($this->tasks->totalOpenAndClosedTasks($id))
             ->withLeadStatistics($this->leads->totalOpenAndClosedLeads($id))
-            ->withClientStatistics($this->clients->totalProducts($id));
+            ->withClientStatistics($this->clients->totalProducts($id))
+            ->withGroupStatistics($this->clients->totalGroups($id));
     }
 
     /**

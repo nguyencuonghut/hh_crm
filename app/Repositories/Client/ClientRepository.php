@@ -119,6 +119,68 @@ class ClientRepository implements ClientRepositoryContract
     }
 
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function totalGroups($id)
+    {
+        // Count all the Clients that is Đại lý/Trại tiềm năng
+        $hongha_1 = Client::where('group_id', 1)
+            ->where('user_id', $id)
+            ->count();
+        $hongha_2 = Client::where('group_id', 1)
+            ->where('gs_tv_id', $id)
+            ->count();
+        $hongha_3 = Client::where('group_id', 1)
+            ->where('gd_vung_id', $id)
+            ->count();
+        $hongha_4 = Client::where('group_id', 1)
+            ->where('pgd_id', $id)
+            ->count();
+        $hongha_5 = Client::where('group_id', 1)
+            ->where('gd_id', $id)
+            ->count();
+        $hongha = $hongha_1 + $hongha_2 + $hongha_3 + $hongha_4 + $hongha_5;
+
+        // Count all the Clients that is Trại key
+        $mix_1 = Client::where('group_id', 2)
+            ->where('user_id', $id)
+            ->count();
+        $mix_2 = Client::where('group_id', 2)
+            ->where('gs_tv_id', $id)
+            ->count();
+        $mix_3 = Client::where('group_id', 2)
+            ->where('gd_vung_id', $id)
+            ->count();
+        $mix_4 = Client::where('group_id', 2)
+            ->where('pgd_id', $id)
+            ->count();
+        $mix_5 = Client::where('group_id', 2)
+            ->where('gd_id', $id)
+            ->count();
+        $mix = $mix_1 + $mix_2 + $mix_3 + $mix_4 + $mix_5;
+
+        // Count all the Clients that is Đại lý/Trại thường
+        $other_1 = Client::where('group_id', 3)
+            ->where('user_id', $id)
+            ->count();
+        $other_2 = Client::where('group_id', 3)
+            ->where('gs_tv_id', $id)
+            ->count();
+        $other_3 = Client::where('group_id', 3)
+            ->where('gd_vung_id', $id)
+            ->count();
+        $other_4 = Client::where('group_id', 3)
+            ->where('pgd_id', $id)
+            ->count();
+        $other_5 = Client::where('group_id', 3)
+            ->where('gd_id', $id)
+            ->count();
+        $other = $other_1 + $other_2 + $other_3 + $other_4 + $other_5;
+
+        return collect([$hongha, $mix, $other]);
+    }
 
     /**
      * @return int cuongnv

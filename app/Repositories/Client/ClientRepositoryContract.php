@@ -13,6 +13,8 @@ interface ClientRepositoryContract
 
     public function totalProducts($id);
 
+    public function totalGroups($id);
+
     public function getAllAgentsCount();//cuongnv
 
     public function getAllFarmsCount();//cuongnv

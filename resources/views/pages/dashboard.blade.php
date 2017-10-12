@@ -127,7 +127,7 @@
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3>{{ $allkeyclients }} - {{ $allcandidateclients }}</h3>
-                        <p>{{ __('Tổng số Trại key - Đại lý/trại tiềm năng') }}</p>
+                        <p>{{ __('Tổng số Trại key - Tiềm năng') }}</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-key"></i>
