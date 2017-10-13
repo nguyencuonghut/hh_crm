@@ -241,7 +241,8 @@ class UsersController extends Controller
             ->withLeadStatistics($this->leads->totalOpenAndClosedLeads($id))
             ->withClientStatistics($this->clients->totalProducts($id))
             ->withGroupStatistics($this->clients->totalGroups($id))
-            ->withAnimalStatistics($this->clients->totalAnimals($id));
+            ->withAnimalStatistics($this->clients->totalAnimals($id))
+            ->withTypeStatistics($this->clients->totalTypes($id));
     }
 
     /**

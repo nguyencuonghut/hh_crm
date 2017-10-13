@@ -265,6 +265,51 @@ class ClientRepository implements ClientRepositoryContract
 
 
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function totalTypes($id)
+    {
+        // Count all the Clients that is Agent
+        $agent_1 = Client::where('client_type_id', 1)
+            ->where('user_id', $id)
+            ->count();
+        $agent_2 = Client::where('client_type_id', 1)
+            ->where('gs_tv_id', $id)
+            ->count();
+        $agent_3 = Client::where('client_type_id', 1)
+            ->where('gd_vung_id', $id)
+            ->count();
+        $agent_4 = Client::where('client_type_id', 1)
+            ->where('pgd_id', $id)
+            ->count();
+        $agent_5 = Client::where('client_type_id', 1)
+            ->where('gd_id', $id)
+            ->count();
+        $agent = $agent_1 + $agent_2 + $agent_3 + $agent_4 + $agent_5;
+
+        // Count all the Clients that is Farm
+        $farm_1 = Client::where('client_type_id', 2)
+            ->where('user_id', $id)
+            ->count();
+        $farm_2 = Client::where('client_type_id', 2)
+            ->where('gs_tv_id', $id)
+            ->count();
+        $farm_3 = Client::where('client_type_id', 2)
+            ->where('gd_vung_id', $id)
+            ->count();
+        $farm_4 = Client::where('client_type_id', 2)
+            ->where('pgd_id', $id)
+            ->count();
+        $farm_5 = Client::where('client_type_id', 2)
+            ->where('gd_id', $id)
+            ->count();
+        $farm = $farm_1 + $farm_2 + $farm_3 + $farm_4 + $farm_5;
+
+        return collect([$agent, $farm]);
+    }
+
+    /**
      * @return int cuongnv
      */
     public function getAllAgentsCount()

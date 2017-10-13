@@ -109,6 +109,10 @@
         <h4>{{ __('Vật nuôi') }}</h4>
         <bar :statistics="{{$animal_statistics}}"></bar>
     </div>
+    <div class="col-sm-6">
+        <h4>{{ __('Khách hàng') }}</h4>
+        <bar1 :statistics="{{$type_statistics}}"></bar1>
+    </div>
 
    @stop 
 @push('scripts')
