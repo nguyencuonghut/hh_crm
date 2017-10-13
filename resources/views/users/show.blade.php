@@ -98,12 +98,16 @@
         <doughnut :statistics="{{$lead_statistics}}"></doughnut>
     </div>
     <div class="col-sm-6">
-        <h4>{{ __('Cơ cấu sản phẩm') }}</h4>
+        <h4>{{ __('Sản phẩm') }}</h4>
         <pie :statistics="{{$client_statistics}}"></pie>
     </div>
     <div class="col-sm-6">
-        <h4>{{ __('Khách hàng') }}</h4>
+        <h4>{{ __('Phân loại') }}</h4>
         <pie1 :statistics="{{$group_statistics}}"></pie1>
+    </div>
+    <div class="col-sm-6">
+        <h4>{{ __('Vật nuôi') }}</h4>
+        <bar :statistics="{{$animal_statistics}}"></bar>
     </div>
 
    @stop 

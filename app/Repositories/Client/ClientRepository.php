@@ -183,6 +183,88 @@ class ClientRepository implements ClientRepositoryContract
     }
 
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function totalAnimals($id)
+    {
+        //Calculate the pig num for each user
+        $pig_num_1 = Client::where('user_id', $id)->sum('pig_num');
+        $pig_num_2 = Client::where('gs_tv_id', $id)->sum('pig_num');
+        $pig_num_3 = Client::where('gd_vung_id', $id)->sum('pig_num');
+        $pig_num_4 = Client::where('pgd_id', $id)->sum('pig_num');
+        $pig_num_5 = Client::where('gd_id', $id)->sum('pig_num');
+        $pig_num = $pig_num_1 + $pig_num_2 + $pig_num_3 +$pig_num_4 +$pig_num_5;
+
+        //Calculate the broiler chicken num for each user
+        $broiler_chicken_num_1 = Client::where('user_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_2 = Client::where('gs_tv_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_3 = Client::where('gd_vung_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_4 = Client::where('pgd_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_5 = Client::where('gd_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num = $broiler_chicken_num_5 + $broiler_chicken_num_4 + $broiler_chicken_num_3 + $broiler_chicken_num_2 + $broiler_chicken_num_1;
+
+        //Calculate the broiler duck num for each user
+        $broiler_duck_num_1 = Client::where('user_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_2 = Client::where('gs_tv_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_3 = Client::where('gd_vung_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_4 = Client::where('pgd_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_5 = Client::where('gd_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num = $broiler_duck_num_1 + $broiler_duck_num_2 + $broiler_duck_num_3 + $broiler_duck_num_4 + $broiler_duck_num_5;
+
+        //Calculate the quail num for each user
+        $quail_num_1 = Client::where('user_id', $id)->sum('quail_num');
+        $quail_num_2 = Client::where('gs_tv_id', $id)->sum('quail_num');
+        $quail_num_3 = Client::where('gd_vung_id', $id)->sum('quail_num');
+        $quail_num_4 = Client::where('pgd_id', $id)->sum('quail_num');
+        $quail_num_5 = Client::where('gd_id', $id)->sum('quail_num');
+        $quail_num = $quail_num_1 + $quail_num_2 + $quail_num_3 + $quail_num_4 + $quail_num_5;
+
+        //Calculate the aqua num for each user
+        $aqua_num_1 = Client::where('user_id', $id)->sum('aqua_num');
+        $aqua_num_2 = Client::where('gs_tv_id', $id)->sum('aqua_num');
+        $aqua_num_3 = Client::where('gd_vung_id', $id)->sum('aqua_num');
+        $aqua_num_4 = Client::where('pgd_id', $id)->sum('aqua_num');
+        $aqua_num_5 = Client::where('gd_id', $id)->sum('aqua_num');
+        $aqua_num = $aqua_num_1 + $aqua_num_2 + $aqua_num_3 + $aqua_num_4 + $aqua_num_5;
+
+        //Calculate the layer chicken num for each user
+        $layer_chicken_num_1 = Client::where('user_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_2 = Client::where('gs_tv_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_3 = Client::where('gd_vung_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_4 = Client::where('pgd_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_5 = Client::where('gd_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num = $layer_chicken_num_1 + $layer_chicken_num_2 + $layer_chicken_num_3 + $layer_chicken_num_4 + $layer_chicken_num_5;
+
+        //Calculate the layer duck num for each user
+        $layer_duck_num_1 = Client::where('user_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_2 = Client::where('gs_tv_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_3 = Client::where('gd_vung_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_4 = Client::where('pgd_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_5 = Client::where('gd_id', $id)->sum('layer_duck_num');
+        $layer_duck_num = $layer_duck_num_1 + $layer_duck_num_2 +  $layer_duck_num_3 + $layer_duck_num_4 + $layer_duck_num_5;
+
+        //Calculate the cow num for each user
+        $cow_num_1 = Client::where('user_id', $id)->sum('cow_num');
+        $cow_num_2 = Client::where('gs_tv_id', $id)->sum('cow_num');
+        $cow_num_3 = Client::where('gd_vung_id', $id)->sum('cow_num');
+        $cow_num_4 = Client::where('pgd_id', $id)->sum('cow_num');
+        $cow_num_5 = Client::where('gd_id', $id)->sum('cow_num');
+        $cow_num = $cow_num_1 + $cow_num_2 + $cow_num_3 + $cow_num_4 + $cow_num_5;
+
+        return collect([$pig_num,
+            $broiler_chicken_num,
+            $broiler_duck_num,
+            $quail_num,
+            $aqua_num,
+            $layer_chicken_num,
+            $layer_duck_num,
+            $cow_num
+        ]);
+    }
+
+
+    /**
      * @return int cuongnv
      */
     public function getAllAgentsCount()
