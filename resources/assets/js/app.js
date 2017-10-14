@@ -13,6 +13,7 @@ import pie from './components/Pie.vue';
 import pie1 from './components/Pie1.vue';
 import bar from './components/Bar.vue';
 import bar1 from './components/Bar1.vue';
+import linechart from './components/Line.vue';
 import message from './components/Message.vue';
 import 'element-ui/lib/theme-default/index.css';
 /**
@@ -105,6 +106,7 @@ var app = new Vue({
         pie1,
         bar,
         bar1,
+        linechart,
         message
     }
 });
