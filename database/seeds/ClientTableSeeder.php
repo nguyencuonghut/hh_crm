@@ -20,7 +20,7 @@ class ClientsTableSeeder extends Seeder
                     'province'              => 'Hưng Yên',
                     'district'              => 'Yên Mỹ',
                     'ward'                  => 'Thanh Long',
-                    'client_type_id'        => '1',
+                    'client_type_id'        => 1,
                     'group_id'              => 3,
                     'scale'                 => 0,
                     'pig_num'               => 0,
@@ -48,8 +48,8 @@ class ClientsTableSeeder extends Seeder
                     'industry'              => null,
                     'industry_id'           => null,
                     'company_type'          => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             1 =>
                 array (
@@ -61,7 +61,7 @@ class ClientsTableSeeder extends Seeder
                     'district'              => 'Yên Mỹ',
                     'ward'                  => 'Hoàn Long',
                     'client_type_id'        => '2',
-                    'group_id'              => 3,
+                    'group_id'              => 1,
                     'scale'                 => 1130,
                     'pig_num'               => 130,
                     'broiler_chicken_num'   => 0,
@@ -88,8 +88,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             2 =>
                 array (
@@ -128,8 +128,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             3 =>
                 array (
@@ -168,8 +168,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             4 =>
                 array (
@@ -208,8 +208,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             5 =>
                 array (
@@ -248,8 +248,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             6 =>
                 array (
@@ -288,8 +288,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-01-04 13:42:19',
+                    'updated_at'            => '2017-01-04 13:42:19',
                 ),
             7 =>
                 array (
@@ -328,8 +328,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             8 =>
                 array (
@@ -368,8 +368,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             9 =>
                 array (
@@ -408,8 +408,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             10 =>
                 array (
@@ -448,8 +448,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             11 =>
                 array (
@@ -488,8 +488,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             12 =>
                 array (
@@ -528,8 +528,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             13 =>
                 array (
@@ -568,8 +568,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-02-04 13:42:19',
+                    'updated_at'            => '2017-02-04 13:42:19',
                 ),
             14 =>
                 array (
@@ -608,8 +608,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-03-04 13:42:19',
+                    'updated_at'            => '2017-03-04 13:42:19',
                 ),
             15 =>
                 array (
@@ -648,8 +648,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-03-04 13:42:19',
+                    'updated_at'            => '2017-03-04 13:42:19',
                 ),
             16 =>
                 array (
@@ -688,8 +688,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-03-04 13:42:19',
+                    'updated_at'            => '2017-03-04 13:42:19',
                 ),
             17 =>
                 array (
@@ -728,8 +728,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             18 =>
                 array (
@@ -768,8 +768,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             19 =>
                 array (
@@ -808,8 +808,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             20 =>
                 array (
@@ -848,8 +848,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             21 =>
                 array (
@@ -888,8 +888,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             22 =>
                 array (
@@ -928,8 +928,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             23 =>
                 array (
@@ -968,8 +968,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-04-04 13:42:19',
+                    'updated_at'            => '2017-04-04 13:42:19',
                 ),
             24=>
                 array (
@@ -1008,8 +1008,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-05-04 13:42:19',
+                    'updated_at'            => '2017-05-04 13:42:19',
                 ),
             25=>
                 array (
@@ -1048,8 +1048,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-05-04 13:42:19',
+                    'updated_at'            => '2017-05-04 13:42:19',
                 ),
             26=>
                 array (
@@ -1088,8 +1088,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-05-04 13:42:19',
+                    'updated_at'            => '2017-05-04 13:42:19',
                 ),
             27=>
                 array (
@@ -1128,8 +1128,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-06-04 13:42:19',
+                    'updated_at'            => '2017-06-04 13:42:19',
                 ),
             28=>
                 array (
@@ -1168,8 +1168,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-06-04 13:42:19',
+                    'updated_at'            => '2017-06-04 13:42:19',
                 ),
             29=>
                 array (
@@ -1208,8 +1208,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-06-04 13:42:19',
+                    'updated_at'            => '2017-06-04 13:42:19',
                 ),
             30=>
                 array (
@@ -1248,8 +1248,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-06-04 13:42:19',
+                    'updated_at'            => '2017-06-04 13:42:19',
                 ),
             31=>
                 array (
@@ -1288,8 +1288,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-07-04 13:42:19',
+                    'updated_at'            => '2017-07-04 13:42:19',
                 ),
             32=>
                 array (
@@ -1328,8 +1328,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-07-04 13:42:19',
+                    'updated_at'            => '2017-07-04 13:42:19',
                 ),
             33=>
                 array (
@@ -1368,8 +1368,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-07-04 13:42:19',
+                    'updated_at'            => '2017-07-04 13:42:19',
                 ),
             34=>
                 array (
@@ -1408,8 +1408,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-07-04 13:42:19',
+                    'updated_at'            => '2017-07-04 13:42:19',
                 ),
             35=>
                 array (
@@ -1448,8 +1448,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-08-04 13:42:19',
+                    'updated_at'            => '2017-08-04 13:42:19',
                 ),
             36=>
                 array (
@@ -1488,8 +1488,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-08-04 13:42:19',
+                    'updated_at'            => '2017-08-04 13:42:19',
                 ),
             37=>
                 array (
@@ -1528,8 +1528,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-08-04 13:42:19',
+                    'updated_at'            => '2017-08-04 13:42:19',
                 ),
             38=>
                 array (
@@ -1568,8 +1568,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-08-04 13:42:19',
+                    'updated_at'            => '2017-08-04 13:42:19',
                 ),
             39=>
                 array (
@@ -1608,8 +1608,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-09-04 13:42:19',
+                    'updated_at'            => '2017-09-04 13:42:19',
                 ),
             40=>
                 array (
@@ -1648,8 +1648,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-09-04 13:42:19',
+                    'updated_at'            => '2017-09-04 13:42:19',
                 ),
             41=>
                 array (
@@ -1688,8 +1688,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             42=>
                 array (
@@ -1728,8 +1728,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             43=>
                 array (
@@ -1768,8 +1768,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             44=>
                 array (
@@ -1808,8 +1808,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             45=>
                 array (
@@ -1848,8 +1848,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             46=>
                 array (
@@ -1888,8 +1888,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-08-04 13:42:19',
+                    'updated_at'            => '2017-08-04 13:42:19',
                 ),
             47=>
                 array (
@@ -1928,8 +1928,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             48=>
                 array (
@@ -1968,8 +1968,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             49=>
                 array (
@@ -2008,8 +2008,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             50=>
                 array (
@@ -2048,8 +2048,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             51=>
                 array (
@@ -2088,8 +2088,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-10-04 13:42:19',
+                    'updated_at'            => '2017-10-04 13:42:19',
                 ),
             52=>
                 array (
@@ -2128,8 +2128,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             53=>
                 array (
@@ -2168,8 +2168,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             54=>
                 array (
@@ -2208,8 +2208,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             55=>
                 array (
@@ -2248,8 +2248,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             56=>
                 array (
@@ -2288,8 +2288,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             57=>
                 array (
@@ -2328,8 +2328,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             58=>
                 array (
@@ -2368,8 +2368,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-11-04 13:42:19',
+                    'updated_at'            => '2017-11-04 13:42:19',
                 ),
             59=>
                 array (
@@ -2408,8 +2408,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
             60 =>
                 array (
@@ -2448,8 +2448,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
             61 =>
                 array (
@@ -2488,8 +2488,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
             62 =>
                 array (
@@ -2528,8 +2528,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
             63 =>
                 array (
@@ -2568,8 +2568,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
             64 =>
                 array (
@@ -2608,8 +2608,8 @@ class ClientsTableSeeder extends Seeder
                     'company_type'          => null,
                     'industry'              => null,
                     'industry_id'           => null,
-                    'created_at'            => '2016-06-04 13:42:19',
-                    'updated_at'            => '2016-06-04 13:42:19',
+                    'created_at'            => '2017-12-04 13:42:19',
+                    'updated_at'            => '2017-12-04 13:42:19',
                 ),
         ));
     }

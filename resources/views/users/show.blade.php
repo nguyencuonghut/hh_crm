@@ -114,8 +114,13 @@
         <bar1 :statistics="{{$type_statistics}}"></bar1>
     </div>
     <div class="col-sm-12">
-        <h4>{{ __('Tăng trưởng') }}</h4>
-        <linechart class="chart"></linechart>
+        <h4>{{ __('Tăng trưởng năm ') }} {{date('Y')}}</h4>
+        <linechart class="chart"
+            :candidate_farms="{{json_encode($candidate_farms)}}"
+            :opened_farms="{{json_encode($opened_farms)}}"
+            :candidate_agents="{{json_encode($candidate_agents)}}"
+            :opened_agents="{{json_encode($opened_agents)}}">
+        </linechart>
     </div>
 
    @stop 

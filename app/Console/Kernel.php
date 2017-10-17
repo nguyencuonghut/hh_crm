@@ -13,8 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\Inspire::class,
-        Commands\Test::class
+        '\App\Console\Commands\GetMonthlyClients',
     ];
 
     /**
@@ -25,7 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->command('GetMonthlyClients:getmonthlyclients')
+                ->everyMinute()
+                ->dailyAt('13:00')
+                ->withoutOverlapping();
     }
 }

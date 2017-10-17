@@ -234,6 +234,27 @@ class UsersController extends Controller
      */
     public function show($id)
     {
+
+        $user = User::findorFail($id);
+        $opened_agents = collect([$user->opened_agents_1, $user->opened_agents_2, $user->opened_agents_3,
+            $user->opened_agents_4, $user->opened_agents_5, $user->opened_agents_6,
+            $user->opened_agents_7, $user->opened_agents_8, $user->opened_agents_9,
+            $user->opened_agents_10, $user->opened_agents_11, $user->opened_agents_12]);
+
+        $candidate_agents = collect([$user->candidate_agents_1, $user->candidate_agents_2, $user->candidate_agents_3,
+            $user->candidate_agents_4, $user->candidate_agents_5, $user->candidate_agents_6,
+            $user->candidate_agents_7, $user->candidate_agents_8, $user->candidate_agents_9,
+            $user->candidate_agents_10, $user->candidate_agents_11, $user->candidate_agents_12]);
+
+        $opened_farms = collect([$user->opened_farms_1, $user->opened_farms_2, $user->opened_farms_3,
+            $user->opened_farms_4, $user->opened_farms_5, $user->opened_farms_6,
+            $user->opened_farms_7, $user->opened_farms_8, $user->opened_farms_9,
+            $user->opened_farms_10, $user->opened_farms_11, $user->opened_farms_12]);
+
+        $candidate_farms = collect([$user->candidate_farms_1, $user->candidate_farms_2, $user->candidate_farms_3,
+            $user->candidate_farms_4, $user->candidate_farms_5, $user->candidate_farms_6,
+            $user->candidate_farms_7, $user->candidate_farms_8, $user->candidate_farms_9,
+            $user->candidate_farms_10, $user->candidate_farms_11, $user->candidate_farms_12]);
         return view('users.show')
             ->withUser($this->users->find($id))
             ->withCompanyname($this->settings->getCompanyName())
@@ -242,7 +263,11 @@ class UsersController extends Controller
             ->withClientStatistics($this->clients->totalProducts($id))
             ->withGroupStatistics($this->clients->totalGroups($id))
             ->withAnimalStatistics($this->clients->totalAnimals($id))
-            ->withTypeStatistics($this->clients->totalTypes($id));
+            ->withTypeStatistics($this->clients->totalTypes($id))
+            ->withCandidateFarms($candidate_farms)
+            ->withOpenedFarms($opened_farms)
+            ->withCandidateAgents($candidate_agents)
+            ->withOpenedAgents($opened_agents);
     }
 
     /**
