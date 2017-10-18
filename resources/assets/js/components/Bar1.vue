@@ -11,7 +11,7 @@
             render(data)
             {
                 this.Chart = new Chart(this.$refs.canvaschart.getContext('2d'), {
-                    type: 'bar',
+                    type: 'horizontalBar',
                     data: {
                         labels: ["Đại lý", "Trại chăn nuôi"],
                         datasets: [
@@ -40,7 +40,7 @@
                                     var chartInstance = this.chart,
                                         ctx = chartInstance.ctx;
                                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                                    ctx.textAlign = 'center';
+                                    ctx.textAlign = 'top';
                                     ctx.textBaseline = 'bottom';
                                     ctx.fillStyle = 'black';
 
@@ -48,7 +48,7 @@
                                         var meta = chartInstance.controller.getDatasetMeta(i);
                                         meta.data.forEach(function (bar, index) {
                                             var data = dataset.data[index];
-                                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                            ctx.fillText(data, bar._model.x, bar._model.y + 7);
                                         });
                                     });
                                 }
