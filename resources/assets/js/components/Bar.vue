@@ -48,7 +48,7 @@
                                         var meta = chartInstance.controller.getDatasetMeta(i);
                                         meta.data.forEach(function (bar, index) {
                                             var data = dataset.data[index];
-                                            ctx.fillText(data, bar._model.x, bar._model.y + 7);
+                                            ctx.fillText(data, bar._model.x, bar._model.y + 8);
                                         });
                                     });
                                 }
