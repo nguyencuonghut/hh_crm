@@ -37,7 +37,8 @@ class Client extends Model
         'industry_id',
         'company_type',
         'user_id',
-        'gs_tv_id',
+        'gs_id',
+        'tv_id',
         'gd_vung_id',
         'pgd_id',
         'gd_id'];

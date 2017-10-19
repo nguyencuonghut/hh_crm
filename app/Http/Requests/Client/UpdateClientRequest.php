@@ -40,7 +40,8 @@ class UpdateClientRequest extends FormRequest
             'secondary_number' => 'max:10',
             'company_type' => '',
             'user_id' => 'required',
-            'gs_tv_id' => 'required',
+            'gs_id' => 'required',
+            'tv_id' => 'required',
             'gd_vung_id' => 'required',
             'pgd_id' => 'required',
             'gd_id' => 'required'

@@ -55,7 +55,8 @@ class ClientsController extends Controller
             $id = Auth::user()->id;
             $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id'])
             ->where('user_id', $id)
-            ->orWhere('gs_tv_id', $id)
+            ->orWhere('gs_id', $id)
+            ->orWhere('tv_id', $id)
             ->orWhere('gd_vung_id', $id)
             ->orWhere('pgd_id', $id)
             ->orWhere('gd_id', $id)

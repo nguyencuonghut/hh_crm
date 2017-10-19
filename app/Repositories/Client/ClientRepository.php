@@ -66,54 +66,63 @@ class ClientRepository implements ClientRepositoryContract
             ->where('user_id', $id)
             ->count();
         $hongha_2 = Client::where('product_category_id', 1)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $hongha_3 = Client::where('product_category_id', 1)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $hongha_4 = Client::where('product_category_id', 1)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $hongha_5 = Client::where('product_category_id', 1)
+            ->where('pgd_id', $id)
+            ->count();
+        $hongha_6 = Client::where('product_category_id', 1)
             ->where('gd_id', $id)
             ->count();
-        $hongha = $hongha_1 + $hongha_2 + $hongha_3 + $hongha_4 + $hongha_5;
+        $hongha = $hongha_1 + $hongha_2 + $hongha_3 + $hongha_4 + $hongha_5 + $hongha_6;
 
         // Count all the Clients that use both Hong Ha + Other company product
         $mix_1 = Client::where('product_category_id', 2)
             ->where('user_id', $id)
             ->count();
         $mix_2 = Client::where('product_category_id', 2)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $mix_3 = Client::where('product_category_id', 2)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $mix_4 = Client::where('product_category_id', 2)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $mix_5 = Client::where('product_category_id', 2)
+            ->where('pgd_id', $id)
+            ->count();
+        $mix_6 = Client::where('product_category_id', 2)
             ->where('gd_id', $id)
             ->count();
-        $mix = $mix_1 + $mix_2 + $mix_3 + $mix_4 + $mix_5;
+        $mix = $mix_1 + $mix_2 + $mix_3 + $mix_4 + $mix_5 + $mix_6;
 
         // Count all the Clients that use Other company product
         $other_1 = Client::where('product_category_id', 3)
             ->where('user_id', $id)
             ->count();
         $other_2 = Client::where('product_category_id', 3)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $other_3 = Client::where('product_category_id', 3)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $other_4 = Client::where('product_category_id', 3)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $other_5 = Client::where('product_category_id', 3)
+            ->where('pgd_id', $id)
+            ->count();
+        $other_6 = Client::where('product_category_id', 3)
             ->where('gd_id', $id)
             ->count();
-        $other = $other_1 + $other_2 + $other_3 + $other_4 + $other_5;
+        $other = $other_1 + $other_2 + $other_3 + $other_4 + $other_5 + $other_6;
 
         return collect([$hongha, $mix, $other]);
     }
@@ -130,54 +139,63 @@ class ClientRepository implements ClientRepositoryContract
             ->where('user_id', $id)
             ->count();
         $hongha_2 = Client::where('group_id', 1)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $hongha_3 = Client::where('group_id', 1)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $hongha_4 = Client::where('group_id', 1)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $hongha_5 = Client::where('group_id', 1)
+            ->where('pgd_id', $id)
+            ->count();
+        $hongha_6 = Client::where('group_id', 1)
             ->where('gd_id', $id)
             ->count();
-        $hongha = $hongha_1 + $hongha_2 + $hongha_3 + $hongha_4 + $hongha_5;
+        $hongha = $hongha_1 + $hongha_2 + $hongha_3 + $hongha_4 + $hongha_5 + $hongha_6;
 
         // Count all the Clients that is Trại key
         $mix_1 = Client::where('group_id', 2)
             ->where('user_id', $id)
             ->count();
         $mix_2 = Client::where('group_id', 2)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $mix_3 = Client::where('group_id', 2)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $mix_4 = Client::where('group_id', 2)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $mix_5 = Client::where('group_id', 2)
+            ->where('pgd_id', $id)
+            ->count();
+        $mix_6 = Client::where('group_id', 2)
             ->where('gd_id', $id)
             ->count();
-        $mix = $mix_1 + $mix_2 + $mix_3 + $mix_4 + $mix_5;
+        $mix = $mix_1 + $mix_2 + $mix_3 + $mix_4 + $mix_5 + $mix_6;
 
         // Count all the Clients that is Đại lý/Trại thường
         $other_1 = Client::where('group_id', 3)
             ->where('user_id', $id)
             ->count();
         $other_2 = Client::where('group_id', 3)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $other_3 = Client::where('group_id', 3)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $other_4 = Client::where('group_id', 3)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $other_5 = Client::where('group_id', 3)
+            ->where('pgd_id', $id)
+            ->count();
+        $other_6 = Client::where('group_id', 3)
             ->where('gd_id', $id)
             ->count();
-        $other = $other_1 + $other_2 + $other_3 + $other_4 + $other_5;
+        $other = $other_1 + $other_2 + $other_3 + $other_4 + $other_5 + $other_6;
 
         return collect([$hongha, $mix, $other]);
     }
@@ -190,7 +208,8 @@ class ClientRepository implements ClientRepositoryContract
     {
         //Calculate the pig num for each user
         $pig_num_1 = Client::where('user_id', $id)->sum('pig_num');
-        $pig_num_2 = Client::where('gs_tv_id', $id)->sum('pig_num');
+        $pig_num_2 = Client::where('gs_id', $id)->sum('pig_num');
+        $pig_num_2 = Client::where('tv_id', $id)->sum('pig_num');
         $pig_num_3 = Client::where('gd_vung_id', $id)->sum('pig_num');
         $pig_num_4 = Client::where('pgd_id', $id)->sum('pig_num');
         $pig_num_5 = Client::where('gd_id', $id)->sum('pig_num');
@@ -198,7 +217,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the broiler chicken num for each user
         $broiler_chicken_num_1 = Client::where('user_id', $id)->sum('broiler_chicken_num');
-        $broiler_chicken_num_2 = Client::where('gs_tv_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_2 = Client::where('gs_id', $id)->sum('broiler_chicken_num');
+        $broiler_chicken_num_2 = Client::where('tv_id', $id)->sum('broiler_chicken_num');
         $broiler_chicken_num_3 = Client::where('gd_vung_id', $id)->sum('broiler_chicken_num');
         $broiler_chicken_num_4 = Client::where('pgd_id', $id)->sum('broiler_chicken_num');
         $broiler_chicken_num_5 = Client::where('gd_id', $id)->sum('broiler_chicken_num');
@@ -206,7 +226,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the broiler duck num for each user
         $broiler_duck_num_1 = Client::where('user_id', $id)->sum('broiler_duck_num');
-        $broiler_duck_num_2 = Client::where('gs_tv_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_2 = Client::where('gs_id', $id)->sum('broiler_duck_num');
+        $broiler_duck_num_2 = Client::where('tv_id', $id)->sum('broiler_duck_num');
         $broiler_duck_num_3 = Client::where('gd_vung_id', $id)->sum('broiler_duck_num');
         $broiler_duck_num_4 = Client::where('pgd_id', $id)->sum('broiler_duck_num');
         $broiler_duck_num_5 = Client::where('gd_id', $id)->sum('broiler_duck_num');
@@ -214,7 +235,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the quail num for each user
         $quail_num_1 = Client::where('user_id', $id)->sum('quail_num');
-        $quail_num_2 = Client::where('gs_tv_id', $id)->sum('quail_num');
+        $quail_num_2 = Client::where('gs_id', $id)->sum('quail_num');
+        $quail_num_2 = Client::where('tv_id', $id)->sum('quail_num');
         $quail_num_3 = Client::where('gd_vung_id', $id)->sum('quail_num');
         $quail_num_4 = Client::where('pgd_id', $id)->sum('quail_num');
         $quail_num_5 = Client::where('gd_id', $id)->sum('quail_num');
@@ -222,7 +244,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the aqua num for each user
         $aqua_num_1 = Client::where('user_id', $id)->sum('aqua_num');
-        $aqua_num_2 = Client::where('gs_tv_id', $id)->sum('aqua_num');
+        $aqua_num_2 = Client::where('gs_id', $id)->sum('aqua_num');
+        $aqua_num_2 = Client::where('tv_id', $id)->sum('aqua_num');
         $aqua_num_3 = Client::where('gd_vung_id', $id)->sum('aqua_num');
         $aqua_num_4 = Client::where('pgd_id', $id)->sum('aqua_num');
         $aqua_num_5 = Client::where('gd_id', $id)->sum('aqua_num');
@@ -230,7 +253,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the layer chicken num for each user
         $layer_chicken_num_1 = Client::where('user_id', $id)->sum('layer_chicken_num');
-        $layer_chicken_num_2 = Client::where('gs_tv_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_2 = Client::where('gs_id', $id)->sum('layer_chicken_num');
+        $layer_chicken_num_2 = Client::where('tv_id', $id)->sum('layer_chicken_num');
         $layer_chicken_num_3 = Client::where('gd_vung_id', $id)->sum('layer_chicken_num');
         $layer_chicken_num_4 = Client::where('pgd_id', $id)->sum('layer_chicken_num');
         $layer_chicken_num_5 = Client::where('gd_id', $id)->sum('layer_chicken_num');
@@ -238,7 +262,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the layer duck num for each user
         $layer_duck_num_1 = Client::where('user_id', $id)->sum('layer_duck_num');
-        $layer_duck_num_2 = Client::where('gs_tv_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_2 = Client::where('gs_id', $id)->sum('layer_duck_num');
+        $layer_duck_num_2 = Client::where('tv_id', $id)->sum('layer_duck_num');
         $layer_duck_num_3 = Client::where('gd_vung_id', $id)->sum('layer_duck_num');
         $layer_duck_num_4 = Client::where('pgd_id', $id)->sum('layer_duck_num');
         $layer_duck_num_5 = Client::where('gd_id', $id)->sum('layer_duck_num');
@@ -246,7 +271,8 @@ class ClientRepository implements ClientRepositoryContract
 
         //Calculate the cow num for each user
         $cow_num_1 = Client::where('user_id', $id)->sum('cow_num');
-        $cow_num_2 = Client::where('gs_tv_id', $id)->sum('cow_num');
+        $cow_num_2 = Client::where('gs_id', $id)->sum('cow_num');
+        $cow_num_2 = Client::where('tv_id', $id)->sum('cow_num');
         $cow_num_3 = Client::where('gd_vung_id', $id)->sum('cow_num');
         $cow_num_4 = Client::where('pgd_id', $id)->sum('cow_num');
         $cow_num_5 = Client::where('gd_id', $id)->sum('cow_num');
@@ -275,36 +301,42 @@ class ClientRepository implements ClientRepositoryContract
             ->where('user_id', $id)
             ->count();
         $agent_2 = Client::where('client_type_id', 1)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $agent_3 = Client::where('client_type_id', 1)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $agent_4 = Client::where('client_type_id', 1)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $agent_5 = Client::where('client_type_id', 1)
+            ->where('pgd_id', $id)
+            ->count();
+        $agent_6 = Client::where('client_type_id', 1)
             ->where('gd_id', $id)
             ->count();
-        $agent = $agent_1 + $agent_2 + $agent_3 + $agent_4 + $agent_5;
+        $agent = $agent_1 + $agent_2 + $agent_3 + $agent_4 + $agent_5 + $agent_5;
 
         // Count all the Clients that is Farm
         $farm_1 = Client::where('client_type_id', 2)
             ->where('user_id', $id)
             ->count();
         $farm_2 = Client::where('client_type_id', 2)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $farm_3 = Client::where('client_type_id', 2)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $farm_4 = Client::where('client_type_id', 2)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $farm_5 = Client::where('client_type_id', 2)
+            ->where('pgd_id', $id)
+            ->count();
+        $farm_6 = Client::where('client_type_id', 2)
             ->where('gd_id', $id)
             ->count();
-        $farm = $farm_1 + $farm_2 + $farm_3 + $farm_4 + $farm_5;
+        $farm = $farm_1 + $farm_2 + $farm_3 + $farm_4 + $farm_5 + $farm_6;
 
         return collect([$agent, $farm]);
     }

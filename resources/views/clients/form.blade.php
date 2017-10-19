@@ -190,8 +190,13 @@
 
 </div>
 <div class="form-group">
-    {!! Form::label('gs_tv_id', 'Giám sát/Trưởng vùng:', ['class' => 'control-label']) !!}
-    {!! Form::select('gs_tv_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::label('gs_id', 'Giám sát:', ['class' => 'control-label']) !!}
+    {!! Form::select('gs_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+<div class="form-group">
+    {!! Form::label('tv_id', 'Trưởng vùng:', ['class' => 'control-label']) !!}
+    {!! Form::select('tv_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
 
 </div>
 <div class="form-group">

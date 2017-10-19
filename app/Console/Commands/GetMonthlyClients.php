@@ -161,20 +161,24 @@ class GetMonthlyClients extends Command
             ->count();
         $client_2 = Client::where('group_id', $group_id)
             ->where('client_type_id', $client_type_id)
-            ->where('gs_tv_id', $id)
+            ->where('gs_id', $id)
             ->count();
         $client_3 = Client::where('group_id', $group_id)
             ->where('client_type_id', $client_type_id)
-            ->where('gd_vung_id', $id)
+            ->where('tv_id', $id)
             ->count();
         $client_4 = Client::where('group_id', $group_id)
             ->where('client_type_id', $client_type_id)
-            ->where('pgd_id', $id)
+            ->where('gd_vung_id', $id)
             ->count();
         $client_5 = Client::where('group_id', $group_id)
             ->where('client_type_id', $client_type_id)
+            ->where('pgd_id', $id)
+            ->count();
+        $client_6 = Client::where('group_id', $group_id)
+            ->where('client_type_id', $client_type_id)
             ->where('gd_id', $id)
             ->count();
-        return $client_1 + $client_2 + $client_3 + $client_4 + $client_5;
+        return $client_1 + $client_2 + $client_3 + $client_4 + $client_5 + $client_6;
     }
 }

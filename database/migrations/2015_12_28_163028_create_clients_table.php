@@ -42,8 +42,10 @@ class CreateClientsTable extends Migration
             $table->dateTime('animal_date')->nullable();
             $table->integer('user_id')->unsigned()->default(0);
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('gs_tv_id')->unsigned()->default(0);
-            $table->foreign('gs_tv_id')->references('id')->on('users');
+            $table->integer('gs_id')->unsigned()->default(0);
+            $table->foreign('gs_id')->references('id')->on('users');
+            $table->integer('tv_id')->unsigned()->default(0);
+            $table->foreign('tv_id')->references('id')->on('users');
             $table->integer('gd_vung_id')->unsigned()->default(1);
             $table->foreign('gd_vung_id')->references('id')->on('users');
             $table->integer('pgd_id')->unsigned()->default(1);
