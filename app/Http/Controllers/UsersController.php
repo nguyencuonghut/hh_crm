@@ -74,9 +74,9 @@ class UsersController extends Controller
             ->addColumn('namelink', function ($users) {
                 return '<a href="users/' . $users->id . '" ">' . $users->name. '</a>';
             })
-            ->addColumn('locale', function ($users) {
-                return $users->locale()->first()->name;
-            })
+            //->addColumn('locale', function ($users) {
+            //    return $users->locale()->first()->name;
+            //})
             ->addColumn('edit', function ($user) {
                 return '<a href="' . route("users.edit", $user->id) . '" class="btn btn-success">Sửa</a>';
             })

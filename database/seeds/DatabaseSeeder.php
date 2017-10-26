@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call('UsersTableSeeder');
-        $this->call('ClientTypesTableSeeder');
+        //$this->call('ClientTypesTableSeeder');
         $this->call('ProductCategoriesTableSeeder');
         $this->call('GroupsTableSeeder');
         $this->call('DepartmentsTableSeeder');
@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call('RolesTablesSeeder');
         $this->call('RolePermissionTableSeeder');
         $this->call('UserRoleTableSeeder');
-        $this->call('ClientsTableSeeder');
+        //$this->call('ClientsTableSeeder');
         $this->call('LocalesTableSeeder');
-        $this->call('TasksTableSeeder');
-        $this->call('LeadsTableSeeder');
+        //$this->call('TasksTableSeeder');
+        //$this->call('LeadsTableSeeder');
     }
 }

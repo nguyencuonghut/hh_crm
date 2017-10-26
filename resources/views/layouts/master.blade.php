@@ -107,12 +107,12 @@ $('body').click(function(e) {
                     <a href="{{ route('clients.create')}}"
                        class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
-                <!-- cuongnv
+                <!-- cuongnv -->
                 @if(Entrust::can('client-create'))
                     <a href="{{ route('data.importexportclient')}}"
                        class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
                 @endif
-                ~cuongnv-->
+                <!-- ~cuongnv-->
             </div>
 
             <a href="#tasks" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
@@ -140,12 +140,12 @@ $('body').click(function(e) {
                         <a href="{{ route('users.create')}}"
                            class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                     @endif
-                    <!-- cuongnv
+                    <!-- cuongnv -->
                     @if(Entrust::can('user-create'))
                         <a href="{{ route('data.importexportuser')}}"
                            class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
                     @endif
-                    ~cuongnv-->
+                    <!-- ~cuongnv-->
                 </div>
                 <!-- ~ Only administrator can view all the Users -->
             @endif
@@ -186,8 +186,34 @@ $('body').click(function(e) {
                     <a href="{{ route('locales.create')}}"
                        class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
+            <!-- cuongnv -->
+                @if(Entrust::can('user-create'))
+                    <a href="{{ route('data.importexportlocale')}}"
+                       class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
+                @endif
+            <!-- ~cuongnv-->
             </div>
-            <!-- ~cuongnv -->
+            <!-- ~cuongnv-->
+
+            <!-- cuongnv -->
+            <a href="#roles" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
+                        class="sidebar-icon glyphicon glyphicon-globe"></i><span id="menu-txt">{{ __('Chức vụ') }}</span>
+                <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
+            <div class="collapse" id="roles">
+                <a href="{{ route('roles.index')}}"
+                   class="list-group-item childlist">{{ __('Tất cả các chức vụ') }}</a>
+                @if(Entrust::hasRole('administrator'))
+                    <a href="{{ route('roles.create')}}"
+                       class="list-group-item childlist">{{ __('Tạo mới') }}</a>
+                @endif
+            <!-- cuongnv -->
+                @if(Entrust::hasRole('administrator'))
+                    <a href="{{ route('data.importexportrole')}}"
+                       class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
+            @endif
+            <!-- ~cuongnv-->
+            </div>
+            <!-- ~cuongnv-->
 
             @if(Entrust::hasRole('administrator'))
                 <a href="#settings" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i

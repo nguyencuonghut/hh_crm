@@ -18,6 +18,7 @@ class UserRoleTableSeeder extends Seeder
         $newrole->timestamps = false;
         $newrole->save();
 
+        /*
         $newrole = new RoleUser;
         $newrole->role_id = '3';
         $newrole->user_id = '2';
@@ -83,5 +84,6 @@ class UserRoleTableSeeder extends Seeder
         $newrole->user_id = '12';
         $newrole->timestamps = false;
         $newrole->save();
+        */
     }
 }

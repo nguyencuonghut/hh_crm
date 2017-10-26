@@ -32,6 +32,11 @@ class GroupsTableSeeder extends Seeder
                     'id'                    => 3,
                     'name'                  => 'Thường',
                 ),
+            3 =>
+                array (
+                    'id'                    => 4,
+                    'name'                  => 'Hướng key',
+                )
         ));
     }
 }

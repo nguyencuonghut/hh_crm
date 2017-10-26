@@ -128,5 +128,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/importexportclient', ['uses' => 'DataController@importExportClient', 'as' => 'data.importexportclient'] );
         Route::post('/importclient', ['uses' => 'DataController@importClient', 'as' => 'data.importclient'] );
         Route::get('/downloadclientform/{type}', ['uses' => 'DataController@downloadClientForm', 'as' => 'data.downloadclientform'] );
+
+        Route::get('/importexportlocale', ['uses' => 'DataController@importExportLocale', 'as' => 'data.importexportlocale'] );
+        Route::post('/importlocale', ['uses' => 'DataController@importLocale', 'as' => 'data.importlocale'] );
+        Route::post('/importlocaleuser', ['uses' => 'DataController@importLocaleUser', 'as' => 'data.importlocaleuser'] );
+        Route::get('/downloadlocaleform/{type}', ['uses' => 'DataController@downloadLocaleForm', 'as' => 'data.downloadlocaleform'] );
+        Route::get('/downloadlocaleuserform/{type}', ['uses' => 'DataController@downloadLocaleUserForm', 'as' => 'data.downloadlocaleuserform'] );
+
+        Route::get('/importexportrole', ['uses' => 'DataController@importExportRole', 'as' => 'data.importexportrole'] );
+        Route::post('/importroleuser', ['uses' => 'DataController@importRoleUser', 'as' => 'data.importroleuser'] );
+        Route::get('/downloadroleuserform/{type}', ['uses' => 'DataController@downloadRoleUserForm', 'as' => 'data.downloadroleuserform'] );
     });
 });

@@ -32,7 +32,7 @@ class DepartmentsTableSeeder extends Seeder
             'department_id' => 2,
             'user_id' => 1
         ]);
-
+/*
         \DB::table('department_user')->insert([
             'department_id' => 1,
             'user_id' => 2
@@ -47,5 +47,6 @@ class DepartmentsTableSeeder extends Seeder
             'department_id' => 1,
             'user_id' => 4
         ]);
+*/
     }
 }
