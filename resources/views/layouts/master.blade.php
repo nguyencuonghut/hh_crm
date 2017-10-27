@@ -197,7 +197,7 @@ $('body').click(function(e) {
 
             <!-- cuongnv -->
             <a href="#roles" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                        class="sidebar-icon glyphicon glyphicon-globe"></i><span id="menu-txt">{{ __('Chức vụ') }}</span>
+                        class="sidebar-icon glyphicon glyphicon-list"></i><span id="menu-txt">{{ __('Chức vụ') }}</span>
                 <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
             <div class="collapse" id="roles">
                 <a href="{{ route('roles.index')}}"
