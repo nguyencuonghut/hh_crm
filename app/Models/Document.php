@@ -5,10 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
-    protected $fillable = ['name', 'size', 'path', 'file_display', 'client_id'];
+    protected $fillable = ['name', 'size', 'path', 'file_display', 'client_id', 'user_id'];
 
     public function clients()
     {
-        $this->belongsTo(Client::class, 'client_id');
+        return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

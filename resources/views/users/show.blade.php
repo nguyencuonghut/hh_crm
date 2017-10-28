@@ -2,7 +2,50 @@
     @section('content')
     @include('partials.userheader')
 <div class="col-sm-8">
-  <el-tabs active-name="tasks" style="width:100%">
+  <el-tabs active-name="plans" style="width:100%">
+      <el-tab-pane label="Báo cáo tuần" name="plans">
+          <table class="table">
+              <h4>{{ __('Tất cả báo cáo tuần') }}</h4>
+              <div class="col-xs-10">
+                  <div class="form-group">
+                      <form method="POST" action="{{ url('/users/upload', $user->id)}}" class="dropzone" id="dropzone"
+                            files="true" data-dz-removea
+                            enctype="multipart/form-data"
+                      >
+                          <meta name="csrf-token" content="{{ csrf_token() }}">
+                      </form>
+                      <p><b>{{ __('Max size') }}</b></p>
+                  </div>
+              </div>
+              <thead>
+              <tr>
+                  <th>{{ __('File') }}</th>
+                  <th>{{ __('Người tạo') }}</th>
+                  <th>{{ __('Ngày tạo') }}</th>
+              </tr>
+              </thead>
+              <tbody>
+              @foreach($user->documents->reverse() as $document)
+                  <tr>
+                      <td><a href="../files/{{$companyname}}/{{$document->path}}"
+                             target="_blank">{{$document->file_display}}</a></td>
+                      <td>{{$document->users->name}}</td>
+                      <td>{{$document->created_at}}</td>
+
+                      @if(Auth::user()->id == $document->user_id | 1 == Auth::user()->userRole()->first()->role_id)
+                      <td>
+                          <form method="POST" action="{{action('DocumentsController@destroy', $document->id)}}">
+                              <input type="hidden" name="_method" value="delete"/>
+                              <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                              <input type="submit" class="btn btn-danger" value="Xóa"/>
+                          </form>
+                      </td>
+                      @endif
+                  </tr>
+              @endforeach
+              </tbody>
+          </table>
+      </el-tab-pane>
     <el-tab-pane label="Nhiệm vụ" name="tasks">
         <table class="table table-hover" id="tasks-table">
         <h3>{{ __('Nhiệm vụ') }}</h3>

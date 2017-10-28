@@ -113,4 +113,9 @@ class User extends Authenticatable
         $setting = Setting::first();
         return $this->image_path ? 'images/' . $setting->company . '/' . $this->image_path : 'images/default_avatar.jpg';
     }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class, 'user_id', 'id');
+    }
 }

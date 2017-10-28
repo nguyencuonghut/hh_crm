@@ -33,22 +33,22 @@ class DocumentsController extends Controller
         }
         $file = $request->file('file');
         $destinationPath = public_path() . '/files/' . $companyname;
-        $filename = str_random(8) . '_' . $file->getClientOriginalName();
+        $filename = str_random(8) . '_' . 'Bao cao tuan';
         $fileOrginal = $file->getClientOriginalName();
         $file->move($destinationPath, $filename);
         $size = $file->getClientSize();
         $mbsize = $size / 1048576;
         $totaltsize = substr($mbsize, 0, 4);
         if ($totaltsize > 15) {
-            Session::flash('flash_message', 'File Size can not be bigger then 15MB');
+            Session::flash('flash_message', 'File Size không được vượt quá 15MB');
             return redirect()->back();
         }
         $input = array_replace(
             $request->all(),
-            ['path' => "$filename", 'size' => "$totaltsize", 'file_display' => "$fileOrginal", 'client_id' => $id]
+            ['path' => "$filename", 'size' => "$totaltsize", 'file_display' => "$fileOrginal", 'client_id' => $id, 'user_id' => $id]
         );
         $document = Document::create($input);
-        Session::flash('flash_message', 'File successfully uploaded');
+        Session::flash('flash_message', 'File đã upload thành công.');
     }
     /**
      * @param Request $request
@@ -90,7 +90,7 @@ class DocumentsController extends Controller
     	$destroy_path = (public_path() . '/files/' . $companyname .'/' . $path);
     	File::delete(public_path() . '/files/' . $companyname .'/' . $path);
     	$document->delete();
-    	Session()->flash('flash_message', 'File has been deleted');
+    	Session()->flash('flash_message', 'File đã được xóa');
     	return redirect()->back();
 	}
     }
