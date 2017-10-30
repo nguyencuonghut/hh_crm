@@ -132,10 +132,10 @@ $('body').click(function(e) {
             <!-- Only administrator can view all the Users -->
             @if(1 == Auth::user()->userRole()->first()->role_id)
                 <a href="#user" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                            class="sidebar-icon fa fa-users"></i><span id="menu-txt">{{ __('Người dùng') }}</span>
+                            class="sidebar-icon fa fa-users"></i><span id="menu-txt">{{ __('Nhân viên') }}</span>
                 <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
                 <div class="collapse" id="user">
-                    <a href="{{ route('users.index')}}" class="list-group-item childlist">{{ __('Tất cả người dùng') }}</a>
+                    <a href="{{ route('users.index')}}" class="list-group-item childlist">{{ __('Tất cả nhân viên') }}</a>
                     @if(Entrust::can('user-create'))
                         <a href="{{ route('users.create')}}"
                            class="list-group-item childlist">{{ __('Tạo mới') }}</a>

@@ -36,7 +36,7 @@
         </table>
 
         <a href="{{ route('roles.create')}}">
-            <button class="btn btn-success">{{ __('Add new Role') }}e</button>
+            <button class="btn btn-success">{{ __('Add new Role') }}</button>
         </a>
 
     </div>
