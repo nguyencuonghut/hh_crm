@@ -20,15 +20,39 @@ class RolesTablesSeeder extends Seeder
         $adminRole->save();
 
         $editorRole = new Role;
-        $editorRole->display_name = 'Manager';
-        $editorRole->name = 'manager';
-        $editorRole->description = 'System Manager';
+        $editorRole->display_name = 'Giám đốc';
+        $editorRole->name = 'giám đốc';
+        $editorRole->description = 'Giám đốc';
+        $editorRole->save();
+
+        $editorRole = new Role;
+        $editorRole->display_name = 'Phó giám đốc';
+        $editorRole->name = 'phó giám đốc';
+        $editorRole->description = 'Phó giám đốc';
+        $editorRole->save();
+
+        $editorRole = new Role;
+        $editorRole->display_name = 'Giám đốc vùng';
+        $editorRole->name = 'giám đốc vùng';
+        $editorRole->description = 'Giám đốc vùng';
         $editorRole->save();
 
         $employeeRole = new Role;
-        $employeeRole->display_name = 'Employee';
-        $employeeRole->name = 'employee';
-        $employeeRole->description = 'Employee';
+        $employeeRole->display_name = 'Trưởng vùng';
+        $employeeRole->name = 'trưởng vùng';
+        $employeeRole->description = 'Trưởng vùng';
+        $employeeRole->save();
+
+        $employeeRole = new Role;
+        $employeeRole->display_name = 'Giám sát';
+        $employeeRole->name = 'giám sát';
+        $employeeRole->description = 'Giám sát';
+        $employeeRole->save();
+
+        $employeeRole = new Role;
+        $employeeRole->display_name = 'Nhân viên';
+        $employeeRole->name = 'nhân viên';
+        $employeeRole->description = 'Nhân viên';
         $employeeRole->save();
     }
 }

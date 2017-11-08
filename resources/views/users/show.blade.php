@@ -129,6 +129,19 @@
                 </thead>
             </table>
     </el-tab-pane>
+      <el-tab-pane label="Nhân viên" name="users">
+          <table class="table table-hover" id="users-table">
+              <h3>{{ __('Nhân viên') }}</h3>
+              <thead>
+              <tr>
+                  <th>{{ __('Tên') }}</th>
+                  <th>{{ __('Mã NV') }}</th>
+                  <th>{{ __('Mail') }}</th>
+                  <th>{{ __('Số điện thoại') }}</th>
+              </tr>
+              </thead>
+          </table>
+      </el-tab-pane>
   </el-tabs>
   </div>
     <hr>
@@ -257,6 +270,21 @@
                     } else {
                         table.columns(6).search( '' ).draw();
                     }
+                });
+            });
+
+            $(function () {
+                $('#users-table').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: '{!! route('users.mdata', ['id' => $user->id]) !!}',
+                    columns: [
+
+                        {data: 'namelink', name: 'name'},
+                        {data: 'code', name: 'code'},
+                        {data: 'email', name: 'email'},
+                        {data: 'personal_number', name: 'personal_number'},
+                    ],
                 });
             });
 

@@ -21,6 +21,8 @@ use App\Repositories\Locale\LocaleRepositoryContract;
 use App\Repositories\Setting\SettingRepositoryContract;
 use App\Repositories\Task\TaskRepositoryContract;
 use App\Repositories\Lead\LeadRepositoryContract;
+use Laravel\Dusk\Concerns\InteractsWithAuthentication;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -85,6 +87,37 @@ class UsersController extends Controller
             })->make(true);
     }
 
+    public function mData($id)
+    {
+        $user = User::findorFail($id);
+        switch($user->userRole()->first()->role_id) {
+            case 1: //Administrator: can view all users
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number']);
+                break;
+            case 2: // Giám đốc: can view all users
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number']);
+                break;
+            case 3: // Phó giám đốc: can view all users of his location
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number'])->where('pgd_id', $user->id);
+                break;
+            case 4: // Giám đốc vùng: can view all users of his location
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number'])->where('gd_vung_id', $user->id);
+                break;
+            case 5: // Trưởng vùng: can view all users of his location
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number'])->where('tv_id', $user->id);
+                break;
+            case 6: // Giám sát: can view all users of his location
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number'])->where('gs_id', $user->id);
+                break;
+            case 7: // Giám sát: can view all users of his location
+                $users = User::select(['id', 'name', 'email', 'code', 'work_number', 'personal_number'])->where('id', 0);
+                break;
+        }
+        return Datatables::of($users)
+            ->addColumn('namelink', function ($users) {
+                return '<a href="users/' . $users->id . '" ">' . $users->name. '</a>';
+            })->make(true);
+    }
     /**
      * Json for Data tables
      * @param $id
@@ -216,7 +249,8 @@ class UsersController extends Controller
         return view('users.create')
             ->withRoles($this->roles->listAllRoles())
             ->withDepartments($this->departments->listAllDepartments())
-            ->withLocales($this->locales->listAllLocales());
+            ->withLocales($this->locales->listAllLocales())
+            ->withUsers($this->users->getAllUsersWithDepartments());
     }
 
     /**
@@ -235,7 +269,6 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-
         $user = User::findorFail($id);
         $opened_agents = collect([$user->opened_agents_1, $user->opened_agents_2, $user->opened_agents_3,
             $user->opened_agents_4, $user->opened_agents_5, $user->opened_agents_6,

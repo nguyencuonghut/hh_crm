@@ -8,7 +8,7 @@
         <thead>
         <tr>
             <th>{{ __('Tên') }}</th>
-            <th>{{ __('Mã NV') }}</th>
+            <th>{{ __('Mã') }}</th>
             <th>{{ __('Mail') }}</th>
             <th>{{ __('Số điện thoại') }}</th>
             <th></th>
@@ -109,15 +109,11 @@
                 {data: 'code', name: 'code'},
                 {data: 'email', name: 'email'},
                 {data: 'personal_number', name: 'personal_number'},
-                    @if(Entrust::can('user-update'))
-                {
-                    data: 'edit', name: 'edit', orderable: false, searchable: false
-                },
-                    @endif
-                    @if(Entrust::can('user-delete'))
-                {
-                    data: 'delete', name: 'delete', orderable: false, searchable: false
-                },
+                @if(Entrust::can('user-update'))
+                {data: 'edit', name: 'edit', orderable: false, searchable: false},
+                @endif
+                @if(Entrust::can('user-delete'))
+                {data: 'delete', name: 'delete', orderable: false, searchable: false},
                 @endif
             ],
         });

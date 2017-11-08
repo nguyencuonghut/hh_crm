@@ -39,6 +39,37 @@
     {!! Form::label('password_confirmation', __('Xác nhận password'), ['class' => 'control-label']) !!}
     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
 </div>
+
+<div class="form-group">
+    {!! Form::label('gd_id', 'Giám đốc:', ['class' => 'control-label']) !!}
+    {!! Form::select('gd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+
+<div class="form-group">
+    {!! Form::label('pgd_id', 'Phó giám đốc:', ['class' => 'control-label']) !!}
+    {!! Form::select('pgd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+
+<div class="form-group">
+    {!! Form::label('gd_vung_id', 'Giám đốc vùng:', ['class' => 'control-label']) !!}
+    {!! Form::select('gd_vung_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+
+<div class="form-group">
+    {!! Form::label('tv_id', 'Trưởng vùng:', ['class' => 'control-label']) !!}
+    {!! Form::select('tv_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+
+<div class="form-group">
+    {!! Form::label('gs_id', 'Giám sát:', ['class' => 'control-label']) !!}
+    {!! Form::select('gs_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+
+</div>
+
 <div class="form-group form-inline">
     {!! Form::label('roles', __('Chức vụ'), ['class' => 'control-label']) !!}
     {!!

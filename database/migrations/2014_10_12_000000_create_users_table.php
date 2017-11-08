@@ -75,6 +75,17 @@ class CreateUsersTable extends Migration
             $table->string('candidate_farms_10')->default(0);
             $table->string('candidate_farms_11')->default(0);
             $table->string('candidate_farms_12')->default(0);
+
+            $table->integer('gs_id')->unsigned()->default(0);
+            $table->foreign('gs_id')->references('id')->on('users');
+            $table->integer('tv_id')->unsigned()->default(0);
+            $table->foreign('tv_id')->references('id')->on('users');
+            $table->integer('gd_vung_id')->unsigned()->default(1);
+            $table->foreign('gd_vung_id')->references('id')->on('users');
+            $table->integer('pgd_id')->unsigned()->default(1);
+            $table->foreign('pgd_id')->references('id')->on('users');
+            $table->integer('gd_id')->unsigned()->default(1);
+            $table->foreign('gd_id')->references('id')->on('users');
             $table->rememberToken();
             $table->timestamps();
         });
