@@ -174,6 +174,10 @@ $('body').click(function(e) {
                     <a href="{{ route('departments.create')}}"
                        class="list-group-item childlist">{{ __('Tạo mới') }}</a>
                 @endif
+                @if(Entrust::hasRole('administrator'))
+                    <a href="{{ route('data.importexportdepartment')}}"
+                       class="list-group-item childlist">{{ __('Import dữ liệu') }}</a>
+                @endif
             </div>
             <!-- cuongnv -->
             <a href="#locales" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i

@@ -5,6 +5,7 @@ use App\Models\Client;
 use App\Models\Locale;
 use App\Models\LocaleUser;
 use App\Models\RoleUser;
+use App\Models\DepartmentUser;
 use Excel;
 use Illuminate\Http\Request;
 
@@ -325,6 +326,64 @@ class DataController extends Controller
     {
         $data = RoleUser::get()->toArray();
         return Excel::create('RoleUserForm', function ($excel) use ($data) {
+            $excel->sheet('mySheet', function ($sheet) use ($data) {
+                $sheet->fromArray($data);
+            });
+        })->download($type);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function importExportDepartment()
+    {
+        return view('data.department');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function importDepartmentUser(Request $request)
+    {
+        if ($request->hasFile('import_file')) {
+            $path = $request->file('import_file')->getRealPath();
+
+            $data = Excel::load($path, function ($reader) {
+            })->get();
+
+            if (!empty($data) && $data->count()) {
+
+                foreach ($data->toArray() as $key => $value) {
+                    if (!empty($value)) {
+                        foreach ($value as $v) {
+                            $insert[] = [
+                                'department_id' => $v['department_id'],
+                                'user_id' => $v['user_id']];
+                        }
+                    }
+                }
+
+
+                if (!empty($insert)) {
+                    DepartmentUser::insert($insert);
+                    return back()->with('success', 'Nhập dữ liệu từ file excel thành công.');
+                }
+
+            }
+
+        }
+
+        return back()->with('error', 'Nhập dữ liệu thất bại. Vui lòng kiểm tra file đầu vào.');
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function downloadDepartmentUserForm(Request $request, $type)
+    {
+        $data = DepartmentUser::get()->toArray();
+        return Excel::create('DepartmentUserForm', function ($excel) use ($data) {
             $excel->sheet('mySheet', function ($sheet) use ($data) {
                 $sheet->fromArray($data);
             });

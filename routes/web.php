@@ -140,5 +140,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/importexportrole', ['uses' => 'DataController@importExportRole', 'as' => 'data.importexportrole'] );
         Route::post('/importroleuser', ['uses' => 'DataController@importRoleUser', 'as' => 'data.importroleuser'] );
         Route::get('/downloadroleuserform/{type}', ['uses' => 'DataController@downloadRoleUserForm', 'as' => 'data.downloadroleuserform'] );
+
+        Route::get('/importexportdepartment', ['uses' => 'DataController@importExportDepartment', 'as' => 'data.importexportdepartment'] );
+        Route::post('/importdepartmentuser', ['uses' => 'DataController@importDepartmentUser', 'as' => 'data.importdepartmentuser'] );
+        Route::get('/downloaddepartmentuserform/{type}', ['uses' => 'DataController@downloadDepartmentUserForm', 'as' => 'data.downloaddepartmentuserform'] );
+
     });
 });
