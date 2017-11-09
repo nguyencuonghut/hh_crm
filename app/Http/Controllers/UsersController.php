@@ -312,6 +312,7 @@ class UsersController extends Controller
     {
         return view('users.edit')
             ->withUser($this->users->find($id))
+            ->withUsers($this->users->getAllUsersWithDepartments())
             ->withRoles($this->roles->listAllRoles())
             ->withDepartments($this->departments->listAllDepartments())
             ->withLocales($this->locales->ListAllLocales());
@@ -326,7 +327,7 @@ class UsersController extends Controller
     {
         $this->users->update($id, $request);
         Session()->flash('flash_message', 'Sửa người dùng thành công.');
-        return redirect()->back();
+        return redirect()->route('users.index');
     }
 
     /**

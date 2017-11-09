@@ -23,13 +23,17 @@
                     <td>{{Str_limit($locale->description, 50)}}</td>
                     <td>{{ $locale->manager->name }}</td>
                     @if(Entrust::hasRole('administrator'))
+                        <td><a href="{{ route('locales.edit', $locale->id) }}" class="btn btn-success btn-md">Sửa</a></td>
+
+                    @endif
+                    @if(Entrust::hasRole('administrator'))
                         <td>   {!! Form::open([
             'method' => 'DELETE',
             'route' => ['locales.destroy', $locale->id]
         ]); !!}
                             {!! Form::submit( __('Xóa'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
 
-                            {!! Form::close(); !!}</td></td>
+                            {!! Form::close(); !!}</td>
                     @endif
                 </tr>
             @endforeach

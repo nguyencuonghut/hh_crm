@@ -40,4 +40,14 @@ class LocaleRepository implements LocaleRepositoryContract
     {
         Locale::findorFail($id)->delete();
     }
+
+    /**
+     * @param $id
+     * @param $requestData
+     */
+    public function update($id, $requestData)
+    {
+        $lead = Locale::findOrFail($id);
+        $lead->fill($requestData->all())->save();
+    }
 }
