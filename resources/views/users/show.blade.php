@@ -6,6 +6,8 @@
       <el-tab-pane label="Báo cáo tuần" name="plans">
           <table class="table">
               <h4>{{ __('Tất cả báo cáo tuần') }}</h4>
+              <!-- Only the user can upload his document -->
+              @if(Auth::user()->id == $user->id)
               <div class="col-xs-10">
                   <div class="form-group">
                       <form method="POST" action="{{ url('/users/upload', $user->id)}}" class="dropzone" id="dropzone"
@@ -17,6 +19,7 @@
                       <p><b>{{ __('Max size') }}</b></p>
                   </div>
               </div>
+              @endif
               <thead>
               <tr>
                   <th>{{ __('File') }}</th>
