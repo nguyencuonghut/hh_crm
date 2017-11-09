@@ -51,7 +51,7 @@ class ClientRepository implements ClientRepositoryContract
      */
     public function getAllClientsCount()
     {
-        return Client::all()->count();
+        return Client::all()->where('name', '!=', NULL)->count();
     }
 
 

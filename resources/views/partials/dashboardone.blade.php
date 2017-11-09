@@ -88,46 +88,6 @@
         </div>
 
     </div>
-    <div class="col-sm-12">
-
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h4 class="box-title"
-                >
-                    {{ __('Người dùng') }}
-                </h4>
-                <div class="box-tools pull-right">
-
-                </div>
-            </div>
-            <div id="collapseOne" class="panel-collapse">
-
-                @foreach($users as $user)
-                    <div class="col-lg-1">
-                        @if($user->isOnline())
-                            <i class="dot-online" data-toggle="tooltip" title="Online" data-placement="left"></i>
-                        @else
-                            <i class="dot-offline" data-toggle="tooltip" title="Offline" data-placement="left"></i>
-                        @endif
-                        <a href="{{route('users.show', $user->id)}}">
-                            <img class="small-profile-picture" data-toggle="tooltip" title="{{$user->name}}"
-                                 data-placement="left"
-                                 @if($user->image_path != "")
-                                 src="images/{{$companyname}}/{{$user->image_path}}"
-                                 @else
-                                 src="images/default_avatar.jpg"
-                                    @endif />
-                        </a>
-
-                    </div>
-
-                @endforeach
-
-            </div>
-        </div>
-    </div>
-
-
 </div>
 </div>
 

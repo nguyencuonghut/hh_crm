@@ -178,6 +178,27 @@ class PagesController extends Controller
          */
         $allcows = $this->clients->getAllCowsCount();//cuongnv Tổng số bò
 
+        /**
+         * Statistics for all animals
+         *
+         */
+        $animalStatistics = collect([$allpigs,
+            $allbroilerchickens,
+            $allbroilerducks,
+            $allquails,
+            $allaquas,
+            $alllayerchickens,
+            $alllayerducks,
+            $allcows
+        ]);
+
+        /**
+         * Statistics for all customers
+         *
+         */
+        $typeStatistics = collect([$allagents,
+            $allfarms
+        ]);
         return view('pages.dashboard', compact(
             'completedTasksToday',
             'completedLeadsToday',
@@ -210,7 +231,9 @@ class PagesController extends Controller
             'allaquas',
             'alllayerchickens',
             'alllayerducks',
-            'allcows'
+            'allcows',
+            'animalStatistics',
+            'typeStatistics'
         ));
     }
 }
