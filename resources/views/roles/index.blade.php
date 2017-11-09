@@ -4,13 +4,13 @@
     <div class="col-lg-12 currenttask">
 
         <table class="table table-hover">
-            <h3>{{ __('All Roles') }}</h3>
+            <h3>{{ __('Tất cả chức vụ') }}</h3>
             <thead>
             <thead>
             <tr>
-                <th>{{ __('Name') }}</th>
-                <th>{{ __('Description') }}</th>
-                <th>{{ __('Action') }}</th>
+                <th>{{ __('Tên') }}</th>
+                <th>{{ __('Mô tả') }}</th>
+                <th>{{ __('Hành động') }}</th>
             </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
             'route' => ['roles.destroy', $role->id]
         ]); !!}
                         @if($role->id !== 1)
-                            {!! Form::submit(__('Delete'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
+                            {!! Form::submit(__('Xóa'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
                         @endif
                         {!! Form::close(); !!}</td>
                     </td>
@@ -36,7 +36,7 @@
         </table>
 
         <a href="{{ route('roles.create')}}">
-            <button class="btn btn-success">{{ __('Add new Role') }}</button>
+            <button class="btn btn-success">{{ __('Tạo thêm chức vụ khác') }}</button>
         </a>
 
     </div>

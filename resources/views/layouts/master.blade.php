@@ -221,22 +221,22 @@ $('body').click(function(e) {
 
             @if(Entrust::hasRole('administrator'))
                 <a href="#settings" class=" list-group-item" data-toggle="collapse" data-parent="#MainMenu"><i
-                            class="glyphicon sidebar-icon glyphicon-cog"></i><span id="menu-txt">{{ __('Settings') }}</span>
+                            class="glyphicon sidebar-icon glyphicon-cog"></i><span id="menu-txt">{{ __('Cài đặt') }}</span>
                 <i class="ion-chevron-up  arrow-up sidebar-arrow"></i></a>
                 <div class="collapse" id="settings">
                     <a href="{{ route('settings.index')}}"
-                       class="list-group-item childlist">{{ __('Overall Settings') }}</a>
+                       class="list-group-item childlist">{{ __('Cài đặt chung') }}</a>
 
                     <a href="{{ route('roles.index')}}"
-                       class="list-group-item childlist">{{ __('Role Management') }}</a>
+                       class="list-group-item childlist">{{ __('Cài đặt chức vụ') }}</a>
                     <a href="{{ route('integrations.index')}}"
-                       class="list-group-item childlist">{{ __('Integrations') }}</a>
+                       class="list-group-item childlist">{{ __('Tích hợp') }}</a>
                 </div>
 
 
             @endif
             <a href="{{ url('/logout') }}" class=" list-group-item impmenu" data-parent="#MainMenu"><i
-                        class="glyphicon sidebar-icon glyphicon-log-out"></i><span id="menu-txt">{{ __('Sign Out') }}</span> </a>
+                        class="glyphicon sidebar-icon glyphicon-log-out"></i><span id="menu-txt">{{ __('Đăng xuất') }}</span> </a>
 
         </div>
     </nav>
