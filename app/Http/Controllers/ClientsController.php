@@ -50,7 +50,9 @@ class ClientsController extends Controller
     {
         //Only show all Clients for administrator
         if(1 == Auth::user()->userRole()->first()->role_id) {
-            $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id']);
+            $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id'])
+                ->where('client_code', '!=', NULL)
+                ->get();
         } else {
             $id = Auth::user()->id;
             $clients = Client::select(['id', 'name', 'client_code', 'company_name', 'email', 'primary_number', 'province', 'district', 'ward', 'client_type_id', 'group_id', 'product_category_id'])

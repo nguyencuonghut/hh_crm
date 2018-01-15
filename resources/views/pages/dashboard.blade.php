@@ -20,12 +20,12 @@
     </script>
 @endpush
     <div class="div">
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-5 col-sm-6 col-xs-12">
             <h4>{{ __('Khách hàng') }}</h4>
             <bar1 :statistics="{{$typeStatistics}}"></bar1>
         </div>
 
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-1">
             <h4>{{ __('Vật nuôi') }}</h4>
             <bar :statistics="{{$animalStatistics}}"></bar>
         </div>
