@@ -172,6 +172,7 @@
         <h4>{{ __('Khách hàng') }}</h4>
         <bar1 :statistics="{{$type_statistics}}"></bar1>
     </div>
+    <!--
     <div class="col-sm-12">
         <h4>{{ __('Tăng trưởng năm ') }} {{date('Y')}}</h4>
         <linechart class="chart"
@@ -181,6 +182,7 @@
             :opened_agents="{{json_encode($opened_agents)}}">
         </linechart>
     </div>
+    -->
 
    @stop 
 @push('scripts')

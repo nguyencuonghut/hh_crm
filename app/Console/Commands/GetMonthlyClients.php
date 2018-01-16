@@ -40,8 +40,8 @@ class GetMonthlyClients extends Command
     public function handle()
     {
         $users = User::all();
-       $month =  date('M');
-       $num_month = date("m", strtotime($month)); //Convert month to number
+        $month =  date('M');
+        $num_month = date("m", strtotime($month)); //Convert current month to number
         foreach($users as $user)
         {
             $id = $user->id;
@@ -49,7 +49,7 @@ class GetMonthlyClients extends Command
             //Calculate the number of opened Agents for each user
             $opened_agents = $this->_getClientMonthly($id, 1, 3);
 
-            //Calculate the number of candidate Agents for each user
+            //Calculate thez number of candidate Agents for each user
             $candidate_agents = $this->_getClientMonthly($id, 1, 1);
 
             //Calculate the number of opened Farms for each user
