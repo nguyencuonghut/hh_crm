@@ -42,59 +42,87 @@
 
 <div class="form-group">
     {!! Form::label('gd_id', 'Giám đốc:', ['class' => 'control-label']) !!}
-    {!! Form::select('gd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::select('gd_id', $users, null, ['id'=>'gd_id', 'name'=>'gd_id','class'=>'form-control']) !!}
 
 </div>
 
 <div class="form-group">
     {!! Form::label('pgd_id', 'Phó giám đốc:', ['class' => 'control-label']) !!}
-    {!! Form::select('pgd_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::select('pgd_id', $users, null, ['id'=>'pgd_id', 'name'=>'pgd_id','class'=>'form-control']) !!}
 
 </div>
 
 <div class="form-group">
     {!! Form::label('gd_vung_id', 'Giám đốc vùng:', ['class' => 'control-label']) !!}
-    {!! Form::select('gd_vung_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::select('gd_vung_id', $users, null, ['id'=>'gd_vung_id', 'name'=>'gd_vung_id','class'=>'form-control']) !!}
 
 </div>
 
 <div class="form-group">
     {!! Form::label('tv_id', 'Trưởng vùng:', ['class' => 'control-label']) !!}
-    {!! Form::select('tv_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::select('tv_id', $users, null, ['id'=>'tv_id', 'name'=>'tv_id','class'=>'form-control']) !!}
 
 </div>
 
 <div class="form-group">
     {!! Form::label('gs_id', 'Giám sát:', ['class' => 'control-label']) !!}
-    {!! Form::select('gs_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+    {!! Form::select('gs_id', $users, null, ['id'=>'gs_id', 'name'=>'gs_id','class'=>'form-control']) !!}
 
 </div>
 
 <div class="form-group form-inline">
-    {!! Form::label('roles', __('Chức vụ'), ['class' => 'control-label']) !!}
-    {!!
-        Form::select('roles',
-        $roles,
-        isset($user->role->role_id) ? $user->role->role_id : null,
-        ['class' => 'form-control']) !!}
+    {!! Form::label('roles', __('Chức vụ:'), ['class' => 'control-label']) !!}
+    {!! Form::select('roles', $roles, isset($user->role->role_id) ? $user->role->role_id : null, ['id'=>'role', 'name'=>'roles','class'=>'form-control']) !!}
 
-    {!! Form::label('departments', __('Phòng/ban'), ['class' => 'control-label']) !!}
-
-    {!!
-        Form::select('departments',
-        $departments,
-        isset($user)
-        ? $user->department->first()->id : null,
-        ['class' => 'form-control']) !!}
+    {!! Form::label('departments', __('Phòng/ban:'), ['class' => 'control-label']) !!}
+    {!! Form::select('departments', $departments, isset($user) ? $user->department->first()->id : null, ['id'=>'department', 'name'=>'departments','class'=>'form-control']) !!}
 
     {!! Form::label('locales', __('Vùng kinh doanh'), ['class' => 'control-label']) !!}
-
-    {!!
-        Form::select('locales',
-        $locales,
-        isset($user)
-        ? $user->locale->first()->id : null,
-        ['class' => 'form-control']) !!}
+    {!! Form::select('locales', $locales, isset($user) ? $user->locale->first()->id : null, ['id'=>'locale', 'name'=>'locales','class'=>'form-control']) !!}
 </div>
 
 {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary']) !!}
+
+@push('scripts')
+    <script type="text/javascript">
+        $("#gs_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+
+        $("#tv_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+
+        $("#gd_vung_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+
+        $("#pgd_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+
+        $("#gd_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+
+        $("#role").select2({
+            placeholder: "Chọn chức vụ",
+            allowClear: true
+        });
+
+        $("#department").select2({
+            placeholder: "Chọn phòng/ban",
+            allowClear: true
+        });
+
+        $("#locale").select2({
+            placeholder: "Chọn vùng kinh doanh",
+            allowClear: true
+        });
+    </script>
+@endpush

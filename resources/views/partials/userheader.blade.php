@@ -1,7 +1,11 @@
 <div class="col-lg-6">
 
     <div class="profilepic"><img class="profilepicsize" src="../{{ $contact->avatar }}" /></div>
-    <h1><a href="{{ route('users.show', $contact->id) }}">{{ $contact->name }}</a></h1>
+    <h1><a href="{{ route('users.show', $contact->id) }}">{{ $contact->name }}</a>
+        <span>
+            <a href="{{ route("users.edit", $contact->id) }}"><button class="btn btn-warning btn-md" style="margin-left: 10px">Sửa</button></a>
+        </span>
+    </h1>
 
     <!--MAIL-->
     <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
