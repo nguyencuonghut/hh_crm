@@ -155,7 +155,6 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
-        $client = Client::find($id);
         return view('clients.show')
             ->withClient($this->clients->find($id))
             ->withCompanyname($this->settings->getCompanyName())

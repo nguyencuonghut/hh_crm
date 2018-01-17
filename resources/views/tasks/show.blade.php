@@ -57,7 +57,7 @@
                'method' => 'PATCH',
                 'url' => ['tasks/updateassign', $tasks->id],
                 ]) !!}
-                {!! Form::select('user_assigned_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+                {!! Form::select('user_assigned_id', $users, null, ['id'=>'user_assigned_id', 'name'=>'user_assigned_id','class'=>'form-control', 'style' => 'width:100%']) !!}
                 {!! Form::submit(__('Giao cho'), ['class' => 'btn btn-primary form-control closebtn']) !!}
                 {!! Form::close() !!}
 
@@ -113,3 +113,12 @@
         </div>
     </div>
 @stop
+
+@push('scripts')
+    <script type="text/javascript">
+        $("#user_assigned_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+    </script>
+@endpush

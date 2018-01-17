@@ -558,4 +558,12 @@ class ClientRepository implements ClientRepositoryContract
 
         return $result;
     }
+    /**
+     * @return mixed
+     */
+    public function getAllClientsWithAddr()
+    {
+        return Client::all()
+            ->pluck('nameAndAddr', 'id');
+    }
 }

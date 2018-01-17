@@ -90,4 +90,9 @@ class Client extends Model
     {
         return User::findOrFail($this->user_id);
     }
+
+    public function getNameAndAddrAttribute()
+    {
+        return $this->name . ' (' . $this->province . ' - ' . $this->district . ' - ' . $this->ward . ')';
+    }
 }

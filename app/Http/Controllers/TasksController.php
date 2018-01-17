@@ -106,7 +106,7 @@ class TasksController extends Controller
     {
         return view('tasks.create')
             ->withUsers($this->users->getAllUsersWithDepartments())
-            ->withClients($this->clients->listAllClients());
+            ->withClients($this->clients->getAllClientsWithAddr());
     }
 
     /**

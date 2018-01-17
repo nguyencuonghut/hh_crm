@@ -40,7 +40,6 @@
             @include('clients.tabs.leadtab')
             @include('clients.tabs.documenttab')
             @include('clients.tabs.invoicetab')
-            <a href="{{ route("clients.edit", $client->id) }}"><button class="btn btn-success btn-md" style="margin-left: 10px">Sửa thông tin khách hàng</button></a>
         </div>
     </div>
     <div class="col-md-4 currenttask">
@@ -48,10 +47,19 @@
                'method' => 'PATCH',
                 'url' => ['clients/updateassign', $client->id],
                 ]) !!}
-                {!! Form::select('user_assigned_id', $users, $client->user->id, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
+                {!! Form::select('user_assigned_id', $users, $client->user->id, ['id'=>'user_assigned_id', 'name'=>'user_assigned_id','class'=>'form-control']) !!}
+
                 {!! Form::submit(__('Giao cho người khác'), ['class' => 'btn btn-primary form-control closebtn']) !!}
                 {!! Form::close() !!}
     </div>
     </div>
     </div>
 @stop
+@push('scripts')
+    <script type="text/javascript">
+        $("#user_assigned_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+    </script>
+@endpush
