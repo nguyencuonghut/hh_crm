@@ -89,6 +89,9 @@ Route::group(['middleware' => ['auth']], function () {
     /**
      * Locales cuongnv
      */
+    Route::group(['prefix' => 'locales'], function () {
+        Route::get('/data', 'LocalesController@anyData')->name('locales.data');
+    });
     Route::resource('locales', 'LocalesController');
 
     /**

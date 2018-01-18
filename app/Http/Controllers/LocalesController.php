@@ -8,6 +8,8 @@ use App\Http\Requests\Locale\StoreLocaleRequest;
 use App\Http\Requests\Locale\UpdateLocaleRequest;
 use App\Repositories\Locale\LocaleRepositoryContract;
 use App\Repositories\User\UserRepositoryContract;
+use Auth;
+use Datatables;
 
 class LocalesController extends Controller
 {
@@ -27,13 +29,43 @@ class LocalesController extends Controller
         $this->middleware('user.is.admin', ['only' => ['create', 'destroy']]);
     }
 
+
+    /**
+     * Make json respnse for datatables
+     * @return mixed
+     */
+    public function anyData()
+    {
+        //$locales = Locale::select(['id', 'name', 'manager_id']);
+        $locales = Locale::with('manager')->select('locales.*');
+        return Datatables::of($locales)
+            ->addColumn('name', function ($locales) {
+                return $locales->name;
+            })
+            ->addColumn('description', function ($locales) {
+                return $locales->description;
+            })
+            ->addColumn('manager_name', function ($locales) {
+                return $locales->manager->name;
+            })
+            ->add_column('edit', '
+                <a href="{{ route(\'locales.edit\', $id) }}" class="btn btn-success" >Sửa</a>')
+            ->add_column('delete', '
+                <form action="{{ route(\'locales.destroy\', $id) }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" name="submit" value="Xóa" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
+
+            {{csrf_field()}}
+            </form>')
+            ->make(true);
+    }
+
     /**
      * @return mixed
      */
     public function index()
     {
-        return view('locales.index')
-            ->withLocales($this->locales->getAllLocales());
+        return view('locales.index');
     }
 
     /**

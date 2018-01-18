@@ -1,46 +1,45 @@
 @extends('layouts.master')
-
-@section('content')
-    <div class="col-lg-12 currenttask">
-        <table class="table table-hover">
-            <h3>Tất cả các vùng</h3>
-            <thead>
-            <thead>
-            <tr>
-                <th>{{ __('Tên') }}</th>
-                <th>{{ __('Mô tả') }}</th>
-                <th>{{ __('Trưởng vùng') }}</th>
-                @if(Entrust::hasRole('administrator'))
-                    <th>{{ __('Hành động') }}</th>
-                @endif
-            </tr>
-            </thead>
-            <tbody>
-
-            @foreach($locales as $locale)
-                <tr>
-                    <td>{{$locale->name}}</td>
-                    <td>{{Str_limit($locale->description, 50)}}</td>
-                    <td>{{ $locale->manager->name }}</td>
-                    @if(Entrust::hasRole('administrator'))
-                        <td><a href="{{ route('locales.edit', $locale->id) }}" class="btn btn-success btn-md">Sửa</a></td>
-
-                    @endif
-                    @if(Entrust::hasRole('administrator'))
-                        <td>   {!! Form::open([
-            'method' => 'DELETE',
-            'route' => ['locales.destroy', $locale->id]
-        ]); !!}
-                            {!! Form::submit( __('Xóa'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
-
-                            {!! Form::close(); !!}</td>
-                    @endif
-                </tr>
-            @endforeach
-
-            </tbody>
-        </table>
-
-    </div>
+@section('heading')
 
 @stop
+
+@section('content')
+
+    <table class="table table-hover " id="locales-table">
+        <thead>
+        <tr>
+            <th>{{ __('Tên') }}</th>
+            <th>{{ __('Mô tả') }}</th>
+            <th>{{ __('Trưởng vùng') }}</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+    </table>
+
+@stop
+
+@push('scripts')
+    <script>
+        $(function () {
+            $('#locales-table').DataTable({
+                processing: true,
+                serverSide: true,
+
+                ajax: '{!! route('locales.data') !!}',
+                columns: [
+
+                    {data: 'name', name: 'name'},
+                    {data: 'description', name: 'description'},
+                    {data: 'manager_name', name: 'manager.name'},
+                    @if(Entrust::hasRole('administrator'))
+                    { data: 'edit', name: 'edit', orderable: false, searchable: false},
+                    { data: 'delete', name: 'delete', orderable: false, searchable: false},
+                    @endif
+
+                ]
+            });
+        });
+    </script>
+@endpush
