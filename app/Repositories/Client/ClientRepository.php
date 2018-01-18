@@ -295,6 +295,7 @@ class ClientRepository implements ClientRepositoryContract
                 $pig_num = 0;
                 $broiler_chicken_num = 0;
                 $broiler_duck_num = 0;
+                $quail_num = 0;
                 $aqua_num = 0;
                 $layer_chicken_num = 0;
                 $layer_duck_num = 0;
