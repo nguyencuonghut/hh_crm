@@ -47,6 +47,8 @@ interface ClientRepositoryContract
 
     public function listAllGroups();
 
+    public function getAllClientsWithAddr();
+
     public function create($requestData);
 
     public function update($id, $requestData);

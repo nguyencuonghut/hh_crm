@@ -103,7 +103,7 @@ class LeadsController extends Controller
     {
         return view('leads.create')
             ->withUsers($this->users->getAllUsersWithDepartments())
-            ->withClients($this->clients->listAllClients());
+            ->withClients($this->clients->getAllClientsWithAddr());
     }
 
     /**
