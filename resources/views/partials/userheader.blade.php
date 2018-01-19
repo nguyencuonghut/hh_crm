@@ -3,7 +3,7 @@
     <div class="profilepic"><img class="profilepicsize" src="../{{ $contact->avatar }}" /></div>
     <h1><a href="{{ route('users.show', $contact->id) }}">{{ $contact->name }}</a>
         <span>
-            <a href="{{ route("users.edit", $contact->id) }}"><button class="btn btn-warning btn-md" style="margin-left: 10px">Sửa</button></a>
+            <a href="{{ route("users.edit", $contact->id) }}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
         </span>
     </h1>
 
