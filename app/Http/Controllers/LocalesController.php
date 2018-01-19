@@ -74,7 +74,7 @@ class LocalesController extends Controller
     public function create()
     {
         return view('locales.create')
-            ->withUsers($this->users->getAllUsersWithDepartments());
+            ->withUsers($this->users->getAllUsersWithLocales());
     }
 
     /**
@@ -97,7 +97,7 @@ class LocalesController extends Controller
         $locale = Locale::findorFail($id);
         return view('locales.edit')
             ->withLocale($locale)
-            ->withUsers($this->users->getAllUsersWithDepartments());
+            ->withUsers($this->users->getAllUsersWithLocales());
     }
 
     /**

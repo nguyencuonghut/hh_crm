@@ -105,7 +105,7 @@ class TasksController extends Controller
     public function create()
     {
         return view('tasks.create')
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withClients($this->clients->getAllClientsWithAddr());
     }
 
@@ -130,7 +130,7 @@ class TasksController extends Controller
     {
         return view('tasks.show')
             ->withTasks($this->tasks->find($id))
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withInvoiceLines($this->tasks->getInvoiceLines($id))
             ->withCompanyname($this->settings->getCompanyName());
     }
@@ -233,8 +233,8 @@ class TasksController extends Controller
         if(($user_id == $user_created_id) | (1 == Auth::user()->userRole()->first()->role_id)) {
             return view('tasks.edit')
                 ->withTask($this->tasks->find($id))
-                ->withClients($this->clients->listAllClients())
-                ->withUsers($this->users->getAllUsersWithDepartments());
+                ->withClients($this->clients->getAllClientsWithAddr())
+                ->withUsers($this->users->getAllUsersWithLocales());
         }else {
             Session()->flash('flash_message_warning', 'Bạn không có quyền sửa nhiệm vụ này!');
             return redirect()->back();

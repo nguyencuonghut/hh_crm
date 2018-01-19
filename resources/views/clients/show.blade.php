@@ -47,7 +47,7 @@
                'method' => 'PATCH',
                 'url' => ['clients/updateassign', $client->id],
                 ]) !!}
-                {!! Form::select('user_assigned_id', $users, $client->user->id, ['id'=>'user_assigned_id', 'name'=>'user_assigned_id','class'=>'form-control']) !!}
+                {!! Form::select('user_assigned_id', $users, $client->user->id, ['id'=>'user_assigned_id', 'name'=>'user_assigned_id','class'=>'form-control', 'style' => 'width:100%']) !!}
 
                 {!! Form::submit(__('Giao cho người khác'), ['class' => 'btn btn-primary form-control closebtn']) !!}
                 {!! Form::close() !!}

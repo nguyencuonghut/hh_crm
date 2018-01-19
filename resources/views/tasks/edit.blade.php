@@ -39,13 +39,14 @@
 
     </div>
     <div class="form-group form-inline">
-        {!! Form::label('user_assigned_id', __('Assign user'), ['class' => 'control-label']) !!}
-        {!! Form::select('user_assigned_id', $users, null, ['class' => 'form-control']) !!}
+        {!! Form::label('user_assigned_id', __('Giao cho nhân viên'), ['class' => 'control-label']) !!}
+        {!! Form::select('user_assigned_id', $users, null, ['id'=>'user_assigned_id', 'name'=>'user_assigned_id','class'=>'form-control', 'style' => 'width:100%']) !!}
+
         @if(Request::get('client') != "")
             {!! Form::hidden('client_id', Request::get('client')) !!}
         @else
-            {!! Form::label('client_id', __('Assign client'), ['class' => 'control-label']) !!}
-            {!! Form::select('client_id', $clients, null, ['class' => 'form-control']) !!}
+            {!! Form::label('client_id', __('Gán cho khách hàng'), ['class' => 'control-label']) !!}
+            {!! Form::select('client_id', $clients, null, ['id'=>'client_id', 'name'=>'client_id','class'=>'form-control', 'style' => 'width:100%']) !!}
         @endif
     </div>
 
@@ -55,3 +56,16 @@
 
 @stop
 @stop
+
+@push('scripts')
+    <script type="text/javascript">
+        $("#user_assigned_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+        $("#client_id").select2({
+            placeholder: "Chọn tên khách hàng",
+            allowClear: true
+        });
+    </script>
+@endpush

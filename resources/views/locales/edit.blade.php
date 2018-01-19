@@ -19,10 +19,19 @@
     </div>
 
     {!! Form::label('manager_id', __('Giám đốc vùng:'), ['class' => 'control-label']) !!}
-    {!! Form::select('manager_id', $users, null, ['class' => 'form-control']) !!}
+    {!! Form::select('manager_id', $users, null, ['id'=>'manager_id', 'name'=>'manager_id','class'=>'form-control', 'style' => 'width:100%']) !!}
     <br>
     {!! Form::submit("Sửa", ['class' => 'btn btn-primary']) !!}
 
     {!! Form::close() !!}
 
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        $("#manager_id").select2({
+            placeholder: "Chọn tên nhân viên",
+            allowClear: true
+        });
+    </script>
+@endpush

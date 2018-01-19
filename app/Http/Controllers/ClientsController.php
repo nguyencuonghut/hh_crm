@@ -120,7 +120,7 @@ class ClientsController extends Controller
     public function create()
     {
         return view('clients.create')
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withIndustries($this->clients->listAllIndustries())
             ->withClienttypes($this->clients->listAllClientTypes())
             ->withProductCategories($this->clients->listAllProductCategories())
@@ -159,7 +159,7 @@ class ClientsController extends Controller
             ->withClient($this->clients->find($id))
             ->withCompanyname($this->settings->getCompanyName())
             ->withInvoices($this->clients->getInvoices($id))
-            ->withUsers($this->users->getAllUsersWithDepartments());
+            ->withUsers($this->users->getAllUsersWithLocales());
     }
 
     /**
@@ -172,7 +172,7 @@ class ClientsController extends Controller
     {
         return view('clients.edit')
             ->withClient($this->clients->find($id))
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withIndustries($this->clients->listAllIndustries())
             ->withClienttypes($this->clients->listAllClientTypes())
             ->withProductCategories($this->clients->listAllProductCategories())

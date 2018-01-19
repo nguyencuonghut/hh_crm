@@ -93,6 +93,6 @@ class Client extends Model
 
     public function getNameAndAddrAttribute()
     {
-        return $this->name . ' (' . $this->province . ' - ' . $this->district . ' - ' . $this->ward . ')';
+        return $this->name . ' (' . $this->ward . ' - ' . $this->district . ' - ' . $this->province . ')';
     }
 }

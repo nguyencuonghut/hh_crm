@@ -250,7 +250,7 @@ class UsersController extends Controller
             ->withRoles($this->roles->listAllRoles())
             ->withDepartments($this->departments->listAllDepartments())
             ->withLocales($this->locales->listAllLocales())
-            ->withUsers($this->users->getAllUsersWithDepartments());
+            ->withUsers($this->users->getAllUsersWithLocales());
     }
 
     /**
@@ -312,7 +312,7 @@ class UsersController extends Controller
     {
         return view('users.edit')
             ->withUser($this->users->find($id))
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withRoles($this->roles->listAllRoles())
             ->withDepartments($this->departments->listAllDepartments())
             ->withLocales($this->locales->ListAllLocales());

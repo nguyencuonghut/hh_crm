@@ -100,7 +100,7 @@ class LeadsController extends Controller
     public function create()
     {
         return view('leads.create')
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withClients($this->clients->getAllClientsWithAddr());
     }
 
@@ -147,7 +147,7 @@ class LeadsController extends Controller
     {
         return view('leads.show')
             ->withLead($this->leads->find($id))
-            ->withUsers($this->users->getAllUsersWithDepartments())
+            ->withUsers($this->users->getAllUsersWithLocales())
             ->withCompanyname($this->settings->getCompanyName());
     }
 
@@ -184,8 +184,8 @@ class LeadsController extends Controller
         if(($user_id == $user_created_id) | (1 == Auth::user()->userRole()->first()->role_id)) {
             return view('leads.edit')
                 ->withLead($this->leads->find($id))
-                ->withClients($this->clients->listAllClients())
-                ->withUsers($this->users->getAllUsersWithDepartments());
+                ->withClients($this->clients->getAllClientsWithAddr())
+                ->withUsers($this->users->getAllUsersWithLocales());
         }else {
             Session()->flash('flash_message_warning', 'Bạn không có quyền sửa chỉ đạo này!');
             return redirect()->back();
