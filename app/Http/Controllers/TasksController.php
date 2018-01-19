@@ -60,10 +60,10 @@ class TasksController extends Controller
     {
         //Only show all Tasks for administrator
         if(1 == Auth::user()->userRole()->first()->role_id) {
-            $tasks = Task::select(['id', 'title', 'created_at', 'deadline', 'user_created_id', 'user_assigned_id', 'status']);
+            $tasks = Task::with(['user', 'createdUser'])->select(['id', 'title', 'created_at', 'deadline', 'user_created_id', 'user_assigned_id', 'status']);
         } else {
             $id = Auth::user()->id;
-            $tasks = Task::select(['id', 'title', 'created_at', 'deadline', 'user_created_id','user_assigned_id', 'status'])
+            $tasks = Task::with(['user', 'createdUser'])->select(['id', 'title', 'created_at', 'deadline', 'user_created_id','user_assigned_id', 'status'])
                 ->where('user_created_id', $id)
                 ->orWhere('user_assigned_id', $id)
                 ->get();
@@ -83,12 +83,12 @@ class TasksController extends Controller
                 return $tasks->deadline ? with(new Carbon($tasks->deadline))
                     ->format('d/m/Y') : '';
             })
-            ->editColumn('user_created_id', function ($tasks) {
-                return '<a href="' . route('users.show', $tasks->user_created_id) . '">' . $tasks->createdUser->name . '</a>';
+            ->addColumn('user_created', function ($tasks) {
+                return $tasks->createdUser->name;
 
             })
-            ->editColumn('user_assigned_id', function ($tasks) {
-                return '<a href="' . route('users.show', $tasks->user_assigned_id) . '">' . $tasks->user->name . '</a>';
+            ->editColumn('user_assigned', function ($tasks) {
+                return $tasks->user->name;
 
             })
             ->addColumn('edit', function ($task) {

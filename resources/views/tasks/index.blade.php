@@ -40,8 +40,8 @@
                 {data: 'titlelink', name: 'title'},
                 {data: 'created_at', name: 'created_at'},
                 {data: 'deadline', name: 'deadline'},
-                {data: 'user_created_id', name: 'user_created_id', searchable: false},
-                {data: 'user_assigned_id', name: 'user_assigned_id', searchable: false},
+                {data: 'user_created', name: 'createdUser.name'},
+                {data: 'user_assigned', name: 'user.name'},
                 {data: 'status', name: 'status', orderable: false},
                 @if(Entrust::can('task-update'))
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},

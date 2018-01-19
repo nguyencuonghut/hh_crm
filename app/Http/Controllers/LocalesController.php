@@ -36,7 +36,7 @@ class LocalesController extends Controller
      */
     public function anyData()
     {
-        //$locales = Locale::select(['id', 'name', 'manager_id']);
+        //$locales = Locale::with('manager')->select(['id', 'name', 'description', 'manager_id']);
         $locales = Locale::with('manager')->select('locales.*');
         return Datatables::of($locales)
             ->addColumn('name', function ($locales) {

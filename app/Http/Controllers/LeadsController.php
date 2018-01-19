@@ -58,10 +58,10 @@ class LeadsController extends Controller
     {
         //Only show all Tasks for administrator
         if(1 == Auth::user()->userRole()->first()->role_id) {
-            $leads = Lead::select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date']);
+            $leads = Lead::with(['user', 'creator'])->select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date']);
         } else {
             $id = Auth::user()->id;
-            $leads = Lead::select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date'])
+            $leads = Lead::with(['user', 'creator'])->select(['id', 'title', 'status',  'user_created_id', 'client_id', 'user_assigned_id', 'created_at', 'contact_date'])
                 ->where('user_created_id', $id)
                 ->orWhere('user_assigned_id', $id)
                 ->get();
@@ -70,9 +70,8 @@ class LeadsController extends Controller
             ->addColumn('titlelink', function ($leads) {
                 return '<a href="leads/' . $leads->id . '" ">' . $leads->title . '</a>';
             })
-            ->editColumn('user_created_id', function ($leads) {
-                return '<a href="' . route('users.show', $leads->user_created_id) . '">' . $leads->creator->name . '</a>';
-
+            ->addColumn('creator_name', function ($leads) {
+                return $leads->creator->name;
             })
             ->editColumn('created_at', function ($leads) {
                 return $leads->created_at ? with(new Carbon($leads->created_at))
@@ -82,9 +81,8 @@ class LeadsController extends Controller
                 return $leads->contact_date ? with(new Carbon($leads->contact_date))
                     ->format('d/m/Y') : '';
             })
-            ->editColumn('user_assigned_id', function ($leads) {
-                return '<a href="' . route('users.show', $leads->user_assigned_id) . '">' . $leads->user->name . '</a>';
-
+            ->addColumn('user_name', function ($leads) {
+                return $leads->user->name;
             })
             ->editColumn('status', function ($leads) {
                 return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';;

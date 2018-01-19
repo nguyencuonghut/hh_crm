@@ -40,8 +40,8 @@
                 {data: 'titlelink', name: 'title'},
                 {data: 'created_at', name: 'created_at',},
                 {data: 'contact_date', name: 'contact_date',},
-                {data: 'user_created_id', name: 'user_created_id'},
-                {data: 'user_assigned_id', name: 'user_assigned_id'},
+                {data: 'creator_name', name: 'creator.name'},
+                {data: 'user_name', name: 'user.name'},
                 {data: 'status', name: 'status', orderable: false},
                 @if(Entrust::can('lead-update'))
                 { data: 'edit', name: 'edit', orderable: false, searchable: false},
