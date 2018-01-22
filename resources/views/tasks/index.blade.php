@@ -15,7 +15,7 @@
             <th>{{ __('Giao cho') }}</th>
             <th>
                 <select name="status" id="status-task">
-                    <option value="" disabled selected>{{ __('Trạng thái') }}</option>
+                    <option value="" disabled selected>{{ __('Tình trạng') }}</option>
                     <option value="open">Open</option>
                     <option value="closed">Closed</option>
                     <option value="all">All</option>
